@@ -62,8 +62,9 @@ img { display: block; max-width: 100%; height: auto; }
 
 .wrap { max-width: 1280px; margin: 0 auto; padding-left: 56px; padding-right: 56px; }
 .header {
-  position: relative;
-  z-index: 40;
+  position: sticky;
+  top: 0;
+  z-index: 50;
   max-width: 1400px;
   margin: auto;
   display: flex;
@@ -72,8 +73,28 @@ img { display: block; max-width: 100%; height: auto; }
   gap: 24px;
   padding: 10px 56px;
   min-height: 0;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 0;
+  /* Solid bar — soft edge lives only on ::after to avoid stacked fade seams */
   background: var(--paper);
+}
+.header::before {
+  content: none;
+}
+/* Single soft fade under the bar (starts opaque so it meets the solid fill) */
+.header::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 18px;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    var(--paper) 0%,
+    color-mix(in srgb, var(--paper) 55%, transparent) 45%,
+    transparent 100%
+  );
 }
 .brand { width: 118px; flex-shrink: 0; line-height: 0; }
 .brand img {
@@ -235,13 +256,61 @@ h1 {
   margin-bottom: 25px;
 }
 em { font-weight: 400; font-style: italic; }
-h1 em { position: relative; white-space: nowrap; }
-h1 em::after {
+/* Hero custom word marks (COLOR / EXPLORE assets) */
+h1 em.hero-word {
+  position: relative;
+  display: inline-flex;
+  align-items: flex-end;
+  white-space: nowrap;
+  color: inherit;
+  -webkit-text-fill-color: currentColor;
+  -webkit-text-stroke: 0;
+  z-index: 0;
+  vertical-align: baseline;
+}
+h1 em.hero-word img {
+  display: block;
+  height: 0.72em;
+  width: auto;
+  max-width: min(280px, 58vw);
+  /* Bold coloring-book outline around white fill */
+  filter:
+    drop-shadow(2px 0 0 var(--ink))
+    drop-shadow(-2px 0 0 var(--ink))
+    drop-shadow(0 2px 0 var(--ink))
+    drop-shadow(0 -2px 0 var(--ink))
+    drop-shadow(1.4px 1.4px 0 var(--ink))
+    drop-shadow(-1.4px -1.4px 0 var(--ink))
+    drop-shadow(1.4px -1.4px 0 var(--ink))
+    drop-shadow(-1.4px 1.4px 0 var(--ink));
+}
+body.dark h1 em.hero-word img {
+  filter:
+    drop-shadow(2px 0 0 var(--cream))
+    drop-shadow(-2px 0 0 var(--cream))
+    drop-shadow(0 2px 0 var(--cream))
+    drop-shadow(0 -2px 0 var(--cream))
+    drop-shadow(1.4px 1.4px 0 var(--cream))
+    drop-shadow(-1.4px -1.4px 0 var(--cream))
+    drop-shadow(1.4px -1.4px 0 var(--cream))
+    drop-shadow(-1.4px 1.4px 0 var(--cream));
+}
+h1 em.hero-word .hero-word-period {
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1;
+  margin-left: 0.02em;
+  color: var(--ink);
+}
+body.dark h1 em.hero-word .hero-word-period {
+  color: var(--cream);
+}
+h1 em.hero-word--color::after {
   content: '';
   position: absolute;
   left: 0;
-  bottom: 0;
-  width: 100%;
+  right: 0.35em;
+  bottom: -0.12em;
   height: 8px;
   background: var(--gold);
   z-index: -1;
@@ -282,6 +351,39 @@ h1 em::after {
   font-weight: 700;
   border-bottom: 1px solid;
   padding-bottom: 5px;
+}
+/* Hero EXPLORE word mark */
+.hero .text-link.hero-explore-link {
+  border-bottom: 0;
+  padding-bottom: 0;
+  gap: 10px;
+  align-items: center;
+}
+.hero .hero-word--explore {
+  display: block;
+  height: 28px;
+  width: auto;
+  max-width: min(220px, 55vw);
+  filter:
+    drop-shadow(1.5px 0 0 var(--ink))
+    drop-shadow(-1.5px 0 0 var(--ink))
+    drop-shadow(0 1.5px 0 var(--ink))
+    drop-shadow(0 -1.5px 0 var(--ink))
+    drop-shadow(1px 1px 0 var(--ink))
+    drop-shadow(-1px -1px 0 var(--ink))
+    drop-shadow(1px -1px 0 var(--ink))
+    drop-shadow(-1px 1px 0 var(--ink));
+}
+body.dark .hero .hero-word--explore {
+  filter:
+    drop-shadow(1.5px 0 0 var(--cream))
+    drop-shadow(-1.5px 0 0 var(--cream))
+    drop-shadow(0 1.5px 0 var(--cream))
+    drop-shadow(0 -1.5px 0 var(--cream))
+    drop-shadow(1px 1px 0 var(--cream))
+    drop-shadow(-1px -1px 0 var(--cream))
+    drop-shadow(1px -1px 0 var(--cream))
+    drop-shadow(-1px 1px 0 var(--cream));
 }
 .hero-note {
   font-size: 11px;
@@ -462,6 +564,35 @@ h1 em::after {
   margin: 0 auto;
   padding: 0 40px;
 }
+/* Soft edge fades — hint more content beyond the viewport */
+.az-carousel-shell::before,
+.az-carousel-shell::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 22px;
+  width: clamp(18px, 7vw, 36px);
+  z-index: 3;
+  pointer-events: none;
+}
+.az-carousel-shell::before {
+  left: 40px;
+  background: linear-gradient(
+    90deg,
+    #eaeded 0%,
+    rgba(234, 237, 237, 0.55) 45%,
+    rgba(234, 237, 237, 0) 100%
+  );
+}
+.az-carousel-shell::after {
+  right: 40px;
+  background: linear-gradient(
+    270deg,
+    #eaeded 0%,
+    rgba(234, 237, 237, 0.55) 45%,
+    rgba(234, 237, 237, 0) 100%
+  );
+}
 .az-carousel {
   display: flex;
   gap: 12px;
@@ -496,12 +627,32 @@ h1 em::after {
 .az-carousel::-webkit-scrollbar-corner {
   background: var(--teal);
 }
-/* Mobile / touch: native bars ignore custom styles — hide them and use a brand track cue */
+/* Mobile / touch: hide native bar; brand thumb tracks scroll in JS */
+.az-scroll {
+  display: none;
+  position: relative;
+  height: 6px;
+  margin: 10px 12px 0;
+  border-radius: 999px;
+  background: var(--teal);
+  overflow: hidden;
+  pointer-events: none;
+}
+.az-scroll-thumb {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 999px;
+  background: var(--gold);
+  min-width: 18%;
+  transition: left 40ms linear;
+}
 @media (hover: none), (max-width: 760px) {
   .az-carousel {
     scrollbar-width: none;
     -ms-overflow-style: none;
-    padding-bottom: 8px;
+    padding-bottom: 4px;
   }
   .az-carousel::-webkit-scrollbar {
     display: none;
@@ -509,25 +660,10 @@ h1 em::after {
     height: 0;
   }
   .az-carousel-shell {
-    padding-bottom: 10px;
+    padding-bottom: 4px;
   }
-  .az-carousel-shell::after {
-    content: '';
+  .az-scroll {
     display: block;
-    height: 6px;
-    margin: 10px 12px 0;
-    border-radius: 999px;
-    background:
-      linear-gradient(
-        90deg,
-        var(--teal) 0%,
-        var(--teal) 62%,
-        var(--gold) 62%,
-        var(--gold) 78%,
-        var(--teal) 78%
-      );
-    opacity: 0.9;
-    pointer-events: none;
   }
 }
 .az-carousel:focus-visible {
@@ -655,20 +791,37 @@ h1 em::after {
   background: var(--gold);
   color: #082f35;
   display: flex;
-  justify-content: space-around;
-  gap: 25px;
-  padding: 19px 30px;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+  gap: clamp(6px, 2vw, 40px);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 16px clamp(10px, 3vw, 30px);
   overflow: hidden;
-  font-size: 22px;
-  letter-spacing: 3px;
+  font-size: clamp(12px, 3.6vw, 22px);
+  letter-spacing: clamp(0.5px, 0.35vw, 3px);
   font-weight: 700;
   white-space: nowrap;
 }
-.brand-strip .brand-spark {
-  width: 1.15em;
-  height: 1.15em;
-  margin-left: 0.55em;
-  vertical-align: -0.18em;
+.brand-strip > span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35em;
+  line-height: 1;
+  flex: 0 1 auto;
+  min-width: 0;
+}
+/* Duplicate marquee item — desktop only so mobile never clips */
+.brand-strip .strip-extra {
+  display: none;
+}
+@media (min-width: 900px) {
+  .brand-strip .strip-extra {
+    display: inline-flex;
+  }
 }
 
 .how { padding-top: 95px; padding-bottom: 90px; }
@@ -828,10 +981,6 @@ h3 {
   border-radius: 6px;
   border: 1px solid #e47911;
   text-align: center;
-}
-.amazon-btn .brand-arrow {
-  width: 0.95em;
-  height: 0.95em;
 }
 .amazon-btn:hover {
   background: #f5a623;
@@ -1004,55 +1153,55 @@ dialog p { text-align: center; margin: 8px 0 0; font-size: 10px; }
 }
 .skip:focus { top: 10px; }
 
-/* Brand mark icons (spark / arrow) — dual light/dark PNGs */
-.brand-icon {
-  display: inline-grid;
-  width: 1.05em;
-  height: 1.05em;
-  vertical-align: -0.18em;
-  flex-shrink: 0;
+/* Brand icons v2 — solid cream/teal SVGs at fixed 24px (do not shrink/recolor) */
+.cd-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  flex: 0 0 24px;
+  object-fit: contain;
+  opacity: 1;
   pointer-events: none;
   user-select: none;
+}
+.cd-icon-auto {
+  display: inline-grid;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  flex: 0 0 24px;
   place-items: center;
+  pointer-events: none;
+  user-select: none;
+  vertical-align: -0.2em;
 }
-.brand-icon img {
+.cd-icon-auto .cd-icon {
   grid-area: 1 / 1;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
 }
-.brand-icon .brand-icon-dark {
+.cd-icon-auto .cd-icon--for-dark {
   display: none;
 }
-body.dark .brand-icon .brand-icon-light {
+body.dark .cd-icon-auto .cd-icon--for-light {
   display: none;
 }
-body.dark .brand-icon .brand-icon-dark {
+body.dark .cd-icon-auto .cd-icon--for-dark {
   display: block;
-}
-/* Gold strip already contrasts with teal spark — keep light asset */
-body.dark .brand-strip .brand-spark .brand-icon-light {
-  display: block;
-}
-body.dark .brand-strip .brand-spark .brand-icon-dark {
-  display: none;
-}
-.brand-arrow {
-  width: 0.95em;
-  height: 0.95em;
 }
 .brand-arrow--down {
   transform: rotate(135deg);
   transform-origin: center;
 }
-.button .brand-arrow,
-.text-link .brand-arrow,
-.menu-panel .brand-arrow {
-  width: 0.95em;
-  height: 0.95em;
+.brand-strip .cd-icon,
+.brand-strip .cd-icon-auto {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  flex: 0 0 24px;
+  margin: 0;
 }
-.menu-panel .brand-arrow {
+.menu-panel .cd-icon-auto,
+.menu-panel .cd-icon {
   margin-left: 0.15em;
 }
 
@@ -1094,6 +1243,22 @@ body.dark .az-card {
 body.dark .az-carousel-wrap { background: #1a2e31; border-color: var(--line); }
 body.dark .az-carousel-head h2 { color: var(--cream); }
 body.dark .az-carousel-head p { color: var(--muted); }
+body.dark .az-carousel-shell::before {
+  background: linear-gradient(
+    90deg,
+    #1a2e31 0%,
+    rgba(26, 46, 49, 0.55) 45%,
+    rgba(26, 46, 49, 0) 100%
+  );
+}
+body.dark .az-carousel-shell::after {
+  background: linear-gradient(
+    270deg,
+    #1a2e31 0%,
+    rgba(26, 46, 49, 0.55) 45%,
+    rgba(26, 46, 49, 0) 100%
+  );
+}
 body.dark .meaning-box { background: #1a454b; }
 
 @media (max-width: 1000px) {
@@ -1131,14 +1296,14 @@ body.dark .meaning-box { background: #1a454b; }
   h1 { font-size: 60px; letter-spacing: -2px; }
   .hero-art { transform: none; }
   .az-carousel-shell { padding: 0 28px; }
+  .az-carousel-shell::before { left: 28px; }
+  .az-carousel-shell::after { right: 28px; }
   .az-nav { display: none; }
-  .brand-strip { font-size: 15px; gap: 12px; padding: 15px; }
-  .brand-strip .brand-spark {
-    width: 1.05em;
-    height: 1.05em;
-    margin-left: 0.4em;
+  .brand-strip {
+    font-size: clamp(12px, 3.8vw, 15px);
+    gap: 8px;
+    padding: 14px 12px;
   }
-  .strip-extra { display: none; }
   .how { padding-top: 55px; padding-bottom: 45px; }
   .section-top { grid-template-columns: 1fr; gap: 8px; }
   h2 { font-size: 36px; }
@@ -1175,6 +1340,18 @@ body.dark .meaning-box { background: #1a454b; }
   .header nav { display: none; }
   .theme { margin-left: auto; }
   .book-grid { max-width: none; }
+  .brand-strip {
+    gap: 4px;
+    padding: 12px 8px;
+    letter-spacing: 0.5px;
+  }
+  .brand-strip .cd-icon,
+  .brand-strip .cd-icon-auto {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    flex: 0 0 20px;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

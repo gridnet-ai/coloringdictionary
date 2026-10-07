@@ -65,7 +65,20 @@ export function HomePage() {
             <h1>
               A dictionary
               <br />
-              you can <em>color.</em>
+              you can{' '}
+              <em className="hero-word hero-word--color">
+                <img
+                  src="/brand/hero-color.png"
+                  alt="color"
+                  width={986}
+                  height={260}
+                  decoding="async"
+                  draggable={false}
+                />
+                <span className="hero-word-period" aria-hidden="true">
+                  .
+                </span>
+              </em>
             </h1>
             <p className="intro">
               Get to know the world, one page at a time. A guide to discover. A
@@ -83,8 +96,17 @@ export function HomePage() {
               >
                 Now available on Amazon <BrandArrow />
               </a>
-              <a className="text-link" href="#collection">
-                Explore the series <BrandArrowDown />
+              <a className="text-link hero-explore-link" href="#collection">
+                <img
+                  className="hero-word hero-word--explore"
+                  src="/brand/hero-explore.png"
+                  alt="Explore the series"
+                  width={979}
+                  height={198}
+                  decoding="async"
+                  draggable={false}
+                />
+                <BrandArrowDown tone="teal" />
               </a>
             </div>
             <p className="hero-note">For curious minds of all ages.</p>
@@ -261,7 +283,7 @@ export function HomePage() {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          Buy on Amazon <BrandArrow />
+                          Buy on Amazon <BrandArrow tone="teal" />
                         </a>
                       ) : (
                         <a
@@ -271,7 +293,7 @@ export function HomePage() {
                           rel="noopener noreferrer"
                           title="Available on Amazon soon — search Coloring Dictionary"
                         >
-                          Buy on Amazon <BrandArrow />
+                          Buy on Amazon <BrandArrow tone="teal" />
                         </a>
                       )}
                       {!onAmazon ? (
@@ -305,7 +327,7 @@ export function HomePage() {
             to discover. Start wherever curiosity takes you.
           </p>
           <a className="text-link" href="#updates">
-            Follow the first collection <BrandArrow />
+            Follow the first collection <BrandArrow tone="auto" />
           </a>
         </section>
 

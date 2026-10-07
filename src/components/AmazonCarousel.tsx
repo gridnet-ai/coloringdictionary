@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { CAROUSEL_LISTINGS, type AmazonListingCard } from '@/lib/books';
 import { recordVcapHit } from '@/lib/vcapTracking';
 
@@ -89,11 +89,50 @@ function ListingCard({
 
 export function AmazonCarousel({ onPreview }: Props) {
   const scrollerRef = useRef<HTMLDivElement>(null);
+  const [thumb, setThumb] = useState({ left: 0, width: 40, visible: false });
+
+  function syncThumb() {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const max = el.scrollWidth - el.clientWidth;
+    if (max <= 1) {
+      setThumb((t) => ({ ...t, visible: false }));
+      return;
+    }
+    const ratio = el.clientWidth / el.scrollWidth;
+    const width = Math.max(18, Math.round(ratio * 100));
+    const left = Math.round((el.scrollLeft / max) * (100 - width));
+    setThumb({ left, width, visible: true });
+  }
+
+  useEffect(() => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const run = () => {
+      requestAnimationFrame(syncThumb);
+    };
+    run();
+    // Covers after images/layout settle
+    const t = window.setTimeout(run, 120);
+    el.addEventListener('scroll', syncThumb, { passive: true });
+    const ro = new ResizeObserver(run);
+    ro.observe(el);
+    window.addEventListener('resize', run);
+    return () => {
+      window.clearTimeout(t);
+      el.removeEventListener('scroll', syncThumb);
+      ro.disconnect();
+      window.removeEventListener('resize', run);
+    };
+  }, []);
 
   function scrollBy(dir: 1 | -1) {
     const el = scrollerRef.current;
     if (!el) return;
-    el.scrollBy({ left: dir * Math.min(340, el.clientWidth * 0.8), behavior: 'smooth' });
+    el.scrollBy({
+      left: dir * Math.min(340, el.clientWidth * 0.8),
+      behavior: 'smooth',
+    });
   }
 
   return (
@@ -124,6 +163,14 @@ export function AmazonCarousel({ onPreview }: Props) {
         >
           ›
         </button>
+        {thumb.visible ? (
+          <div className="az-scroll" aria-hidden="true">
+            <div
+              className="az-scroll-thumb"
+              style={{ left: `${thumb.left}%`, width: `${thumb.width}%` }}
+            />
+          </div>
+        ) : null}
       </div>
     </section>
   );

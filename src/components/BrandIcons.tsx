@@ -1,22 +1,57 @@
 type IconProps = {
   className?: string;
+  /** cream = on teal buttons; teal = on yellow/orange or light surfaces; auto = light↔dark swap */
+  tone?: 'cream' | 'teal' | 'auto';
 };
 
-function BrandMark({
-  className,
-  lightSrc,
-  darkSrc,
-  markClass,
+const ARROW = {
+  cream: '/brand/cd-arrow-cream.svg',
+  teal: '/brand/cd-arrow-teal.svg',
+} as const;
+
+const SPARK = {
+  cream: '/brand/cd-sparkle-cream.svg',
+  teal: '/brand/cd-sparkle-teal.svg',
+} as const;
+
+function CdIcon({
+  src,
+  className = '',
+  markClass = '',
 }: {
-  className: string;
-  lightSrc: string;
-  darkSrc: string;
-  markClass: string;
+  src: string;
+  className?: string;
+  markClass?: string;
 }) {
   return (
-    <span className={`brand-icon ${markClass} ${className}`.trim()} aria-hidden="true">
+    <img
+      className={`cd-icon ${markClass} ${className}`.trim()}
+      src={src}
+      alt=""
+      width={24}
+      height={24}
+      decoding="async"
+      aria-hidden="true"
+      draggable={false}
+    />
+  );
+}
+
+function AutoIcon({
+  lightSrc,
+  darkSrc,
+  className = '',
+  markClass = '',
+}: {
+  lightSrc: string;
+  darkSrc: string;
+  className?: string;
+  markClass?: string;
+}) {
+  return (
+    <span className={`cd-icon-auto ${markClass} ${className}`.trim()} aria-hidden="true">
       <img
-        className="brand-icon-light"
+        className="cd-icon cd-icon--for-light"
         src={lightSrc}
         alt=""
         width={24}
@@ -25,7 +60,7 @@ function BrandMark({
         draggable={false}
       />
       <img
-        className="brand-icon-dark"
+        className="cd-icon cd-icon--for-dark"
         src={darkSrc}
         alt=""
         width={24}
@@ -37,31 +72,51 @@ function BrandMark({
   );
 }
 
-/** Brand spark (✳) — cream+gold swap in dark mode. */
-export function BrandSpark({ className = '' }: IconProps) {
+/** Solid spark — teal on gold strip; cream on dark backgrounds. */
+export function BrandSpark({ className = '', tone = 'teal' }: IconProps) {
+  if (tone === 'auto') {
+    return (
+      <AutoIcon
+        className={className}
+        markClass="brand-spark"
+        lightSrc={SPARK.teal}
+        darkSrc={SPARK.cream}
+      />
+    );
+  }
   return (
-    <BrandMark
+    <CdIcon
       className={className}
       markClass="brand-spark"
-      lightSrc="/brand/cd-sparkle.png"
-      darkSrc="/brand/cd-sparkle-dark.png"
+      src={tone === 'cream' ? SPARK.cream : SPARK.teal}
     />
   );
 }
 
-/** Brand arrow (↗) — cream+gold swap in dark mode (readable on teal CTAs). */
-export function BrandArrow({ className = '' }: IconProps) {
+/** Solid arrow — cream on teal CTAs; teal on yellow/orange; auto for text links. */
+export function BrandArrow({ className = '', tone = 'cream' }: IconProps) {
+  if (tone === 'auto') {
+    return (
+      <AutoIcon
+        className={className}
+        markClass="brand-arrow"
+        lightSrc={ARROW.teal}
+        darkSrc={ARROW.cream}
+      />
+    );
+  }
   return (
-    <BrandMark
+    <CdIcon
       className={className}
       markClass="brand-arrow"
-      lightSrc="/brand/cd-arrow.png"
-      darkSrc="/brand/cd-arrow-dark.png"
+      src={tone === 'cream' ? ARROW.cream : ARROW.teal}
     />
   );
 }
 
 /** Downward arrow — same mark, rotated. */
-export function BrandArrowDown({ className = '' }: IconProps) {
-  return <BrandArrow className={`brand-arrow--down ${className}`.trim()} />;
+export function BrandArrowDown({ className = '', tone = 'auto' }: IconProps) {
+  return (
+    <BrandArrow className={`brand-arrow--down ${className}`.trim()} tone={tone} />
+  );
 }

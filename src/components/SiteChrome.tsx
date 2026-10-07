@@ -129,7 +129,7 @@ export function SiteChrome({ children, homeHref = '/' }: Props) {
               {item.cta ? (
                 <>
                   {' '}
-                  <BrandArrow />
+                  <BrandArrow tone="auto" />
                 </>
               ) : null}
             </a>
