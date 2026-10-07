@@ -1004,16 +1004,39 @@ dialog p { text-align: center; margin: 8px 0 0; font-size: 10px; }
 }
 .skip:focus { top: 10px; }
 
-/* Brand mark icons (spark / arrow) */
+/* Brand mark icons (spark / arrow) — dual light/dark PNGs */
 .brand-icon {
-  display: inline-block;
+  display: inline-grid;
   width: 1.05em;
   height: 1.05em;
   vertical-align: -0.18em;
-  object-fit: contain;
   flex-shrink: 0;
   pointer-events: none;
   user-select: none;
+  place-items: center;
+}
+.brand-icon img {
+  grid-area: 1 / 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.brand-icon .brand-icon-dark {
+  display: none;
+}
+body.dark .brand-icon .brand-icon-light {
+  display: none;
+}
+body.dark .brand-icon .brand-icon-dark {
+  display: block;
+}
+/* Gold strip already contrasts with teal spark — keep light asset */
+body.dark .brand-strip .brand-spark .brand-icon-light {
+  display: block;
+}
+body.dark .brand-strip .brand-spark .brand-icon-dark {
+  display: none;
 }
 .brand-arrow {
   width: 0.95em;
@@ -1040,18 +1063,6 @@ body.dark {
   --line: #3b595c;
   --card: #143e44;
   color-scheme: dark;
-}
-/* Lighten teal portion of brand PNGs on dark backgrounds; gold stays vivid */
-body.dark .brand-icon:not(.brand-spark) {
-  filter: brightness(1.55) saturate(1.05) contrast(1.05);
-}
-body.dark .button .brand-icon,
-body.dark .menu-panel .nav-cta .brand-icon {
-  /* Already on teal / dark CTA — keep original contrast */
-  filter: none;
-}
-body.dark .brand-strip .brand-spark {
-  filter: none; /* gold strip already contrasts with teal spark */
 }
 body.dark .brand {
   background: #fff5db;
