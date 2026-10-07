@@ -1320,6 +1320,22 @@ input {
 }
 .footer strong { font-size: 16px; }
 .footer p { margin-top: 7px; color: var(--muted); }
+.footer-social {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+.footer-social a {
+  display: block;
+  line-height: 0;
+  border-radius: 8px;
+}
+.footer-social img {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+.footer-social a:hover { opacity: 0.85; }
 .footer > div:nth-child(2) {
   display: flex;
   gap: 25px;

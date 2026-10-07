@@ -376,6 +376,32 @@ export function SiteChrome({ children, homeHref = '/' }: Props) {
         <div>
           <strong>Coloring Dictionary</strong>
           <p>Color • Learn • Grow</p>
+          <nav className="footer-social" aria-label="Social">
+            <a
+              href="https://x.com/coloringdiction"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Coloring Dictionary on X"
+            >
+              <img src="/brand/social-x.svg" alt="" width={28} height={28} />
+            </a>
+            <a
+              href="https://www.instagram.com/coloringdictionary"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Coloring Dictionary on Instagram"
+            >
+              <img src="/brand/social-instagram.svg" alt="" width={28} height={28} />
+            </a>
+            <a
+              href="https://www.tiktok.com/@coloringdictionary"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Coloring Dictionary on TikTok"
+            >
+              <img src="/brand/social-tiktok.svg" alt="" width={28} height={28} />
+            </a>
+          </nav>
         </div>
         <div>
           <Link to="/shop">Shop</Link>
