@@ -63,12 +63,16 @@
 .shop-page {
   padding-top: 16px;
   padding-bottom: 64px;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .shop-layout {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  min-width: 0;
+  max-width: 100%;
 }
 .shop-results-meta {
   margin: 0 0 4px;
@@ -79,8 +83,10 @@
 .shop-empty { color: var(--muted); margin: 8px 0 0; }
 .shop-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
   gap: 18px;
+  min-width: 0;
+  max-width: 100%;
 }
 .shop-card {
   background: #fff;
