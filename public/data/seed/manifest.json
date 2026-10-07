@@ -1,0 +1,33 @@
+﻿{
+    "importedAt":  "2026-10-07T15:35:55.930307+00:00",
+    "brandPromise":  "A dictionary that you can color.",
+    "counts":  {
+                   "flowers":  745,
+                   "dictionarySheet":  714,
+                   "finalDraftSheet":  745,
+                   "books":  3,
+                   "vol1FlowerSelections":  30,
+                   "covers":  5,
+                   "localAssets":  17,
+                   "almanacSheets":  {
+                                         "Almanac Chart":  133,
+                                         "Almanac By Color":  18,
+                                         "Almanac By Meaning":  20,
+                                         "Almanac Victorian Era":  7,
+                                         "Almanac Wedding":  4
+                                     }
+               },
+    "summarySnapshot":  {
+                            "Total entries claimed on Summary sheet":  713,
+                            "Dictionary actual populated":  714,
+                            "Final Draft actual populated":  745,
+                            "note":  "Recalculated from records; do not trust older summary totals."
+                        },
+    "notes":  [
+                  "Final Draft - Combined has 745 populated rows (recalculated).",
+                  "Terry List author credit imported and flagged for confirmation before release.",
+                  "Drive links retained as external references until files are confirmed available.",
+                  "Marketing mockups are separate from print-ready interior pages.",
+                  "editorialLocked protects reviewed fields from reimport overwrite."
+              ]
+}

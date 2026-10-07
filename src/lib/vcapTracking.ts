@@ -15,7 +15,8 @@ export type VcapSurface =
   | 'irl_openapi'
   | 'irl_jsonld'
   | 'signup_intent'
-  | 'preview_open';
+  | 'preview_open'
+  | 'amazon_cta';
 
 type AccessPayload = {
   sourceRegistry: string;

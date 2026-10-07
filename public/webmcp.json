@@ -1,0 +1,62 @@
+{
+  "name": "coloring-dictionary-webmcp",
+  "version": "0.2.0",
+  "description": "WebMCP / origin VCAP Actionability descriptor for Coloring Dictionary.",
+  "homepage": "https://coloringdictionary.com/",
+  "brandPromise": "A dictionary that you can color.",
+  "surfaces": {
+    "visibility": ["/", "/llms.txt", "/irl/coloring-dictionary"],
+    "citability": ["/brand.json", "/book.json", "/json.ld", "/discovery.json"],
+    "actionability": ["/mcp.json", "/webmcp.json", "/.well-known/ai-plugin.json"],
+    "performability": ["/openapi.json", "/api/signup", "/api/vcap/hit"]
+  },
+  "tools": [
+    {
+      "name": "get_brand",
+      "description": "Machine-readable brand facts",
+      "method": "GET",
+      "url": "https://coloringdictionary.com/brand.json"
+    },
+    {
+      "name": "get_book",
+      "description": "Flower Meanings Volume One metadata and samples",
+      "method": "GET",
+      "url": "https://coloringdictionary.com/book.json"
+    },
+    {
+      "name": "get_flower",
+      "description": "Public flower page by slug",
+      "method": "GET",
+      "url": "https://coloringdictionary.com/flowers/{slug}/",
+      "parameters": {
+        "slug": {
+          "type": "string",
+          "enum": ["coreopsis", "pink-carnation", "white-clover"]
+        }
+      }
+    },
+    {
+      "name": "get_seed_manifest",
+      "description": "Imported workbook seed counts and notes (public staged data)",
+      "method": "GET",
+      "url": "https://coloringdictionary.com/data/seed/manifest.json"
+    },
+    {
+      "name": "record_hit",
+      "description": "Record a VCAP/HITS access event",
+      "method": "POST",
+      "url": "https://coloringdictionary.com/api/vcap/hit"
+    }
+  ],
+  "chatgpt_plugin": {
+    "ai_plugin": "https://coloringdictionary.com/.well-known/ai-plugin.json",
+    "openapi": "https://coloringdictionary.com/openapi.json",
+    "status": "configured_descriptor",
+    "note": "Install via ChatGPT plugin / custom GPT actions using the OpenAPI URL. No private owner data is exposed."
+  },
+  "owner_workspace": {
+    "login": "https://coloringdictionary.com/login",
+    "dashboard": "https://coloringdictionary.com/owner",
+    "auth": "Firebase Auth allowlist + staff/{uid} roles"
+  }
+}

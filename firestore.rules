@@ -1,7 +1,61 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Client never writes directly; Functions use Admin SDK.
+    function signedIn() {
+      return request.auth != null;
+    }
+    function staffRole() {
+      return signedIn()
+        && exists(/databases/$(database)/documents/staff/$(request.auth.uid))
+        && get(/databases/$(database)/documents/staff/$(request.auth.uid)).data.role in ['owner', 'editor', 'illustrator', 'reviewer'];
+    }
+    function isOwner() {
+      return signedIn()
+        && exists(/databases/$(database)/documents/staff/$(request.auth.uid))
+        && get(/databases/$(database)/documents/staff/$(request.auth.uid)).data.role == 'owner';
+    }
+
+    match /staff/{uid} {
+      allow read: if signedIn() && request.auth.uid == uid;
+      allow write: if isOwner() || (signedIn() && request.auth.uid == uid && !exists(/databases/$(database)/documents/staff/$(uid)));
+    }
+
+    // Editorial content — staff only
+    match /entries/{id} {
+      allow read, write: if staffRole();
+    }
+    match /books/{id} {
+      allow read, write: if staffRole();
+    }
+    match /assets/{id} {
+      allow read, write: if staffRole();
+    }
+    match /productionJobs/{id} {
+      allow read, write: if staffRole();
+    }
+    match /imports/{id} {
+      allow read, write: if staffRole();
+    }
+
+    // CRM / finance — owner + editor
+    match /crmContacts/{id} {
+      allow read, write: if staffRole();
+    }
+    match /crmOpportunities/{id} {
+      allow read, write: if staffRole();
+    }
+    match /financeSales/{id} {
+      allow read, write: if isOwner();
+    }
+    match /financeExpenses/{id} {
+      allow read, write: if isOwner();
+    }
+
+    // Future consumer projects — private per user
+    match /customerProjects/{uid}/{document=**} {
+      allow read, write: if signedIn() && request.auth.uid == uid;
+    }
+
     match /{document=**} {
       allow read, write: if false;
     }

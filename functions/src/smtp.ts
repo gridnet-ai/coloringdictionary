@@ -37,7 +37,8 @@ export async function sendHtmlEmail(opts: {
 }) {
   const host = smtpHost.value().trim();
   const user = smtpUser.value().trim();
-  const pass = smtpPass.value();
+  /** App passwords may be stored with spaces; SMTP auth expects contiguous chars. */
+  const pass = smtpPass.value().replace(/\s+/g, '');
   const fromAddr = (
     smtpFrom.value().trim() ||
     user ||

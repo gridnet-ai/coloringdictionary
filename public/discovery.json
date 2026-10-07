@@ -4,7 +4,7 @@
   "description": "A dictionary you can color. Discover flower meanings with colored guides and facing illustrations to make your own.",
   "url": "https://coloringdictionary.com/",
   "og_image": "https://coloringdictionary.com/assets/og-image.png",
-  "logo": "https://coloringdictionary.com/icons/favicon.png",
+  "logo": "https://coloringdictionary.com/icons/icon-512.png",
   "llms_txt": "https://coloringdictionary.com/llms.txt",
   "brand": "https://coloringdictionary.com/brand.json",
   "book": "https://coloringdictionary.com/book.json",

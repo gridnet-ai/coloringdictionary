@@ -1,0 +1,35 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    function signedIn() {
+      return request.auth != null;
+    }
+    function staffRole() {
+      return signedIn()
+        && firestore.exists(/databases/(default)/documents/staff/$(request.auth.uid))
+        && firestore.get(/databases/(default)/documents/staff/$(request.auth.uid)).data.role
+          in ['owner', 'editor', 'illustrator', 'reviewer'];
+    }
+
+    // Editorial / production assets
+    match /assets/{allPaths=**} {
+      allow read: if staffRole();
+      allow write: if staffRole();
+    }
+
+    // Book exports (PDF interiors / covers)
+    match /exports/{allPaths=**} {
+      allow read: if staffRole();
+      allow write: if staffRole();
+    }
+
+    // Future consumer uploads — private per uid
+    match /customer/{uid}/{allPaths=**} {
+      allow read, write: if signedIn() && request.auth.uid == uid;
+    }
+
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

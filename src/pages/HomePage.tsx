@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { Link } from 'react-router-dom';
+import { AmazonCarousel } from '@/components/AmazonCarousel';
 import { SiteChrome } from '@/components/SiteChrome';
 import { FAQS } from '@/lib/siteSeo';
-import { BOOKS } from '@/lib/books';
+import { BOOKS, FLAGSHIP_LISTING } from '@/lib/books';
 import { recordVcapHit } from '@/lib/vcapTracking';
 
 export function HomePage() {
@@ -69,47 +70,76 @@ export function HomePage() {
               picture to make your own.
             </p>
             <div className="actions">
-              <a className="button" href="#collection">
-                Explore the series <span aria-hidden="true">↗</span>
+              <a
+                className="button"
+                href={FLAGSHIP_LISTING.amazonUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() =>
+                  recordVcapHit('amazon_cta', '/#hero', { book: FLAGSHIP_LISTING.slug })
+                }
+              >
+                Now available on Amazon <span aria-hidden="true">↗</span>
               </a>
-              <a className="text-link" href="#how">
-                Take a peek inside <span aria-hidden="true">↓</span>
+              <a className="text-link" href="#collection">
+                Explore the series <span aria-hidden="true">↓</span>
               </a>
             </div>
             <p className="hero-note">For curious minds of all ages.</p>
           </div>
-          <div className="hero-art">
-            <div className="art-heading">
-              <span>FIRST COLLECTION</span>
-              <span>FLOWER MEANINGS / VOL. 01</span>
-            </div>
+          <aside className="az-listing" aria-label="Amazon product listing">
             <button
-              className="preview"
               type="button"
-              aria-label="Enlarge the white clover sample spread"
+              className="az-listing-cover"
+              aria-label={`Preview cover: ${FLAGSHIP_LISTING.title}`}
               onClick={() =>
-                openPreview(
-                  '/assets/spread-white-clover.png',
-                  'Open book with a colored white clover guide on the left and its coloring page on the right',
-                )
+                openPreview(FLAGSHIP_LISTING.cover, `${FLAGSHIP_LISTING.title} cover`)
               }
             >
+              {FLAGSHIP_LISTING.badge ? (
+                <span className="az-badge">{FLAGSHIP_LISTING.badge}</span>
+              ) : null}
               <img
-                src="/assets/spread-white-clover.png"
-                width={1536}
-                height={1024}
-                alt="Open book with a colored white clover guide on the left and its coloring page on the right"
+                src={FLAGSHIP_LISTING.cover}
+                width={900}
+                height={1200}
+                alt={`Cover: ${FLAGSHIP_LISTING.title}`}
               />
             </button>
-            <div className="art-footer">
-              <span>Learn a little. Make it yours.</span>
-              <span className="circle-arrow" aria-hidden="true">
-                ↗
-              </span>
+            <div className="az-listing-body">
+              <h2 className="az-listing-title">{FLAGSHIP_LISTING.title}</h2>
+              <p className="az-series">
+                <a
+                  href={FLAGSHIP_LISTING.amazonUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {FLAGSHIP_LISTING.seriesLabel}
+                </a>
+              </p>
+              <p className="az-rating az-rating--new">New on Amazon</p>
+              <p className="az-format">{FLAGSHIP_LISTING.format}</p>
+              <p className="az-price az-price--see">See price on Amazon</p>
+              <p className="az-ages">Ages: {FLAGSHIP_LISTING.ages}</p>
+              <p className="az-tagline">{FLAGSHIP_LISTING.tagline}</p>
+              <a
+                className="az-cart"
+                href={FLAGSHIP_LISTING.amazonUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() =>
+                  recordVcapHit('amazon_cta', '/#hero-listing', {
+                    book: FLAGSHIP_LISTING.slug,
+                  })
+                }
+              >
+                {FLAGSHIP_LISTING.cta}
+              </a>
             </div>
-            <p className="small-note">Concept preview of pages in development.</p>
-          </div>
+          </aside>
         </section>
+
+        <AmazonCarousel onPreview={openPreview} />
 
         <div className="brand-strip" aria-label="Color Learn Grow">
           <span>

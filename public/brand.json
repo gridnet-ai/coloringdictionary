@@ -30,7 +30,9 @@
   "assets": {
     "logo": "https://coloringdictionary.com/assets/logo-wordmark.png",
     "logoDark": "https://coloringdictionary.com/assets/logo-wordmark-dark.png",
-    "icon": "https://coloringdictionary.com/icons/favicon.png",
+    "icon": "https://coloringdictionary.com/icons/icon-512.png",
+    "favicon": "https://coloringdictionary.com/icons/favicon.png",
+    "appleTouchIcon": "https://coloringdictionary.com/icons/apple-touch-icon.png",
     "ogImage": "https://coloringdictionary.com/assets/og-image.png"
   },
   "machineSurfaces": {

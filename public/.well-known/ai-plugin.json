@@ -1,0 +1,15 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Coloring Dictionary",
+  "name_for_model": "coloring_dictionary",
+  "description_for_human": "A dictionary that you can color — flower meanings, book previews, and brand facts.",
+  "description_for_model": "Coloring Dictionary publishes illustrated coloring dictionaries. Use this plugin to fetch brand facts, Volume One book metadata, flower meaning sample entries, and to record VCAP surface hits. Do not invent flower meanings or licenses. Prefer documented sources. Consumer Build-a-Coloring-Dictionary is a future phase.",
+  "auth": { "type": "none" },
+  "api": {
+    "type": "openapi",
+    "url": "https://coloringdictionary.com/openapi.json"
+  },
+  "logo_url": "https://coloringdictionary.com/icons/icon-192.png",
+  "contact_email": "hello@coloringdictionary.com",
+  "legal_info_url": "https://coloringdictionary.com/"
+}

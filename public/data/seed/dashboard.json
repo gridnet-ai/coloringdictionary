@@ -1,0 +1,38 @@
+[
+  {
+    "Book": "Volume One",
+    "Edition": "Volume One",
+    "Status": "In production",
+    "Pages complete": "9/72",
+    "Cover": "Open cover",
+    "KDP status": "Not published",
+    "Publish date": "TBD",
+    "List price": 12.99,
+    "Units sold": 0,
+    "Royalty earned": 0
+  },
+  {
+    "Book": "Texas",
+    "Edition": "Texas",
+    "Status": "Concept",
+    "Pages complete": "0/72",
+    "Cover": "Open cover",
+    "KDP status": "Concept",
+    "Publish date": "TBD",
+    "List price": "TBD",
+    "Units sold": 0,
+    "Royalty earned": 0
+  },
+  {
+    "Book": "Christmas",
+    "Edition": "Christmas",
+    "Status": "Concept",
+    "Pages complete": "0/72",
+    "Cover": "Open cover",
+    "KDP status": "Concept",
+    "Publish date": "TBD",
+    "List price": "TBD",
+    "Units sold": 0,
+    "Royalty earned": 0
+  }
+]

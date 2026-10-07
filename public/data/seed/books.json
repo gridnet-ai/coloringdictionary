@@ -1,0 +1,2603 @@
+[
+  {
+    "id": "volume-one",
+    "title": "Coloring Dictionary",
+    "subtitle": "Flower Meanings",
+    "series": "Coloring Dictionary",
+    "edition": "Volume One",
+    "authorImported": "Terry List",
+    "authorCreditNeedsConfirmation": true,
+    "coverUrl": "https://drive.google.com/file/d/1QkC74pQdwcghtEJavoxklLSzqYshUhGY/view?usp=drivesdk",
+    "format": "8.5 x 11 paperback, standard color, 72 pages",
+    "status": "In production",
+    "language": "en",
+    "audience": "For all ages",
+    "spreadLayout": {
+      "guideSide": "left_even",
+      "coloringSide": "right_odd"
+    },
+    "pages": [
+      {
+        "Page #": 1.0,
+        "Section": "Front matter",
+        "Flower": null,
+        "Page type": "Title page",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 2.0,
+        "Section": "Front matter",
+        "Flower": null,
+        "Page type": "Copyright page",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 3.0,
+        "Section": "Front matter",
+        "Flower": null,
+        "Page type": "Name: ____ (ownership page)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 4.0,
+        "Section": "Front matter",
+        "Flower": null,
+        "Page type": "Introduction - meanings we've chosen",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 5.0,
+        "Section": "Front matter",
+        "Flower": null,
+        "Page type": "How to use this book",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 6.0,
+        "Section": "Flowers",
+        "Flower": "Aster",
+        "Page type": "Reference (even/left)",
+        "Meaning": "Love of variety",
+        "Status": "Draft exists",
+        "Artwork link": "https://drive.google.com/file/d/1d0A-ijp_4hWR0-gzMHzyIpscFd0Sx5Dt/view?usp=drivesdk",
+        "Notes": "Meaning updated from Daintiness per 2026-10-06 draft (Greenaway: China aster = Variety)"
+      },
+      {
+        "Page #": 7.0,
+        "Section": "Flowers",
+        "Flower": "Aster",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": "Love of variety",
+        "Status": "Draft exists",
+        "Artwork link": "https://drive.google.com/file/d/1TqdcNtTqw4tpevc_po-1VsNP5UbvyOvJ/view?usp=drivesdk",
+        "Notes": null
+      },
+      {
+        "Page #": 8.0,
+        "Section": "Flowers",
+        "Flower": "Baby's breath",
+        "Page type": "Reference (even/left)",
+        "Meaning": "Everlasting love",
+        "Status": "Draft exists",
+        "Artwork link": "https://drive.google.com/file/d/1qZdUCMtxwS2NQ0phAxIxXqa9qEhPOwr0/view?usp=drivesdk",
+        "Notes": null
+      },
+      {
+        "Page #": 9.0,
+        "Section": "Flowers",
+        "Flower": "Baby's breath",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": "Everlasting love",
+        "Status": "Draft exists",
+        "Artwork link": "https://drive.google.com/file/d/1KFj_Bj5n388_zG0YNk6w0hGxmocrtmx_/view?usp=drivesdk",
+        "Notes": null
+      },
+      {
+        "Page #": 10.0,
+        "Section": "Flowers",
+        "Flower": "Carnation, pink",
+        "Page type": "Reference (even/left)",
+        "Meaning": "I'll never forget you",
+        "Status": "Draft exists",
+        "Artwork link": "https://drive.google.com/file/d/1b3DIgj5bVH9YXIeyUWNhtnlMLK29dITs/view?usp=drivesdk",
+        "Notes": null
+      },
+      {
+        "Page #": 11.0,
+        "Section": "Flowers",
+        "Flower": "Carnation, pink",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": "I'll never forget you",
+        "Status": "Draft exists",
+        "Artwork link": "https://drive.google.com/file/d/1B07ondtC_1nNhg9Gqe6VTihaRO9R1uFp/view?usp=drivesdk",
+        "Notes": null
+      },
+      {
+        "Page #": 12.0,
+        "Section": "Flowers",
+        "Flower": "Clover, white",
+        "Page type": "Reference (even/left)",
+        "Meaning": "Think of me",
+        "Status": "Draft exists",
+        "Artwork link": "https://drive.google.com/file/d/1GNMEpfO0FSFLlVwlXxaiZE0_wvldwMv8/view?usp=drivesdk",
+        "Notes": "★ brand flower (TL-004)"
+      },
+      {
+        "Page #": 13.0,
+        "Section": "Flowers",
+        "Flower": "Clover, white",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": "Think of me",
+        "Status": "Draft exists",
+        "Artwork link": "https://drive.google.com/file/d/1fB9x1NYAiVyec39V37F-IhQPaV1xJNkU/view?usp=drivesdk",
+        "Notes": "★ brand flower (TL-004)"
+      },
+      {
+        "Page #": 14.0,
+        "Section": "Flowers",
+        "Flower": "Coreopsis",
+        "Page type": "Reference (even/left)",
+        "Meaning": "Always cheerful",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 15.0,
+        "Section": "Flowers",
+        "Flower": "Coreopsis",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": "Always cheerful",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 16.0,
+        "Section": "Flowers",
+        "Flower": "Daffodil",
+        "Page type": "Reference (even/left)",
+        "Meaning": "New beginnings",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 17.0,
+        "Section": "Flowers",
+        "Flower": "Daffodil",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": "New beginnings",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 18.0,
+        "Section": "Flowers",
+        "Flower": "Daisy",
+        "Page type": "Reference (even/left)",
+        "Meaning": "Loyal love",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 19.0,
+        "Section": "Flowers",
+        "Flower": "Daisy",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": "Loyal love",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 20.0,
+        "Section": "Flowers",
+        "Flower": "Edelweiss",
+        "Page type": "Reference (even/left)",
+        "Meaning": "Courage",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 21.0,
+        "Section": "Flowers",
+        "Flower": "Edelweiss",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": "Courage",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 22.0,
+        "Section": "Flowers",
+        "Flower": "Forget-me-not",
+        "Page type": "Reference (even/left)",
+        "Meaning": "Do not forget me",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 23.0,
+        "Section": "Flowers",
+        "Flower": "Forget-me-not",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": "Do not forget me",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 24.0,
+        "Section": "Flowers",
+        "Flower": "Gardenia",
+        "Page type": "Reference (even/left)",
+        "Meaning": "You're lovely",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 25.0,
+        "Section": "Flowers",
+        "Flower": "Gardenia",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": "You're lovely",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 26.0,
+        "Section": "Flowers",
+        "Flower": "Gladiolus",
+        "Page type": "Reference (even/left)",
+        "Meaning": "Strength, integrity",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 27.0,
+        "Section": "Flowers",
+        "Flower": "Gladiolus",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": "Strength, integrity",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 28.0,
+        "Section": "Flowers",
+        "Flower": "Hibiscus",
+        "Page type": "Reference (even/left)",
+        "Meaning": "Delicate beauty",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 29.0,
+        "Section": "Flowers",
+        "Flower": "Hibiscus",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": "Delicate beauty",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 30.0,
+        "Section": "Flowers",
+        "Flower": "Honeysuckle",
+        "Page type": "Reference (even/left)",
+        "Meaning": "Bonds of love",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 31.0,
+        "Section": "Flowers",
+        "Flower": "Honeysuckle",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": "Bonds of love",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 32.0,
+        "Section": "Flowers",
+        "Flower": "Iris",
+        "Page type": "Reference (even/left)",
+        "Meaning": "Hope",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 33.0,
+        "Section": "Flowers",
+        "Flower": "Iris",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": "Hope",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 34.0,
+        "Section": "Flowers",
+        "Flower": "Lily, white",
+        "Page type": "Reference (even/left)",
+        "Meaning": "Purity",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 35.0,
+        "Section": "Flowers",
+        "Flower": "Lily, white",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": "Purity",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 36.0,
+        "Section": "Flowers",
+        "Flower": "Lily-of-the-valley",
+        "Page type": "Reference (even/left)",
+        "Meaning": "Sweetness",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 37.0,
+        "Section": "Flowers",
+        "Flower": "Lily-of-the-valley",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": "Sweetness",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 38.0,
+        "Section": "Flowers",
+        "Flower": "Lotus",
+        "Page type": "Reference (even/left)",
+        "Meaning": "Rebirth",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 39.0,
+        "Section": "Flowers",
+        "Flower": "Lotus",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": "Rebirth",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 40.0,
+        "Section": "Flowers",
+        "Flower": "Magnolia",
+        "Page type": "Reference (even/left)",
+        "Meaning": "Love of nature",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 41.0,
+        "Section": "Flowers",
+        "Flower": "Magnolia",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": "Love of nature",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 42.0,
+        "Section": "Flowers",
+        "Flower": "Morning glory",
+        "Page type": "Reference (even/left)",
+        "Meaning": "Affection",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 43.0,
+        "Section": "Flowers",
+        "Flower": "Morning glory",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": "Affection",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 44.0,
+        "Section": "Flowers",
+        "Flower": "Pansy",
+        "Page type": "Reference (even/left)",
+        "Meaning": "Thoughts",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 45.0,
+        "Section": "Flowers",
+        "Flower": "Pansy",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": "Thoughts",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 46.0,
+        "Section": "Flowers",
+        "Flower": "Peony",
+        "Page type": "Reference (even/left)",
+        "Meaning": "Happy life",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 47.0,
+        "Section": "Flowers",
+        "Flower": "Peony",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": "Happy life",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 48.0,
+        "Section": "Flowers",
+        "Flower": "Poppy",
+        "Page type": "Reference (even/left)",
+        "Meaning": "Consolation",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 49.0,
+        "Section": "Flowers",
+        "Flower": "Poppy",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": "Consolation",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 50.0,
+        "Section": "Flowers",
+        "Flower": "Rose, red",
+        "Page type": "Reference (even/left)",
+        "Meaning": "Love",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 51.0,
+        "Section": "Flowers",
+        "Flower": "Rose, red",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": "Love",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 52.0,
+        "Section": "Flowers",
+        "Flower": "Rosemary",
+        "Page type": "Reference (even/left)",
+        "Meaning": "Remembrance",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 53.0,
+        "Section": "Flowers",
+        "Flower": "Rosemary",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": "Remembrance",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 54.0,
+        "Section": "Flowers",
+        "Flower": "Sunflower, dwarf",
+        "Page type": "Reference (even/left)",
+        "Meaning": "Adoration",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 55.0,
+        "Section": "Flowers",
+        "Flower": "Sunflower, dwarf",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": "Adoration",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 56.0,
+        "Section": "Flowers",
+        "Flower": "Sweet pea",
+        "Page type": "Reference (even/left)",
+        "Meaning": "Thank you",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 57.0,
+        "Section": "Flowers",
+        "Flower": "Sweet pea",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": "Thank you",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 58.0,
+        "Section": "Flowers",
+        "Flower": "Thyme",
+        "Page type": "Reference (even/left)",
+        "Meaning": "Courage, strength",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 59.0,
+        "Section": "Flowers",
+        "Flower": "Thyme",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": "Courage, strength",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 60.0,
+        "Section": "Flowers",
+        "Flower": "Tulip, red",
+        "Page type": "Reference (even/left)",
+        "Meaning": "Declaration of love",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 61.0,
+        "Section": "Flowers",
+        "Flower": "Tulip, red",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": "Declaration of love",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 62.0,
+        "Section": "Flowers",
+        "Flower": "Violet",
+        "Page type": "Reference (even/left)",
+        "Meaning": "Faithfulness",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 63.0,
+        "Section": "Flowers",
+        "Flower": "Violet",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": "Faithfulness",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 64.0,
+        "Section": "Flowers",
+        "Flower": "Zinnia",
+        "Page type": "Reference (even/left)",
+        "Meaning": "Thinking of absent friends",
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": "★ brand flower"
+      },
+      {
+        "Page #": 65.0,
+        "Section": "Flowers",
+        "Flower": "Zinnia",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": "Thinking of absent friends",
+        "Status": "Concept exists",
+        "Artwork link": "https://drive.google.com/file/d/13t7_tCkcWXIRg5-MKjqg_5lFj4MuzJlL/view?usp=drivesdk",
+        "Notes": "★ brand flower"
+      },
+      {
+        "Page #": 66.0,
+        "Section": "Back matter",
+        "Flower": null,
+        "Page type": "Meaning-match quiz",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 67.0,
+        "Section": "Back matter",
+        "Flower": null,
+        "Page type": "Color-mixing guide",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 68.0,
+        "Section": "Back matter",
+        "Flower": null,
+        "Page type": "Flower checklist - \"Find them all\"",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 69.0,
+        "Section": "Back matter",
+        "Flower": null,
+        "Page type": "Draw your own flower (1)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 70.0,
+        "Section": "Back matter",
+        "Flower": null,
+        "Page type": "Draw your own flower (2)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 71.0,
+        "Section": "Back matter",
+        "Flower": null,
+        "Page type": "About Terry List + QR to terrylist.com",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 72.0,
+        "Section": "Back matter",
+        "Flower": null,
+        "Page type": "Closing page",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": "AMAZON / KDP",
+        "Section": null,
+        "Flower": null,
+        "Page type": null,
+        "Meaning": null,
+        "Status": null,
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": "KDP status",
+        "Section": "Not published",
+        "Flower": null,
+        "Page type": null,
+        "Meaning": null,
+        "Status": null,
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": "KDP book link",
+        "Section": "TBD",
+        "Flower": null,
+        "Page type": null,
+        "Meaning": null,
+        "Status": null,
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": "ASIN",
+        "Section": "TBD",
+        "Flower": null,
+        "Page type": null,
+        "Meaning": null,
+        "Status": null,
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": "ISBN",
+        "Section": "TBD",
+        "Flower": null,
+        "Page type": null,
+        "Meaning": null,
+        "Status": null,
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": "Categories (up to 3)",
+        "Section": "TBD",
+        "Flower": null,
+        "Page type": null,
+        "Meaning": null,
+        "Status": null,
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": "Publish date",
+        "Section": "TBD",
+        "Flower": null,
+        "Page type": null,
+        "Meaning": null,
+        "Status": null,
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": "List price",
+        "Section": 12.99,
+        "Flower": null,
+        "Page type": null,
+        "Meaning": null,
+        "Status": null,
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": "Print cost",
+        "Section": 3.89,
+        "Flower": null,
+        "Page type": null,
+        "Meaning": null,
+        "Status": null,
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": "Est. royalty",
+        "Section": "~$3.90",
+        "Flower": null,
+        "Page type": null,
+        "Meaning": null,
+        "Status": null,
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": "SALES TRACKING",
+        "Section": null,
+        "Flower": null,
+        "Page type": null,
+        "Meaning": null,
+        "Status": null,
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": "Date",
+        "Section": "Units sold",
+        "Flower": "Royalty earned",
+        "Page type": "Notes",
+        "Meaning": null,
+        "Status": null,
+        "Artwork link": null,
+        "Notes": null
+      }
+    ],
+    "pageCount": 84,
+    "provenance": {
+      "workbook": "Coloring-Dictionary-Production-Tracker.xlsx",
+      "sheet": "Volume One"
+    },
+    "pinnedAssetVersions": {},
+    "creditsEditable": true
+  },
+  {
+    "id": "texas",
+    "title": "Coloring Dictionary",
+    "subtitle": "Flower Meanings",
+    "series": "Coloring Dictionary",
+    "edition": "Texas",
+    "authorImported": "Terry List",
+    "authorCreditNeedsConfirmation": true,
+    "coverUrl": "https://drive.google.com/file/d/1VanqM7afpjCRoMxTIoFCcVSfhYLM9bQK/view?usp=drivesdk",
+    "format": "8.5 x 11 paperback, standard color, 72 pages",
+    "status": "Concept",
+    "language": "en",
+    "audience": "For all ages",
+    "spreadLayout": {
+      "guideSide": "left_even",
+      "coloringSide": "right_odd"
+    },
+    "pages": [
+      {
+        "Page #": 1.0,
+        "Section": "Front matter",
+        "Flower": null,
+        "Page type": "Title page",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 2.0,
+        "Section": "Front matter",
+        "Flower": null,
+        "Page type": "Copyright page",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 3.0,
+        "Section": "Front matter",
+        "Flower": null,
+        "Page type": "Name: ____ (ownership page)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 4.0,
+        "Section": "Front matter",
+        "Flower": null,
+        "Page type": "Introduction - meanings we've chosen",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 5.0,
+        "Section": "Front matter",
+        "Flower": null,
+        "Page type": "How to use this book",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 6.0,
+        "Section": "Flowers",
+        "Flower": "Black-eyed Susan",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 7.0,
+        "Section": "Flowers",
+        "Flower": "Black-eyed Susan",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 8.0,
+        "Section": "Flowers",
+        "Flower": "Bluebonnet",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 9.0,
+        "Section": "Flowers",
+        "Flower": "Bluebonnet",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 10.0,
+        "Section": "Flowers",
+        "Flower": "Butterfly milkweed",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 11.0,
+        "Section": "Flowers",
+        "Flower": "Butterfly milkweed",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 12.0,
+        "Section": "Flowers",
+        "Flower": "Cardinal flower",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 13.0,
+        "Section": "Flowers",
+        "Flower": "Cardinal flower",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 14.0,
+        "Section": "Flowers",
+        "Flower": "Cenizo (Texas sage)",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 15.0,
+        "Section": "Flowers",
+        "Flower": "Cenizo (Texas sage)",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 16.0,
+        "Section": "Flowers",
+        "Flower": "Chocolate flower",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 17.0,
+        "Section": "Flowers",
+        "Flower": "Chocolate flower",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 18.0,
+        "Section": "Flowers",
+        "Flower": "Coral honeysuckle",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 19.0,
+        "Section": "Flowers",
+        "Flower": "Coral honeysuckle",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 20.0,
+        "Section": "Flowers",
+        "Flower": "Crossvine",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 21.0,
+        "Section": "Flowers",
+        "Flower": "Crossvine",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 22.0,
+        "Section": "Flowers",
+        "Flower": "Desert marigold",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 23.0,
+        "Section": "Flowers",
+        "Flower": "Desert marigold",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 24.0,
+        "Section": "Flowers",
+        "Flower": "Esperanza (yellow bells)",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 25.0,
+        "Section": "Flowers",
+        "Flower": "Esperanza (yellow bells)",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 26.0,
+        "Section": "Flowers",
+        "Flower": "Evening rain lily",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 27.0,
+        "Section": "Flowers",
+        "Flower": "Evening rain lily",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 28.0,
+        "Section": "Flowers",
+        "Flower": "Firewheel (Indian blanket)",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 29.0,
+        "Section": "Flowers",
+        "Flower": "Firewheel (Indian blanket)",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 30.0,
+        "Section": "Flowers",
+        "Flower": "Gayfeather",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 31.0,
+        "Section": "Flowers",
+        "Flower": "Gayfeather",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 32.0,
+        "Section": "Flowers",
+        "Flower": "Greenthread",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 33.0,
+        "Section": "Flowers",
+        "Flower": "Greenthread",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 34.0,
+        "Section": "Flowers",
+        "Flower": "Indian paintbrush",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 35.0,
+        "Section": "Flowers",
+        "Flower": "Indian paintbrush",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 36.0,
+        "Section": "Flowers",
+        "Flower": "Lantana (Texas)",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 37.0,
+        "Section": "Flowers",
+        "Flower": "Lantana (Texas)",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 38.0,
+        "Section": "Flowers",
+        "Flower": "Maximilian sunflower",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 39.0,
+        "Section": "Flowers",
+        "Flower": "Maximilian sunflower",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 40.0,
+        "Section": "Flowers",
+        "Flower": "Mexican hat",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 41.0,
+        "Section": "Flowers",
+        "Flower": "Mexican hat",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 42.0,
+        "Section": "Flowers",
+        "Flower": "Passionflower (maypop)",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 43.0,
+        "Section": "Flowers",
+        "Flower": "Passionflower (maypop)",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 44.0,
+        "Section": "Flowers",
+        "Flower": "Pink evening primrose",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 45.0,
+        "Section": "Flowers",
+        "Flower": "Pink evening primrose",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 46.0,
+        "Section": "Flowers",
+        "Flower": "Prairie verbena",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 47.0,
+        "Section": "Flowers",
+        "Flower": "Prairie verbena",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 48.0,
+        "Section": "Flowers",
+        "Flower": "Prickly pear (flower)",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 49.0,
+        "Section": "Flowers",
+        "Flower": "Prickly pear (flower)",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 50.0,
+        "Section": "Flowers",
+        "Flower": "Purple coneflower",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 51.0,
+        "Section": "Flowers",
+        "Flower": "Purple coneflower",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 52.0,
+        "Section": "Flowers",
+        "Flower": "Standing cypress",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 53.0,
+        "Section": "Flowers",
+        "Flower": "Standing cypress",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 54.0,
+        "Section": "Flowers",
+        "Flower": "Texas bluebell",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 55.0,
+        "Section": "Flowers",
+        "Flower": "Texas bluebell",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 56.0,
+        "Section": "Flowers",
+        "Flower": "Texas mountain laurel",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 57.0,
+        "Section": "Flowers",
+        "Flower": "Texas mountain laurel",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 58.0,
+        "Section": "Flowers",
+        "Flower": "Texas star hibiscus",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 59.0,
+        "Section": "Flowers",
+        "Flower": "Texas star hibiscus",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 60.0,
+        "Section": "Flowers",
+        "Flower": "Turk's cap",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 61.0,
+        "Section": "Flowers",
+        "Flower": "Turk's cap",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 62.0,
+        "Section": "Flowers",
+        "Flower": "Winecup",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 63.0,
+        "Section": "Flowers",
+        "Flower": "Winecup",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 64.0,
+        "Section": "Flowers",
+        "Flower": "Yucca flower",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 65.0,
+        "Section": "Flowers",
+        "Flower": "Yucca flower",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 66.0,
+        "Section": "Back matter",
+        "Flower": null,
+        "Page type": "Meaning-match quiz",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 67.0,
+        "Section": "Back matter",
+        "Flower": null,
+        "Page type": "Color-mixing guide",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 68.0,
+        "Section": "Back matter",
+        "Flower": null,
+        "Page type": "Flower checklist - \"Find them all\"",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 69.0,
+        "Section": "Back matter",
+        "Flower": null,
+        "Page type": "Draw your own flower (1)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 70.0,
+        "Section": "Back matter",
+        "Flower": null,
+        "Page type": "Draw your own flower (2)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 71.0,
+        "Section": "Back matter",
+        "Flower": null,
+        "Page type": "About Terry List + QR to terrylist.com",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 72.0,
+        "Section": "Back matter",
+        "Flower": null,
+        "Page type": "Closing page",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": "AMAZON / KDP",
+        "Section": null,
+        "Flower": null,
+        "Page type": null,
+        "Meaning": null,
+        "Status": null,
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": "KDP status",
+        "Section": "Concept",
+        "Flower": null,
+        "Page type": null,
+        "Meaning": null,
+        "Status": null,
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": "KDP book link",
+        "Section": "TBD",
+        "Flower": null,
+        "Page type": null,
+        "Meaning": null,
+        "Status": null,
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": "ASIN",
+        "Section": "TBD",
+        "Flower": null,
+        "Page type": null,
+        "Meaning": null,
+        "Status": null,
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": "ISBN",
+        "Section": "TBD",
+        "Flower": null,
+        "Page type": null,
+        "Meaning": null,
+        "Status": null,
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": "Categories (up to 3)",
+        "Section": "TBD",
+        "Flower": null,
+        "Page type": null,
+        "Meaning": null,
+        "Status": null,
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": "Publish date",
+        "Section": "TBD",
+        "Flower": null,
+        "Page type": null,
+        "Meaning": null,
+        "Status": null,
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": "List price",
+        "Section": "TBD",
+        "Flower": null,
+        "Page type": null,
+        "Meaning": null,
+        "Status": null,
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": "Print cost",
+        "Section": "TBD",
+        "Flower": null,
+        "Page type": null,
+        "Meaning": null,
+        "Status": null,
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": "Est. royalty",
+        "Section": "TBD",
+        "Flower": null,
+        "Page type": null,
+        "Meaning": null,
+        "Status": null,
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": "SALES TRACKING",
+        "Section": null,
+        "Flower": null,
+        "Page type": null,
+        "Meaning": null,
+        "Status": null,
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": "Date",
+        "Section": "Units sold",
+        "Flower": "Royalty earned",
+        "Page type": "Notes",
+        "Meaning": null,
+        "Status": null,
+        "Artwork link": null,
+        "Notes": null
+      }
+    ],
+    "pageCount": 84,
+    "provenance": {
+      "workbook": "Coloring-Dictionary-Production-Tracker.xlsx",
+      "sheet": "Texas"
+    },
+    "pinnedAssetVersions": {},
+    "creditsEditable": true
+  },
+  {
+    "id": "christmas",
+    "title": "Coloring Dictionary",
+    "subtitle": "Flower Meanings",
+    "series": "Coloring Dictionary",
+    "edition": "Christmas",
+    "authorImported": "Terry List",
+    "authorCreditNeedsConfirmation": true,
+    "coverUrl": "https://drive.google.com/file/d/1g7wwbiV7rQTgwqYbYtEaIFCi3pN50p2K/view?usp=drivesdk",
+    "format": "8.5 x 11 paperback, standard color, 72 pages",
+    "status": "Concept",
+    "language": "en",
+    "audience": "For all ages",
+    "spreadLayout": {
+      "guideSide": "left_even",
+      "coloringSide": "right_odd"
+    },
+    "pages": [
+      {
+        "Page #": 1.0,
+        "Section": "Front matter",
+        "Flower": null,
+        "Page type": "Title page",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 2.0,
+        "Section": "Front matter",
+        "Flower": null,
+        "Page type": "Copyright page",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 3.0,
+        "Section": "Front matter",
+        "Flower": null,
+        "Page type": "Name: ____ (ownership page)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 4.0,
+        "Section": "Front matter",
+        "Flower": null,
+        "Page type": "Introduction - meanings we've chosen",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 5.0,
+        "Section": "Front matter",
+        "Flower": null,
+        "Page type": "How to use this book",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 6.0,
+        "Section": "Flowers",
+        "Flower": "Amaryllis",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 7.0,
+        "Section": "Flowers",
+        "Flower": "Amaryllis",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 8.0,
+        "Section": "Flowers",
+        "Flower": "Christmas cactus",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 9.0,
+        "Section": "Flowers",
+        "Flower": "Christmas cactus",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 10.0,
+        "Section": "Flowers",
+        "Flower": "Christmas rose (hellebore)",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 11.0,
+        "Section": "Flowers",
+        "Flower": "Christmas rose (hellebore)",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 12.0,
+        "Section": "Flowers",
+        "Flower": "Cyclamen",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 13.0,
+        "Section": "Flowers",
+        "Flower": "Cyclamen",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 14.0,
+        "Section": "Flowers",
+        "Flower": "Holly",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 15.0,
+        "Section": "Flowers",
+        "Flower": "Holly",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 16.0,
+        "Section": "Flowers",
+        "Flower": "Ivy",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 17.0,
+        "Section": "Flowers",
+        "Flower": "Ivy",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 18.0,
+        "Section": "Flowers",
+        "Flower": "Kalanchoe",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 19.0,
+        "Section": "Flowers",
+        "Flower": "Kalanchoe",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 20.0,
+        "Section": "Flowers",
+        "Flower": "Mistletoe",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 21.0,
+        "Section": "Flowers",
+        "Flower": "Mistletoe",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 22.0,
+        "Section": "Flowers",
+        "Flower": "Paperwhite narcissus",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 23.0,
+        "Section": "Flowers",
+        "Flower": "Paperwhite narcissus",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 24.0,
+        "Section": "Flowers",
+        "Flower": "Poinsettia",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 25.0,
+        "Section": "Flowers",
+        "Flower": "Poinsettia",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 26.0,
+        "Section": "Flowers",
+        "Flower": "Rosemary",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 27.0,
+        "Section": "Flowers",
+        "Flower": "Rosemary",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 28.0,
+        "Section": "Flowers",
+        "Flower": "Snowdrop",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 29.0,
+        "Section": "Flowers",
+        "Flower": "Snowdrop",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 30.0,
+        "Section": "Flowers",
+        "Flower": "Winterberry",
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 31.0,
+        "Section": "Flowers",
+        "Flower": "Winterberry",
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Draft list",
+        "Artwork link": null,
+        "Notes": "Meaning TBD — verify against dictionary"
+      },
+      {
+        "Page #": 32.0,
+        "Section": "Flowers",
+        "Flower": null,
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": "Flower TBD"
+      },
+      {
+        "Page #": 33.0,
+        "Section": "Flowers",
+        "Flower": null,
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": "Flower TBD"
+      },
+      {
+        "Page #": 34.0,
+        "Section": "Flowers",
+        "Flower": null,
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": "Flower TBD"
+      },
+      {
+        "Page #": 35.0,
+        "Section": "Flowers",
+        "Flower": null,
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": "Flower TBD"
+      },
+      {
+        "Page #": 36.0,
+        "Section": "Flowers",
+        "Flower": null,
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": "Flower TBD"
+      },
+      {
+        "Page #": 37.0,
+        "Section": "Flowers",
+        "Flower": null,
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": "Flower TBD"
+      },
+      {
+        "Page #": 38.0,
+        "Section": "Flowers",
+        "Flower": null,
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": "Flower TBD"
+      },
+      {
+        "Page #": 39.0,
+        "Section": "Flowers",
+        "Flower": null,
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": "Flower TBD"
+      },
+      {
+        "Page #": 40.0,
+        "Section": "Flowers",
+        "Flower": null,
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": "Flower TBD"
+      },
+      {
+        "Page #": 41.0,
+        "Section": "Flowers",
+        "Flower": null,
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": "Flower TBD"
+      },
+      {
+        "Page #": 42.0,
+        "Section": "Flowers",
+        "Flower": null,
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": "Flower TBD"
+      },
+      {
+        "Page #": 43.0,
+        "Section": "Flowers",
+        "Flower": null,
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": "Flower TBD"
+      },
+      {
+        "Page #": 44.0,
+        "Section": "Flowers",
+        "Flower": null,
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": "Flower TBD"
+      },
+      {
+        "Page #": 45.0,
+        "Section": "Flowers",
+        "Flower": null,
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": "Flower TBD"
+      },
+      {
+        "Page #": 46.0,
+        "Section": "Flowers",
+        "Flower": null,
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": "Flower TBD"
+      },
+      {
+        "Page #": 47.0,
+        "Section": "Flowers",
+        "Flower": null,
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": "Flower TBD"
+      },
+      {
+        "Page #": 48.0,
+        "Section": "Flowers",
+        "Flower": null,
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": "Flower TBD"
+      },
+      {
+        "Page #": 49.0,
+        "Section": "Flowers",
+        "Flower": null,
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": "Flower TBD"
+      },
+      {
+        "Page #": 50.0,
+        "Section": "Flowers",
+        "Flower": null,
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": "Flower TBD"
+      },
+      {
+        "Page #": 51.0,
+        "Section": "Flowers",
+        "Flower": null,
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": "Flower TBD"
+      },
+      {
+        "Page #": 52.0,
+        "Section": "Flowers",
+        "Flower": null,
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": "Flower TBD"
+      },
+      {
+        "Page #": 53.0,
+        "Section": "Flowers",
+        "Flower": null,
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": "Flower TBD"
+      },
+      {
+        "Page #": 54.0,
+        "Section": "Flowers",
+        "Flower": null,
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": "Flower TBD"
+      },
+      {
+        "Page #": 55.0,
+        "Section": "Flowers",
+        "Flower": null,
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": "Flower TBD"
+      },
+      {
+        "Page #": 56.0,
+        "Section": "Flowers",
+        "Flower": null,
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": "Flower TBD"
+      },
+      {
+        "Page #": 57.0,
+        "Section": "Flowers",
+        "Flower": null,
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": "Flower TBD"
+      },
+      {
+        "Page #": 58.0,
+        "Section": "Flowers",
+        "Flower": null,
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": "Flower TBD"
+      },
+      {
+        "Page #": 59.0,
+        "Section": "Flowers",
+        "Flower": null,
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": "Flower TBD"
+      },
+      {
+        "Page #": 60.0,
+        "Section": "Flowers",
+        "Flower": null,
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": "Flower TBD"
+      },
+      {
+        "Page #": 61.0,
+        "Section": "Flowers",
+        "Flower": null,
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": "Flower TBD"
+      },
+      {
+        "Page #": 62.0,
+        "Section": "Flowers",
+        "Flower": null,
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": "Flower TBD"
+      },
+      {
+        "Page #": 63.0,
+        "Section": "Flowers",
+        "Flower": null,
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": "Flower TBD"
+      },
+      {
+        "Page #": 64.0,
+        "Section": "Flowers",
+        "Flower": null,
+        "Page type": "Reference (even/left)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": "Flower TBD"
+      },
+      {
+        "Page #": 65.0,
+        "Section": "Flowers",
+        "Flower": null,
+        "Page type": "Coloring (odd/right)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": "Flower TBD"
+      },
+      {
+        "Page #": 66.0,
+        "Section": "Back matter",
+        "Flower": null,
+        "Page type": "Meaning-match quiz",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 67.0,
+        "Section": "Back matter",
+        "Flower": null,
+        "Page type": "Color-mixing guide",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 68.0,
+        "Section": "Back matter",
+        "Flower": null,
+        "Page type": "Flower checklist - \"Find them all\"",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 69.0,
+        "Section": "Back matter",
+        "Flower": null,
+        "Page type": "Draw your own flower (1)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 70.0,
+        "Section": "Back matter",
+        "Flower": null,
+        "Page type": "Draw your own flower (2)",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 71.0,
+        "Section": "Back matter",
+        "Flower": null,
+        "Page type": "About Terry List + QR to terrylist.com",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": 72.0,
+        "Section": "Back matter",
+        "Flower": null,
+        "Page type": "Closing page",
+        "Meaning": null,
+        "Status": "Not started",
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": "AMAZON / KDP",
+        "Section": null,
+        "Flower": null,
+        "Page type": null,
+        "Meaning": null,
+        "Status": null,
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": "KDP status",
+        "Section": "Concept",
+        "Flower": null,
+        "Page type": null,
+        "Meaning": null,
+        "Status": null,
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": "KDP book link",
+        "Section": "TBD",
+        "Flower": null,
+        "Page type": null,
+        "Meaning": null,
+        "Status": null,
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": "ASIN",
+        "Section": "TBD",
+        "Flower": null,
+        "Page type": null,
+        "Meaning": null,
+        "Status": null,
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": "ISBN",
+        "Section": "TBD",
+        "Flower": null,
+        "Page type": null,
+        "Meaning": null,
+        "Status": null,
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": "Categories (up to 3)",
+        "Section": "TBD",
+        "Flower": null,
+        "Page type": null,
+        "Meaning": null,
+        "Status": null,
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": "Publish date",
+        "Section": "TBD",
+        "Flower": null,
+        "Page type": null,
+        "Meaning": null,
+        "Status": null,
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": "List price",
+        "Section": "TBD",
+        "Flower": null,
+        "Page type": null,
+        "Meaning": null,
+        "Status": null,
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": "Print cost",
+        "Section": "TBD",
+        "Flower": null,
+        "Page type": null,
+        "Meaning": null,
+        "Status": null,
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": "Est. royalty",
+        "Section": "TBD",
+        "Flower": null,
+        "Page type": null,
+        "Meaning": null,
+        "Status": null,
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": "SALES TRACKING",
+        "Section": null,
+        "Flower": null,
+        "Page type": null,
+        "Meaning": null,
+        "Status": null,
+        "Artwork link": null,
+        "Notes": null
+      },
+      {
+        "Page #": "Date",
+        "Section": "Units sold",
+        "Flower": "Royalty earned",
+        "Page type": "Notes",
+        "Meaning": null,
+        "Status": null,
+        "Artwork link": null,
+        "Notes": null
+      }
+    ],
+    "pageCount": 84,
+    "provenance": {
+      "workbook": "Coloring-Dictionary-Production-Tracker.xlsx",
+      "sheet": "Christmas"
+    },
+    "pinnedAssetVersions": {},
+    "creditsEditable": true
+  }
+]

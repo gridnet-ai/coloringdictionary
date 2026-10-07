@@ -12,6 +12,8 @@ interface ImportMetaEnv {
   readonly VITE_SOURCE_REGISTRY: string;
   readonly VITE_IRL_SLUG: string;
   readonly VITE_REGISTRY_ACCESS_URL?: string;
+  readonly VITE_CLARITY_PROJECT_ID?: string;
+  readonly VITE_OWNER_EMAILS?: string;
 }
 
 interface ImportMeta {

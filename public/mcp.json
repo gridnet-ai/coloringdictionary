@@ -1,8 +1,14 @@
 {
   "name": "coloring-dictionary",
   "description": "MCP-style capability descriptor for Coloring Dictionary origin VCAP (Actionability).",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "homepage": "https://coloringdictionary.com/",
+  "brandPromise": "A dictionary that you can color.",
+  "related": {
+    "webmcp": "https://coloringdictionary.com/webmcp.json",
+    "chatgptPlugin": "https://coloringdictionary.com/.well-known/ai-plugin.json",
+    "openapi": "https://coloringdictionary.com/openapi.json"
+  },
   "tools": [
     {
       "name": "get_brand",
@@ -30,6 +36,12 @@
         }
       },
       "endpoint": "GET https://coloringdictionary.com/flowers/{slug}/"
+    },
+    {
+      "name": "get_seed_manifest",
+      "description": "Return imported dictionary/tracker seed manifest (counts, notes).",
+      "inputSchema": { "type": "object", "properties": {} },
+      "endpoint": "GET https://coloringdictionary.com/data/seed/manifest.json"
     },
     {
       "name": "list_faqs",

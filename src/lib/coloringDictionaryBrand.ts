@@ -26,7 +26,7 @@ export const COLORING_DICTIONARY_BRAND = {
     ink: '#202A2D',
     paper: '#FAF8F0',
   },
-  logo: `${SITE_ORIGIN}/assets/logo-wordmark.png`,
-  icon: `${SITE_ORIGIN}/icons/favicon.png`,
+  logo: `${SITE_ORIGIN}/assets/logo-header.png`,
+  icon: `${SITE_ORIGIN}/icons/icon-512.png`,
   ogImage: `${SITE_ORIGIN}/assets/og-image.png`,
 } as const;

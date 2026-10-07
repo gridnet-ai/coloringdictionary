@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-label="White clover spread preview placeholder">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFF5DB"/>
+      <stop offset="100%" stop-color="#e8f2f3"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="540" fill="url(#g)"/>
+  <line x1="480" y1="24" x2="480" y2="516" stroke="#00505A" stroke-opacity=".25" stroke-width="2"/>
+  <text x="240" y="72" text-anchor="middle" fill="#00505A" font-family="Georgia,serif" font-size="22">Learning guide · even / left</text>
+  <text x="720" y="72" text-anchor="middle" fill="#00505A" font-family="Georgia,serif" font-size="22">Coloring page · odd / right</text>
+  <g fill="none" stroke="#202A2D" stroke-width="2" transform="translate(140 140)">
+    <ellipse cx="100" cy="80" rx="36" ry="48"/>
+    <path d="M100 128v120M70 190c-28 12-36 40-36 40M130 190c28 12 36 40 36 40"/>
+  </g>
+  <g fill="none" stroke="#202A2D" stroke-width="2.5" transform="translate(620 120)">
+    <ellipse cx="100" cy="90" rx="42" ry="55"/>
+    <path d="M100 145v150M70 220c-30 16-36 50-36 50M130 220c30 16 36 50 36 50"/>
+  </g>
+  <text x="480" y="510" text-anchor="middle" fill="#082F35" font-family="system-ui,sans-serif" font-size="14">Marketing preview · not a print-ready interior</text>
+</svg>

@@ -1,0 +1,125 @@
+.owner {
+  --o-bg: #f6f4ee;
+  --o-ink: #153c40;
+  --o-muted: #596d6b;
+  --o-teal: #00505a;
+  --o-line: #d7ded5;
+  --o-card: #fff;
+  min-height: 100dvh;
+  background: var(--o-bg);
+  color: var(--o-ink);
+  font-family: 'Nunito Sans', system-ui, sans-serif;
+}
+.owner-top {
+  display: flex; align-items: center; gap: 16px;
+  padding: 12px 24px; border-bottom: 1px solid var(--o-line); background: #fff;
+}
+.owner-top img { width: 36px; height: 36px; }
+.owner-top strong { font-size: 15px; }
+.owner-top nav { margin-left: auto; display: flex; gap: 14px; flex-wrap: wrap; font-size: 13px; font-weight: 600; }
+.owner-top a { color: inherit; text-decoration: none; }
+.owner-top a.is-active { border-bottom: 2px solid var(--o-teal); }
+.owner-top button {
+  appearance: none; border: 1px solid var(--o-line); background: #fff;
+  border-radius: 999px; padding: 6px 12px; font: inherit; cursor: pointer;
+}
+.owner-body { max-width: 1200px; margin: 0 auto; padding: 24px; }
+.owner-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 28px;
+}
+.owner-stat {
+  background: var(--o-card); border-radius: 12px; padding: 16px; border: 1px solid var(--o-line);
+}
+.owner-stat span { display: block; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--o-muted); }
+.owner-stat strong { font-size: 28px; font-weight: 800; color: var(--o-teal); }
+.owner-stat em { display: block; font-style: normal; font-size: 11px; color: var(--o-muted); margin-top: 4px; }
+.owner-panel {
+  background: var(--o-card); border-radius: 12px; border: 1px solid var(--o-line);
+  padding: 18px; margin-bottom: 18px;
+}
+.owner-panel h2 { margin: 0 0 12px; font-size: 18px; }
+.owner-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.owner-table th, .owner-table td {
+  text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--o-line); vertical-align: top;
+}
+.owner-table th { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--o-muted); }
+.owner-search {
+  width: 100%; max-width: 420px; box-sizing: border-box; border: 1px solid var(--o-line);
+  border-radius: 8px; padding: 10px 12px; font: inherit; margin-bottom: 12px;
+}
+.owner-badge {
+  display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: .04em;
+  text-transform: uppercase; border-radius: 999px; padding: 2px 8px; border: 1px solid var(--o-line);
+}
+.owner-badge.warn { background: #fff5db; border-color: #ffc629; }
+.owner-badge.ok { background: #e8f5ef; }
+.owner-note { font-size: 12px; color: var(--o-muted); margin: 8px 0 0; }
+.owner-split { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+@media (max-width: 900px) {
+  .owner-grid { grid-template-columns: 1fr 1fr; }
+  .owner-split { grid-template-columns: 1fr; }
+}
+.owner-asset-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+.owner-asset-card {
+  margin: 0;
+  background: #fafaf7;
+  border: 1px solid var(--o-line);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.owner-asset-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  background: #eee;
+}
+.owner-asset-card figcaption {
+  padding: 8px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.owner-asset-card strong { font-size: 12px; line-height: 1.3; }
+.owner-thumb {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: #eee;
+  display: block;
+}
+.owner-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.75rem 0 1rem;
+}
+.owner-form input,
+.owner-form select {
+  flex: 1 1 8rem;
+  min-width: 0;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--o-line);
+  border-radius: 8px;
+  font: inherit;
+}
+.owner-form button {
+  appearance: none;
+  border: 0;
+  border-radius: 8px;
+  background: var(--o-teal);
+  color: #fff;
+  font: 600 0.85rem/1.2 inherit;
+  padding: 0.5rem 0.85rem;
+  cursor: pointer;
+}
+@media (max-width: 560px) {
+  .owner-grid { grid-template-columns: 1fr; }
+  .owner-top { flex-wrap: wrap; }
+}

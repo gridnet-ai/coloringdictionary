@@ -1,0 +1,942 @@
+{
+  "Almanac Chart": [
+    {
+      "Plant": "Abatina",
+      "Meaning": "Fickleness",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Acanthus",
+      "Meaning": "The fine art, Artifice",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Aloe",
+      "Meaning": "Affection, also Grief",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Amaryllis",
+      "Meaning": "Pride",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Anemone",
+      "Meaning": "Forsaken",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Angelica",
+      "Meaning": "Inspiration",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Apple blossom",
+      "Meaning": "Preference",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Arborvitae",
+      "Meaning": "Unchanging friendship",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Aster",
+      "Meaning": "Symbol of love, Daintiness",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Baby's breath",
+      "Meaning": "Everlasting Love",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Bachelor's button",
+      "Meaning": "Single blessedness",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Basil",
+      "Meaning": "Good wishes",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Bay tree",
+      "Meaning": "Glory",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Begonia",
+      "Meaning": "Beware",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Belladonna",
+      "Meaning": "Silence",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Bittersweet",
+      "Meaning": "Truth",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Black-eyed Susan",
+      "Meaning": "Justice",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Bluebell",
+      "Meaning": "Humility",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Borage",
+      "Meaning": "Bluntness, Directness",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Butterfly weed",
+      "Meaning": "Let me go",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Calla lily",
+      "Meaning": "Beauty",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Camellia, pink",
+      "Meaning": "Longing for you",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Camellia, red",
+      "Meaning": "You're a flame in my heart",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Camellia, white",
+      "Meaning": "You're adorable",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Candytuft",
+      "Meaning": "Indifference",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Carnation",
+      "Meaning": "Fascination, Female love, Mother's love",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Carnation, red",
+      "Meaning": "Alas for my poor heart, My heart aches, Deep love",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Carnation, white",
+      "Meaning": "Innocence, pure love, sweet love",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Carnation, pink",
+      "Meaning": "I'll never forget you",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Carnation, striped",
+      "Meaning": "Refusal",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Carnation, yellow",
+      "Meaning": "Disdain, Disappointment, Rejection",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Chamomile",
+      "Meaning": "Patience in adversity",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Chives",
+      "Meaning": "Usefulness",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Chrysanthemum, red",
+      "Meaning": "I love you",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Chrysanthemum, yellow",
+      "Meaning": "Slighted love",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Chrysanthemum, white",
+      "Meaning": "Truth",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Clematis",
+      "Meaning": "Mental beauty",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Clematis, evergreen",
+      "Meaning": "Poverty",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Clover, white",
+      "Meaning": "Think of me",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Columbine",
+      "Meaning": "Foolishness, Folly",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Columbine, purple",
+      "Meaning": "Resolution",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Columbine, red",
+      "Meaning": "Anxious, Trembling",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Coreopsis",
+      "Meaning": "Always cheerful",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Coriander",
+      "Meaning": "Hidden worth/merit",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Crab blossom",
+      "Meaning": "Ill nature",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Crocus, spring",
+      "Meaning": "Cheerfulness, Youthful gladness",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Cyclamen",
+      "Meaning": "Resignation, Diffidence, Goodbye",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Daffodil",
+      "Meaning": "Regard, Unequalled love",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Dahlia, single",
+      "Meaning": "Good taste",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Daisy",
+      "Meaning": "Innocence, Loyal love, I'll never tell",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Daylily",
+      "Meaning": "Chinese emblem for mother",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Dill",
+      "Meaning": "Powerful against evil",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Edelweiss",
+      "Meaning": "Courage, Devotion",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Fennel",
+      "Meaning": "Flattery",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Fern",
+      "Meaning": "Magic, Fascination, Secret bonds of love",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Forget-me-not",
+      "Meaning": "True love memories, Do not forget me",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Gardenia",
+      "Meaning": "You're lovely, Secret love",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Geranium",
+      "Meaning": "Folly, Stupidity",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Gladiolus",
+      "Meaning": "Flower of the Gladiators, Integrity, Strength, Victory",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Goldenrod",
+      "Meaning": "Encouragement, Good fortune",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Heliotrope",
+      "Meaning": "Eternal love, Devotion",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Hibiscus",
+      "Meaning": "Delicate beauty",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Holly",
+      "Meaning": "Defense, Domestic happiness",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Hollyhock",
+      "Meaning": "Ambition",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Honeysuckle",
+      "Meaning": "Bonds of love",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Hyacinth",
+      "Meaning": "Sport, Game, Play",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Hyacinth, blue",
+      "Meaning": "Constancy",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Hyacinth, purple",
+      "Meaning": "Sorrow",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Hyacinth, yellow",
+      "Meaning": "Jealousy",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Hyacinth, white",
+      "Meaning": "Loveliness, Prayers for someone",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Hydrangea",
+      "Meaning": "Gratitude for being understood, Frigidity and heartlessness",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Hyssop",
+      "Meaning": "Sacrifice, Cleanliness",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Iris",
+      "Meaning": "Faith, trust, Wisdom, Hope, Valor",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Ivy",
+      "Meaning": "Affection, Friendship, Fidelity",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Jasmine, white",
+      "Meaning": "Sweet love, Amiability",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Jasmine, yellow",
+      "Meaning": "Grace; Elegance",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Lady Slipper",
+      "Meaning": "Capricious beauty",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Larkspur",
+      "Meaning": "Open heart, Levity, Lightness, Fickleness (pink or simple varieties)",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Lavender",
+      "Meaning": "Distrust",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Lemon balm",
+      "Meaning": "Sympathy",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Lilac",
+      "Meaning": "Joy of youth",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Lily, white",
+      "Meaning": "Virginity, Purity, Heavenly",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Lily, yellow",
+      "Meaning": "Happy, Gay, Walking on air",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Lily, orange",
+      "Meaning": "Hatred",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Lily, tiger",
+      "Meaning": "Wealth, Pride",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Lily-of-the-valley",
+      "Meaning": "Sweetness, Tears of the Virgin Mary, Humility",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Lotus Flower",
+      "Meaning": "Purity, Enlightenment, Self-regeneration, and Rebirth",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Magnolia",
+      "Meaning": "Nobility, Love of nature",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Marigold",
+      "Meaning": "Grief, Jealousy",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Marjoram",
+      "Meaning": "Joy, Happiness",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Mint",
+      "Meaning": "Virtue",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Morning glory",
+      "Meaning": "Affection",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Myrtle",
+      "Meaning": "Good luck, Love in a marriage",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Nasturtium",
+      "Meaning": "Patriotism, Conquest, Victory in Battle",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Oak",
+      "Meaning": "Strength",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Oregano",
+      "Meaning": "Substance",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Pansy",
+      "Meaning": "Thoughts",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Parsley",
+      "Meaning": "Festivity",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Peony",
+      "Meaning": "Bashful, Happy life, Shame",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Pine",
+      "Meaning": "Humility, Piety",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Poppy",
+      "Meaning": "Consolation",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Rhododendron",
+      "Meaning": "Danger, beware",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Rose, red",
+      "Meaning": "Love, I love you",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Rose, dark crimson",
+      "Meaning": "Mourning",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Rose, pink",
+      "Meaning": "Happiness",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Rose, white",
+      "Meaning": "Innocence, Heavenly, I'm worthy of you",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Rose, yellow",
+      "Meaning": "Jealousy, Decrease of love, Infidelity",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Rosemary",
+      "Meaning": "Remembrance",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Rue",
+      "Meaning": "Grace, Clear vision",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Sage",
+      "Meaning": "Wisdom, Immortality",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Salvia, blue",
+      "Meaning": "I think of you",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Salvia, red",
+      "Meaning": "Forever mine",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Savory",
+      "Meaning": "Spice, Interest",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Snapdragon",
+      "Meaning": "Deception, Graciousness",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Sorrel",
+      "Meaning": "Affection",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Southernwood",
+      "Meaning": "Constancy, Jest",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Spearmint",
+      "Meaning": "Warmth of sentiment",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Speedwell",
+      "Meaning": "Feminine fidelity",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Sunflower, dwarf",
+      "Meaning": "Adoration",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Sunflower, tall",
+      "Meaning": "Haughtiness",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Sweet pea",
+      "Meaning": "Blissful pleasures, Goodbye, Thank you for a lovely time",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Sweet William",
+      "Meaning": "Gallantry",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Sweet woodruff",
+      "Meaning": "Humility",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Tansy",
+      "Meaning": "Hostile thoughts, Declaring war",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Tarragon",
+      "Meaning": "Lasting interest",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Thyme",
+      "Meaning": "Courage, strength",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Tulip, red",
+      "Meaning": "Passion, Declaration of love",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Tulip, yellow",
+      "Meaning": "Sunshine in your smile",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Valerian",
+      "Meaning": "Readiness",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Violet",
+      "Meaning": "Watchfulness, Modesty, Faithfulness",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Willow",
+      "Meaning": "Sadness",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Yarrow",
+      "Meaning": "Everlasting love",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Zinnia",
+      "Meaning": "Thoughts of absent friends, Lasting affection",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    }
+  ],
+  "Almanac By Color": [
+    {
+      "Plant": "Rose, white",
+      "Color meaning": "purity, innocence, reverence, a new beginning, a fresh start",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Rose, red",
+      "Color meaning": "love; I love you",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Rose, deep dark crimson",
+      "Color meaning": "mourning",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Rose, pink",
+      "Color meaning": "grace, happiness, gentleness",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Rose, yellow",
+      "Color meaning": "jealousy, infidelity",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Rose, orange",
+      "Color meaning": "desire and enthusiasm",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Rose, lavender",
+      "Color meaning": "love at first sight",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Rose, coral",
+      "Color meaning": "friendship, modesty, sympathy",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Carnation, pink",
+      "Color meaning": "I'll never forget you",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Carnation, red",
+      "Color meaning": "my heart aches for you",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Carnation, purple",
+      "Color meaning": "capriciousness",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Carnation, white",
+      "Color meaning": "the sweet and lovely",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Carnation, yellow",
+      "Color meaning": "romantic rejection",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Violet, white",
+      "Color meaning": "innocence",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Violet, purple",
+      "Color meaning": "thoughts occupied with love",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Tulip, red",
+      "Color meaning": "confession of love",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Calla lily",
+      "Color meaning": "magnificent beauty",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Plant": "Clover",
+      "Color meaning": "think of me",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    }
+  ],
+  "Almanac By Meaning": [
+    {
+      "Theme": "Love",
+      "Flower": "Red rose",
+      "Meaning": "Love and desire",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Theme": "Love",
+      "Flower": "Red tulip",
+      "Meaning": "Declaration of love",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Theme": "Love",
+      "Flower": "Honeysuckle",
+      "Meaning": "Bonds of love",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Theme": "Love",
+      "Flower": "Heliotrope",
+      "Meaning": "Eternal love and devotion",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Theme": "Love",
+      "Flower": "Forget-me-not",
+      "Meaning": "True-love memories",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Theme": "Friendship",
+      "Flower": "Arborvitae",
+      "Meaning": "Unchanging friendship",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Theme": "Friendship",
+      "Flower": "Ivy",
+      "Meaning": "Friendship and fidelity",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Theme": "Friendship",
+      "Flower": "Yellow rose",
+      "Meaning": "Friendship (modern symbolism)",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Theme": "Friendship",
+      "Flower": "Zinnia",
+      "Meaning": "Thoughts of absent friends",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Theme": "Remembrance",
+      "Flower": "Rosemary",
+      "Meaning": "Remembrance",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Theme": "Remembrance",
+      "Flower": "Forget-me-not",
+      "Meaning": "Do not forget me",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Theme": "Remembrance",
+      "Flower": "Poppy",
+      "Meaning": "Consolation",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Theme": "Remembrance",
+      "Flower": "Zinnia",
+      "Meaning": "Thoughts of absent friends",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Theme": "Strength or Courage",
+      "Flower": "Oak",
+      "Meaning": "Strength",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Theme": "Strength or Courage",
+      "Flower": "Thyme",
+      "Meaning": "Courage and strength",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Theme": "Strength or Courage",
+      "Flower": "Gladiolus",
+      "Meaning": "Strength, integrity, and victory",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Theme": "Strength or Courage",
+      "Flower": "Edelweiss",
+      "Meaning": "Courage and devotion",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Theme": "New Beginnings",
+      "Flower": "White rose",
+      "Meaning": "A new beginning or fresh start",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Theme": "New Beginnings",
+      "Flower": "Lotus",
+      "Meaning": "Rebirth and self-regeneration",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Theme": "New Beginnings",
+      "Flower": "Daffodil",
+      "Meaning": "Regard and unequaled love",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    }
+  ],
+  "Almanac Victorian Era": [
+    {
+      "Topic": "Source note",
+      "Summary": "Old Farmer's Almanac, 'Flower Meanings: The Language of Flowers' (Catherine Boeckmann). The chart reflects mainly Victorian flower language; meanings vary by culture and source.",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Topic": "1800s pastime",
+      "Summary": "Learning flower symbolism became a popular pastime in the 1800s. Nearly all Victorian homes kept guidebooks for deciphering the 'language' alongside the Bible, though definitions shifted depending on the source.",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Topic": "Silent dialogue",
+      "Summary": "Flowers delivered messages that couldn't be spoken aloud. A 'yes' answer came as flowers handed over with the right hand; the left hand meant 'no.'",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Topic": "Aversive messages",
+      "Summary": "Plants could also express negative feelings: pomegranate for 'conceit,' aloe for 'bitterness.' A yellow carnation returned to a suitor expressed 'disdain.'",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Topic": "Presentation rules",
+      "Summary": "How flowers were presented changed the message: given upside down, the meaning was reversed. Ribbon tied to the left meant the symbolism applied to the giver; tied to the right, to the recipient. A wilted bouquet delivered an obvious message.",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Topic": "Examples",
+      "Summary": "Bluebells and kindness, peonies and bashfulness, rosemary and remembrance, tulips and passion.",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Topic": "Change over time",
+      "Summary": "Meanings and traditions have changed over time, and different cultures assign varying ideas to the same species.",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    }
+  ],
+  "Almanac Wedding": [
+    {
+      "Topic": "Tradition",
+      "Detail": "One tradition is to select wedding bouquet flowers based on plant symbolism.",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Topic": "Kate Middleton bouquet",
+      "Detail": "All-white bouquet: lily-of-the-valley (trustworthiness, purity), sweet William (gallantry), hyacinth (loveliness), myrtle (love in marriage), ivy (continuity) — together expressing hope for a loving, everlasting marriage.",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Topic": "Groom's buttonhole",
+      "Detail": "The groom wore a flower from the bridal bouquet in his buttonhole, from the medieval tradition of a man wearing his lady's colors to declare his love.",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    },
+    {
+      "Topic": "Modern idea",
+      "Detail": "Give each bridesmaid a bouquet featuring a signature flower whose meaning suits her personality.",
+      "Source": "Old Farmer's Almanac - Flower Meanings (Victorian-era chart)"
+    }
+  ]
+}

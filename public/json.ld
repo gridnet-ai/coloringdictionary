@@ -8,7 +8,7 @@
       "url": "https://coloringdictionary.com/",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://coloringdictionary.com/icons/favicon.png"
+        "url": "https://coloringdictionary.com/icons/icon-512.png"
       },
       "description": "A publishing brand creating dictionaries with explanations, colored guides and illustrations to color."
     },

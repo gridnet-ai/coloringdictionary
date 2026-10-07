@@ -1,4 +1,10 @@
 {
+  "firestore": {
+    "rules": "firestore.rules"
+  },
+  "storage": {
+    "rules": "storage.rules"
+  },
   "functions": [
     {
       "source": "functions",
@@ -51,6 +57,28 @@
         "headers": [
           { "key": "Content-Type", "value": "application/json; charset=utf-8" },
           { "key": "Access-Control-Allow-Origin", "value": "*" }
+        ]
+      },
+      {
+        "source": "/webmcp.json",
+        "headers": [
+          { "key": "Content-Type", "value": "application/json; charset=utf-8" },
+          { "key": "Access-Control-Allow-Origin", "value": "*" }
+        ]
+      },
+      {
+        "source": "/.well-known/ai-plugin.json",
+        "headers": [
+          { "key": "Content-Type", "value": "application/json; charset=utf-8" },
+          { "key": "Access-Control-Allow-Origin", "value": "*" }
+        ]
+      },
+      {
+        "source": "/data/seed/**",
+        "headers": [
+          { "key": "Content-Type", "value": "application/json; charset=utf-8" },
+          { "key": "Access-Control-Allow-Origin", "value": "*" },
+          { "key": "Cache-Control", "value": "public, max-age=300" }
         ]
       },
       {

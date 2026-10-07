@@ -6,6 +6,7 @@ import { defineString } from 'firebase-functions/params';
 import { logger } from 'firebase-functions';
 import { sendLaunchSignupEmails } from './signupEmail';
 import { SITE_ORIGIN as MAIL_SITE_ORIGIN } from './smtp';
+import { seedFromPublicHosting } from './seed';
 
 initializeApp();
 
@@ -36,13 +37,19 @@ function cors(res: { set: (k: string, v: string) => void }) {
 }
 
 async function enqueueHit(payload: AccessPayload) {
-  await db.collection('registryAccessOutbox').add({
-    ...payload,
+  const doc: Record<string, unknown> = {
+    sourceRegistry: payload.sourceRegistry,
+    slug: payload.slug,
+    surface: payload.surface,
     httpStatus: payload.httpStatus ?? 200,
+    path: payload.path,
     createdAt: FieldValue.serverTimestamp(),
     attempts: 0,
     status: 'pending',
-  });
+  };
+  if (payload.userAgent) doc.userAgent = payload.userAgent;
+  if (payload.meta) doc.meta = payload.meta;
+  await db.collection('registryAccessOutbox').add(doc);
 }
 
 /** Unified API: /api/signup and /api/vcap/hit via Hosting rewrite. */
@@ -108,6 +115,32 @@ export const api = onRequest({ cors: true }, async (req, res) => {
       meta: body.meta,
     });
     res.status(202).json({ ok: true, queued: true });
+    return;
+  }
+
+  /** Owner seed: POST /api/owner/seed { token, force?, maxFlowers? } */
+  if (path.startsWith('/owner/seed') && req.method === 'POST') {
+    const expected = String(process.env.OWNER_SEED_TOKEN || '').trim();
+    const provided = String(req.body?.token || req.get('x-owner-seed-token') || '').trim();
+    if (!expected || provided !== expected) {
+      res.status(401).json({ error: 'unauthorized' });
+      return;
+    }
+    try {
+      const result = await seedFromPublicHosting({
+        force: Boolean(req.body?.force),
+        maxFlowers:
+          typeof req.body?.maxFlowers === 'number' ? req.body.maxFlowers : undefined,
+      });
+      res.status(200).json(result);
+    } catch (err) {
+      logger.error('Owner seed failed', {
+        error: err instanceof Error ? err.message : String(err),
+      });
+      res.status(500).json({
+        error: err instanceof Error ? err.message : 'seed failed',
+      });
+    }
     return;
   }
 

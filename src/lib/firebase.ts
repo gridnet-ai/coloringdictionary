@@ -1,5 +1,8 @@
 import { initializeApp, type FirebaseApp } from 'firebase/app';
 import { getAnalytics, isSupported, type Analytics } from 'firebase/analytics';
+import { getAuth } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
+import { getStorage } from 'firebase/storage';
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -12,6 +15,9 @@ const firebaseConfig = {
 };
 
 export const app: FirebaseApp = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
+export const db = getFirestore(app);
+export const storage = getStorage(app);
 
 let analyticsPromise: Promise<Analytics | null> | null = null;
 
@@ -22,4 +28,12 @@ export function initAnalytics(): Promise<Analytics | null> {
       .catch(() => null);
   }
   return analyticsPromise;
+}
+
+export function ownerEmailAllowlist(): string[] {
+  const raw = (import.meta.env.VITE_OWNER_EMAILS as string | undefined) || '';
+  return raw
+    .split(',')
+    .map((s) => s.trim().toLowerCase())
+    .filter(Boolean);
 }

@@ -1,0 +1,321 @@
+[
+  {
+    "id": "asset_cover_words_wonders",
+    "kind": "cover",
+    "bookId": "words-and-wonders",
+    "path": "/assets/cover-words-wonders.jpg",
+    "title": "Words & Wonders cover (half color)",
+    "alt": "Coloring Dictionary Words and Wonders cover — colored left, line art right",
+    "labels": [
+      "cover",
+      "flagship",
+      "amazon",
+      "words-wonders",
+      "for-all-ages"
+    ],
+    "status": "draft",
+    "availability": "local",
+    "isMarketingMockup": false,
+    "note": "Standard cover used in hero Amazon listing."
+  },
+  {
+    "id": "asset_cover_volume_one",
+    "kind": "cover",
+    "bookId": "volume-one",
+    "path": "/assets/cover-volume-one.png",
+    "status": "draft",
+    "availability": "local",
+    "isMarketingMockup": false
+  },
+  {
+    "id": "asset_cover_texas",
+    "kind": "cover",
+    "bookId": "texas",
+    "path": "/assets/cover-texas.png",
+    "status": "draft",
+    "availability": "local",
+    "isMarketingMockup": false
+  },
+  {
+    "id": "asset_cover_christmas",
+    "kind": "cover",
+    "bookId": "christmas",
+    "path": "/assets/cover-christmas.png",
+    "status": "draft",
+    "availability": "local",
+    "isMarketingMockup": false
+  },
+  {
+    "id": "asset_spread_white_clover",
+    "kind": "marketing_preview",
+    "path": "/assets/spread-white-clover.svg",
+    "status": "concept",
+    "availability": "local",
+    "isMarketingMockup": true,
+    "note": "Open-book marketing mockup; not a finished interior page."
+  },
+  {
+    "id": "asset_flower_coreopsis",
+    "kind": "guide_raster",
+    "path": "/assets/flower-coreopsis.svg",
+    "status": "draft",
+    "availability": "local",
+    "isMarketingMockup": false,
+    "printCheck": "pending"
+  },
+  {
+    "id": "asset_flower_pink_carnation",
+    "kind": "guide_raster",
+    "path": "/assets/flower-pink-carnation.svg",
+    "status": "draft",
+    "availability": "local",
+    "printCheck": "pending"
+  },
+  {
+    "id": "asset_flower_white_clover",
+    "kind": "guide_raster",
+    "path": "/assets/flower-white-clover.svg",
+    "status": "draft",
+    "availability": "local",
+    "printCheck": "pending"
+  },
+  {
+    "id": "asset_preview_christmas_holly",
+    "kind": "interior_preview",
+    "bookId": "christmas",
+    "entryId": "holly",
+    "path": "/assets/previews/interior-christmas-holly.png",
+    "title": "Christmas · Holly spread (concept)",
+    "alt": "Concept preview of Coloring Dictionary Christmas holly guide and coloring spread",
+    "labels": [
+      "christmas",
+      "holly",
+      "interior",
+      "concept-preview",
+      "draft"
+    ],
+    "status": "concept",
+    "availability": "local",
+    "isMarketingMockup": true,
+    "printCheck": "pending",
+    "note": "Concept preview · draft interior. Not print-ready."
+  },
+  {
+    "id": "asset_preview_texas_coreopsis",
+    "kind": "interior_preview",
+    "bookId": "texas",
+    "entryId": "coreopsis",
+    "path": "/assets/previews/interior-texas-coreopsis.png",
+    "title": "Texas · Coreopsis spread (concept)",
+    "alt": "Concept preview of Coloring Dictionary Texas coreopsis guide and coloring spread",
+    "labels": [
+      "texas",
+      "coreopsis",
+      "interior",
+      "concept-preview",
+      "draft"
+    ],
+    "status": "concept",
+    "availability": "local",
+    "isMarketingMockup": true,
+    "printCheck": "pending",
+    "note": "Concept preview · draft interior. Not print-ready."
+  },
+  {
+    "id": "asset_product_adults_cafe_group",
+    "kind": "product_lifestyle",
+    "path": "/assets/product/lifestyle/adults-cafe-group-coloring.png",
+    "title": "Adults coloring together in a cafe",
+    "alt": "Five adults coloring books together at a cafe table",
+    "audience": "adult",
+    "labels": [
+      "product-image",
+      "lifestyle",
+      "adult",
+      "social",
+      "cafe",
+      "community",
+      "later-use"
+    ],
+    "status": "draft",
+    "availability": "local",
+    "isProductImage": true,
+    "isMarketingMockup": false,
+    "note": "Product lifestyle photo for later marketing / Build a Coloring Dictionary. Not an interior page."
+  },
+  {
+    "id": "asset_product_adult_floral_mandala",
+    "kind": "product_lifestyle",
+    "path": "/assets/product/lifestyle/adult-floral-mandala-progress.png",
+    "title": "Adult coloring floral mandala (in progress)",
+    "alt": "Hands coloring a floral mandala page with pink and purple pencils beside coffee",
+    "audience": "adult",
+    "labels": [
+      "product-image",
+      "lifestyle",
+      "adult",
+      "floral",
+      "mandala",
+      "in-use",
+      "later-use"
+    ],
+    "status": "draft",
+    "availability": "local",
+    "isProductImage": true,
+    "isMarketingMockup": false,
+    "note": "Product-in-use lifestyle shot for later marketing."
+  },
+  {
+    "id": "asset_product_adult_geometric_mandala",
+    "kind": "product_lifestyle",
+    "path": "/assets/product/lifestyle/adult-geometric-mandala.png",
+    "title": "Adult coloring geometric mandala",
+    "alt": "Close-up of adult hands coloring a geometric circular pattern with red pencils",
+    "audience": "adult",
+    "labels": [
+      "product-image",
+      "lifestyle",
+      "adult",
+      "geometric",
+      "mandala",
+      "mindfulness",
+      "later-use"
+    ],
+    "status": "draft",
+    "availability": "local",
+    "isProductImage": true,
+    "isMarketingMockup": false,
+    "note": "Product lifestyle photo for later marketing."
+  },
+  {
+    "id": "asset_product_detail_pencil_tips",
+    "kind": "product_detail",
+    "path": "/assets/product/detail/colored-pencil-tips-on-page.png",
+    "title": "Colored pencil tips on a floral page",
+    "alt": "Macro of sharpened colored pencil tips resting on black-and-white floral line art",
+    "audience": "general",
+    "labels": [
+      "product-image",
+      "detail",
+      "pencils",
+      "texture",
+      "hero-capable",
+      "later-use"
+    ],
+    "status": "draft",
+    "availability": "local",
+    "isProductImage": true,
+    "isMarketingMockup": false,
+    "note": "Product detail shot for later marketing / UI accents."
+  },
+  {
+    "id": "asset_product_child_christmas_crayons",
+    "kind": "product_lifestyle",
+    "path": "/assets/product/lifestyle/child-christmas-crayons.png",
+    "title": "Child coloring Christmas page with crayons",
+    "alt": "Child in a knit sweater coloring a holiday gingerbread page with a red crayon",
+    "audience": "child",
+    "labels": [
+      "product-image",
+      "lifestyle",
+      "child",
+      "christmas",
+      "crayons",
+      "holiday",
+      "later-use"
+    ],
+    "status": "draft",
+    "availability": "local",
+    "isProductImage": true,
+    "isMarketingMockup": false,
+    "note": "Kids product lifestyle photo for later marketing."
+  },
+  {
+    "id": "asset_product_toddler_crayon",
+    "kind": "product_lifestyle",
+    "path": "/assets/product/lifestyle/toddler-crayon-page.png",
+    "title": "Toddler coloring with crayon",
+    "alt": "Young child's hand holding a red crayon coloring a page with floral border",
+    "audience": "child",
+    "labels": [
+      "product-image",
+      "lifestyle",
+      "toddler",
+      "child",
+      "crayon",
+      "early-childhood",
+      "later-use"
+    ],
+    "status": "draft",
+    "availability": "local",
+    "isProductImage": true,
+    "isMarketingMockup": false,
+    "note": "Kids product lifestyle photo for later marketing."
+  },
+  {
+    "id": "asset_product_kids_collaborative",
+    "kind": "product_lifestyle",
+    "path": "/assets/product/lifestyle/kids-collaborative-floral.png",
+    "title": "Two children coloring a floral mandala together",
+    "alt": "Two children's hands coloring a floral mandala page with markers and pencils",
+    "audience": "child",
+    "labels": [
+      "product-image",
+      "lifestyle",
+      "child",
+      "collaborative",
+      "floral",
+      "family-activity",
+      "later-use"
+    ],
+    "status": "draft",
+    "availability": "local",
+    "isProductImage": true,
+    "isMarketingMockup": false,
+    "note": "Kids / shared activity product lifestyle photo for later marketing."
+  },
+  {
+    "id": "asset_product_father_daughter",
+    "kind": "product_lifestyle",
+    "path": "/assets/product/lifestyle/father-daughter-floor-coloring.png",
+    "title": "Father and daughter coloring on the floor",
+    "alt": "Man and young girl lying on a wooden floor coloring a tiger page together",
+    "audience": "family",
+    "labels": [
+      "product-image",
+      "lifestyle",
+      "family",
+      "father-daughter",
+      "child",
+      "floor",
+      "later-use"
+    ],
+    "status": "draft",
+    "availability": "local",
+    "isProductImage": true,
+    "isMarketingMockup": false,
+    "note": "Family product lifestyle photo for later marketing."
+  },
+  {
+    "id": "asset_product_family_acorn_hero",
+    "kind": "product_lifestyle",
+    "path": "/assets/hero-family-coloring.jpg",
+    "title": "Family coloring Acorn page (hero)",
+    "alt": "Father and daughter coloring an Acorn page in a Coloring Dictionary",
+    "audience": "family",
+    "labels": [
+      "product-image",
+      "lifestyle",
+      "family",
+      "hero",
+      "acorn",
+      "later-use",
+      "site-hero"
+    ],
+    "status": "draft",
+    "availability": "local",
+    "isProductImage": true,
+    "isMarketingMockup": false,
+    "note": "Primary site hero lifestyle photo. Also at /assets/product/lifestyle/family-acorn-hero.jpg"
+  }
+]

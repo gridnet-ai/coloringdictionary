@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 480" role="img" aria-label="White clover line art placeholder">
+  <rect width="400" height="480" fill="#FFF5DB"/>
+  <g fill="none" stroke="#202A2D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="200" cy="175" rx="42" ry="55"/>
+    <path d="M175 145c8 12 16 24 25 30M225 145c-8 12-16 24-25 30M185 200c10 8 20 12 30 12s20-4 30-12"/>
+    <path d="M200 230v130"/>
+    <path d="M200 300c-45-10-70 20-78 48M200 300c45-10 70 20 78 48"/>
+    <path d="M155 348c12-8 28-10 45-8M245 348c-12-8-28-10-45-8"/>
+  </g>
+  <text x="200" y="450" text-anchor="middle" fill="#00505A" font-family="Georgia,serif" font-size="14">Draft line art · White Clover</text>
+</svg>

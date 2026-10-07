@@ -30,7 +30,7 @@ export const FLOWERS: FlowerEntry[] = [
       { label: 'Golden yellow', note: 'Classic sunny petals.' },
       { label: 'Bicolor', note: 'Gold with deep red near the eye.' },
     ],
-    image: '/assets/flower-coreopsis.png',
+    image: '/assets/flower-coreopsis.svg',
     caption: 'Natural colors are a guide. Your colors are your choice.',
   },
   {
@@ -50,7 +50,7 @@ export const FLOWERS: FlowerEntry[] = [
       { label: 'Light pink', note: 'Soft, delicate petals.' },
       { label: 'Deep pink', note: 'Richer tones toward the center.' },
     ],
-    image: '/assets/flower-pink-carnation.png',
+    image: '/assets/flower-pink-carnation.svg',
     caption: 'Natural colors are a guide. Your colors are your choice.',
   },
   {
@@ -70,7 +70,7 @@ export const FLOWERS: FlowerEntry[] = [
       { label: 'Creamy white', note: 'Typical flower head.' },
       { label: 'A hint of pink', note: 'Sometimes appears on blooms.' },
     ],
-    image: '/assets/flower-white-clover.png',
+    image: '/assets/flower-white-clover.svg',
     caption: 'Green leaves often have pale markings.',
   },
 ];
