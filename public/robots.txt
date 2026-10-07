@@ -1,6 +1,13 @@
 User-agent: *
 Allow: /
 
+# Staff surfaces — keep out of search indexes.
+# Direct URL access (and ChatGPT/MCP with a known link) still works.
+Disallow: /staff
+Disallow: /staff/
+Disallow: /owner
+Disallow: /owner/
+
 Sitemap: https://coloringdictionary.com/sitemap.xml
 
 # Machine-readable brand & book surfaces

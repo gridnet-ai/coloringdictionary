@@ -86,8 +86,8 @@ export function OwnerDashboard() {
   );
 
   if (!ready) return <main className="owner"><p className="owner-body">Loading…</p></main>;
-  if (!user) return <Navigate to="/login" replace />;
-  if (!isOwnerWorkspace) return <Navigate to="/login" replace />;
+  if (!user) return <Navigate to="/staff/login" replace />;
+  if (!isOwnerWorkspace) return <Navigate to="/staff/login" replace />;
 
   function setTab(next: Tab) {
     setParams(next === 'overview' ? {} : { tab: next });

@@ -1,20 +1,13 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { SiteChrome } from '@/components/SiteChrome';
 import {
-  AGE_GROUPS,
-  ageGroupById,
-  matchesAgeFilter,
-  parseAgeGroupParam,
-  type AgeGroupId,
-} from '@/lib/ageGroups';
-import {
-  CATALOG,
   catalogAgeLabel,
   formatUsd,
   type CatalogProduct,
 } from '@/lib/catalog';
 import { useCart } from '@/lib/cart';
+import { filterCatalog } from '@/lib/shopSearch';
 import { recordVcapHit } from '@/lib/vcapTracking';
 
 function ProductCard({
@@ -90,30 +83,28 @@ function ProductCard({
 }
 
 export function ShopPage() {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const ageFilter = parseAgeGroupParam(searchParams.get('age'));
-  const ageGroup = ageGroupById(ageFilter);
-  const { count, items, subtotalCents, setQuantity, removeItem, clear } =
-    useCart();
+  const [searchParams] = useSearchParams();
+  const { items, subtotalCents, setQuantity, removeItem, clear } = useCart();
   const [cartOpen, setCartOpen] = useState(false);
   const [checkoutError, setCheckoutError] = useState('');
   const [checkingOut, setCheckingOut] = useState(false);
 
   const products = useMemo(
     () =>
-      CATALOG.filter((p) =>
-        matchesAgeFilter(p.readingAge, ageFilter, p.ageFilters),
-      ),
-    [ageFilter],
+      filterCatalog({
+        age: searchParams.get('age'),
+        q: searchParams.get('q'),
+      }),
+    [searchParams],
   );
 
-  function setAge(id: AgeGroupId) {
-    if (id === 'all') {
-      setSearchParams({});
-    } else {
-      setSearchParams({ age: id });
+  useEffect(() => {
+    function openCart() {
+      setCartOpen(true);
     }
-  }
+    window.addEventListener('cd-open-cart', openCart);
+    return () => window.removeEventListener('cd-open-cart', openCart);
+  }, []);
 
   async function checkout() {
     if (items.length === 0) return;
@@ -149,69 +140,14 @@ export function ShopPage() {
   return (
     <SiteChrome>
       <main id="main" className="shop-page">
-        <div className="shop-top wrap">
-          <div>
-            <p className="eyebrow">SHOP</p>
-            <h1>Coloring Dictionary catalogue</h1>
-            <p className="shop-intro">
-              Browse by age, add titles to your cart, and check out with Stripe —
-              or open the matching Amazon listing.
-            </p>
-          </div>
-          <button
-            type="button"
-            className="shop-cart-btn"
-            onClick={() => setCartOpen(true)}
-            aria-label={`Open cart, ${count} items`}
-          >
-            Cart
-            {count > 0 ? <span className="shop-cart-count">{count}</span> : null}
-          </button>
-        </div>
-
         <div className="shop-layout wrap">
-          <aside className="shop-filters" aria-label="Age filters">
-            <p className="shop-filters-label">Browse by age</p>
-            <ul className="shop-filter-list">
-              {AGE_GROUPS.map((g) => (
-                <li key={g.id}>
-                  <button
-                    type="button"
-                    className={`shop-filter${ageFilter === g.id ? ' is-active' : ''}`}
-                    aria-current={ageFilter === g.id ? 'true' : undefined}
-                    onClick={() => setAge(g.id)}
-                  >
-                    <span className="shop-filter-range">{g.label}</span>
-                    <span className="shop-filter-audience">{g.audience}</span>
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </aside>
-
-          <section className="shop-results" aria-live="polite">
-            <div className="shop-results-head">
-              <h2>
-                {ageGroup.label}
-                <span className="shop-results-count">
-                  {' '}
-                  · {products.length} title{products.length === 1 ? '' : 's'}
-                </span>
-              </h2>
-              {ageFilter !== 'all' ? (
-                <p className="shop-results-note">{ageGroup.audience}</p>
-              ) : (
-                <p className="shop-results-note">
-                  General-audience titles appear here and under every age band.
-                </p>
-              )}
-            </div>
+          <section className="shop-results">
             {products.length === 0 ? (
               <p className="shop-empty">
-                No titles in this band yet.{' '}
-                <button type="button" className="text-link" onClick={() => setAge('all')}>
-                  Show all ages
-                </button>
+                No matching titles.{' '}
+                <Link className="text-link" to="/shop">
+                  Clear filters
+                </Link>
               </p>
             ) : (
               <div className="shop-grid">

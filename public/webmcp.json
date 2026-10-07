@@ -54,9 +54,8 @@
     "status": "configured_descriptor",
     "note": "Install via ChatGPT plugin / custom GPT actions using the OpenAPI URL. No private owner data is exposed."
   },
-  "owner_workspace": {
+  "consumer_account": {
     "login": "https://coloringdictionary.com/login",
-    "dashboard": "https://coloringdictionary.com/owner",
-    "auth": "Firebase Auth allowlist + staff/{uid} roles"
+    "note": "Shopper sign-in / create account. Staff workspace is private (not listed for SEO)."
   }
 }

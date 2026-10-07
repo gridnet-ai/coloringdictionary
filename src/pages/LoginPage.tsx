@@ -1,9 +1,11 @@
 import { useState, type FormEvent } from 'react';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { StaffSeoShield } from '@/components/StaffSeoShield';
 import { useAuth } from '@/lib/auth';
 
 type AuthForm = 'signin' | 'signup';
 type Step = 'welcome' | 'email' | 'credentials';
+export type LoginVariant = 'consumer' | 'staff';
 
 const EMAIL_DOMAINS = [
   '@gmail.com',
@@ -53,7 +55,12 @@ function GoogleIcon() {
   );
 }
 
-export function LoginPage() {
+type Props = {
+  variant?: LoginVariant;
+};
+
+export function LoginPage({ variant = 'consumer' }: Props) {
+  const staff = variant === 'staff';
   const { ready, user, isOwnerWorkspace, signInEmail, signUpEmail, signInGoogle } =
     useAuth();
   const navigate = useNavigate();
@@ -65,6 +72,8 @@ export function LoginPage() {
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
 
+  const afterAuth = staff ? '/staff' : '/shop';
+
   if (!ready) {
     return (
       <main className="login-screen">
@@ -72,21 +81,29 @@ export function LoginPage() {
       </main>
     );
   }
-  if (user && isOwnerWorkspace) return <Navigate to="/owner" replace />;
-  if (user && !isOwnerWorkspace) {
+
+  if (user && staff) {
+    if (isOwnerWorkspace) return <Navigate to="/staff" replace />;
     return (
-      <main className="login-screen">
-        <div className="login-panel">
-          <p className="login-error">
-            Signed in, but this account is not on the owner allowlist. Add your
-            email to VITE_OWNER_EMAILS and create a staff role.
-          </p>
-          <Link className="login-primary" to="/" style={{ textAlign: 'center' }}>
-            Back to site
-          </Link>
-        </div>
-      </main>
+      <StaffSeoShield>
+        <main className="login-screen">
+          <div className="login-panel">
+            <p className="login-error">
+              Signed in, but this account is not staff. Add your email to
+              VITE_OWNER_EMAILS and create a staff role.
+            </p>
+            <Link className="login-primary" to="/" style={{ textAlign: 'center' }}>
+              Back to site
+            </Link>
+          </div>
+        </main>
+      </StaffSeoShield>
     );
+  }
+
+  if (user && !staff) {
+    if (isOwnerWorkspace) return <Navigate to="/staff" replace />;
+    return <Navigate to="/shop" replace />;
   }
 
   async function onSubmit(e: FormEvent) {
@@ -96,7 +113,7 @@ export function LoginPage() {
     try {
       if (form === 'signin') await signInEmail(email.trim(), password);
       else await signUpEmail(name.trim(), email.trim(), password);
-      navigate('/owner');
+      navigate(afterAuth);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Sign-in failed');
     } finally {
@@ -104,9 +121,22 @@ export function LoginPage() {
     }
   }
 
-  const domains = matchingEmailDomains(email);
+  async function onGoogle() {
+    setBusy(true);
+    setError('');
+    try {
+      await signInGoogle();
+      navigate(afterAuth);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Google sign-in failed');
+    } finally {
+      setBusy(false);
+    }
+  }
 
-  return (
+  const domains = matchingEmailDomains(email);
+  const subtitle = staff ? 'Staff workspace' : 'Your account';
+  const screen = (
     <main className={`login-screen${step === 'welcome' ? ' login-screen--welcome' : ''}`}>
       <Link className="login-close" to="/" aria-label="Close">
         <span>×</span>
@@ -116,32 +146,17 @@ export function LoginPage() {
         <div className="login-welcome">
           <div className="login-brand">
             <div className="login-avatar login-avatar--welcome">
-              <img
-                className="login-avatar-img"
-                src="/icons/icon.png"
-                alt=""
-              />
+              <img className="login-avatar-img" src="/icons/icon.png" alt="" />
             </div>
             <h1 className="login-wordmark">Coloring Dictionary</h1>
-            <p className="login-legal">Owner workspace</p>
+            <p className="login-legal">{subtitle}</p>
           </div>
           <div className="login-actions">
             <button
               type="button"
               className="login-provider"
               disabled={busy}
-              onClick={async () => {
-                setBusy(true);
-                setError('');
-                try {
-                  await signInGoogle();
-                  navigate('/owner');
-                } catch (err) {
-                  setError(err instanceof Error ? err.message : 'Google sign-in failed');
-                } finally {
-                  setBusy(false);
-                }
-              }}
+              onClick={() => void onGoogle()}
             >
               <GoogleIcon /> Continue with Google
             </button>
@@ -153,7 +168,9 @@ export function LoginPage() {
               Continue with email
             </button>
             <p className="login-legal">
-              A dictionary that you can color.
+              {staff
+                ? 'Private staff access — not listed for search engines.'
+                : 'Save your cart, track orders, and pick up where you left off.'}
             </p>
           </div>
         </div>
@@ -164,6 +181,7 @@ export function LoginPage() {
               <img className="login-avatar-img" src="/icons/icon.png" alt="" />
             </div>
             <h1 className="login-wordmark">Coloring Dictionary</h1>
+            <p className="login-legal">{subtitle}</p>
           </div>
 
           {step === 'credentials' ? (
@@ -247,7 +265,9 @@ export function LoginPage() {
                 <label>
                   <input
                     type="password"
-                    autoComplete={form === 'signin' ? 'current-password' : 'new-password'}
+                    autoComplete={
+                      form === 'signin' ? 'current-password' : 'new-password'
+                    }
                     placeholder="Password"
                     value={password}
                     onChange={(ev) => setPassword(ev.target.value)}
@@ -256,7 +276,11 @@ export function LoginPage() {
                   />
                 </label>
                 <button className="login-primary" type="submit" disabled={busy}>
-                  {busy ? 'Working…' : form === 'signin' ? 'Sign in' : 'Create account'}
+                  {busy
+                    ? 'Working…'
+                    : form === 'signin'
+                      ? 'Sign in'
+                      : 'Create account'}
                 </button>
               </>
             )}
@@ -270,20 +294,7 @@ export function LoginPage() {
                   type="button"
                   className="login-provider"
                   disabled={busy}
-                  onClick={async () => {
-                    setBusy(true);
-                    setError('');
-                    try {
-                      await signInGoogle();
-                      navigate('/owner');
-                    } catch (err) {
-                      setError(
-                        err instanceof Error ? err.message : 'Google sign-in failed',
-                      );
-                    } finally {
-                      setBusy(false);
-                    }
-                  }}
+                  onClick={() => void onGoogle()}
                 >
                   <GoogleIcon /> Continue with Google
                 </button>
@@ -296,4 +307,14 @@ export function LoginPage() {
       )}
     </main>
   );
+
+  return staff ? <StaffSeoShield>{screen}</StaffSeoShield> : screen;
+}
+
+export function StaffLoginPage() {
+  return <LoginPage variant="staff" />;
+}
+
+export function ConsumerLoginPage() {
+  return <LoginPage variant="consumer" />;
 }
