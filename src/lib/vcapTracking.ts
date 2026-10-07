@@ -16,7 +16,10 @@ export type VcapSurface =
   | 'irl_jsonld'
   | 'signup_intent'
   | 'preview_open'
-  | 'amazon_cta';
+  | 'amazon_cta'
+  | 'cart_add'
+  | 'checkout_start'
+  | 'checkout_success';
 
 type AccessPayload = {
   sourceRegistry: string;

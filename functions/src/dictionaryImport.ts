@@ -866,6 +866,15 @@ export async function registerDictionarySources() {
       year: 1913,
       note: 'Year-stamped definition editions; archive in entries/*/definitionEditions',
     },
+    {
+      id: 'english-word-database',
+      path: 'englishwords/sources/README.csv',
+      license: 'CC BY-SA (Wiktionary via kaikki.org)',
+      url: 'https://docs.google.com/spreadsheets/d/1vrMpdBc0oyDI2_VN15TityjvqevJU6q2SQEJPeTrLcQ/edit?usp=sharing',
+      note: 'Own Firestore DB englishwords (~1.49M Kaikki entries by letter tab). Working catalogue for book headwords.',
+      namedDatabase: 'englishwords',
+      totalEntries: 1491502,
+    },
   ];
 
   for (const s of sources) {

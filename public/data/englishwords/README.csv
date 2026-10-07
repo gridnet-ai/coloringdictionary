@@ -1,0 +1,41 @@
+Coloring Dictionary — English Word Database
+"Source: kaikki.org machine-readable English dictionary (Wiktionary), extracted 2026-10-03 from the enwiktionary 2026-09-02 dump. Pulled 2026-10-07."
+License: Wiktionary text is CC BY-SA — credit Wiktionary contributors if definitions are published; check share-alike terms for commercial books.
+
+How to use
+One row per dictionary entry (word + part of speech). Tabs split entries by first letter; # holds entries starting with non-letters.
+"Filter the Note column to hide inflected/variant forms (plurals, past tenses, alternative spellings) when picking headwords for books."
+"Topics come from Wiktionary categories (e.g. zoology, botany) — useful for themed volumes."
+
+Columns
+Word — headword as spelled in Wiktionary
+
+Contents
+"Total entries: 1,491,502"
+"Tab A: 88,494 entries"
+"Tab B: 95,117 entries"
+"Tab C: 126,391 entries"
+"Tab D: 76,612 entries"
+"Tab E: 48,495 entries"
+"Tab F: 55,840 entries"
+"Tab G: 55,933 entries"
+"Tab H: 64,811 entries"
+"Tab I: 40,050 entries"
+"Tab J: 14,607 entries"
+"Tab K: 28,403 entries"
+"Tab L: 49,633 entries"
+"Tab M: 97,254 entries"
+"Tab N: 50,480 entries"
+"Tab O: 40,089 entries"
+"Tab P: 122,853 entries"
+"Tab Q: 8,121 entries"
+"Tab R: 67,073 entries"
+"Tab S: 156,457 entries"
+"Tab T: 80,710 entries"
+"Tab U: 40,497 entries"
+"Tab V: 20,319 entries"
+"Tab W: 38,422 entries"
+"Tab X: 2,854 entries"
+"Tab Y: 8,130 entries"
+"Tab Z: 7,264 entries"
+"Tab #: 6,593 entries"

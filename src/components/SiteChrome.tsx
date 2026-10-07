@@ -1,6 +1,8 @@
 import { useEffect, useId, useRef, useState, type ReactNode } from 'react';
-import { Link } from 'react-router-dom';
-import { BrandArrow } from '@/components/BrandIcons';
+import { Link, useLocation, useSearchParams } from 'react-router-dom';
+import { BrandArrow, BrandCart } from '@/components/BrandIcons';
+import { AGE_GROUPS, parseAgeGroupParam, type AgeGroupId } from '@/lib/ageGroups';
+import { useCart } from '@/lib/cart';
 
 type Props = {
   children: ReactNode;
@@ -8,6 +10,7 @@ type Props = {
 };
 
 const NAV: { href: string; label: string; cta?: boolean }[] = [
+  { href: '/shop', label: 'Shop' },
   { href: '/#how', label: 'How it works' },
   { href: '/#collection', label: 'The collection' },
   { href: '/#updates', label: 'Stay in the loop', cta: true },
@@ -17,6 +20,13 @@ const NAV: { href: string; label: string; cta?: boolean }[] = [
 export function SiteChrome({ children, homeHref = '/' }: Props) {
   const [dark, setDark] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [searchParams] = useSearchParams();
+  const location = useLocation();
+  const { count } = useCart();
+  const activeAge =
+    location.pathname.startsWith('/shop')
+      ? parseAgeGroupParam(searchParams.get('age'))
+      : null;
   const menuId = useId();
   const panelRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -75,6 +85,11 @@ export function SiteChrome({ children, homeHref = '/' }: Props) {
 
   const year = new Date().getFullYear();
 
+  function ageHref(id: AgeGroupId) {
+    if (id === 'all') return '/shop';
+    return `/shop?age=${id}`;
+  }
+
   return (
     <>
       <a className="skip" href="#main">
@@ -90,6 +105,14 @@ export function SiteChrome({ children, homeHref = '/' }: Props) {
             />
         </Link>
         <div className="header-menu">
+          <Link
+            className="header-cart"
+            to="/shop"
+            aria-label={`Shop cart${count ? `, ${count} items` : ''}`}
+          >
+            <BrandCart />
+            {count > 0 ? <span className="header-cart-count">{count}</span> : null}
+          </Link>
           <button
             ref={buttonRef}
             className={`menu-toggle${menuOpen ? ' is-open' : ''}`}
@@ -113,10 +136,22 @@ export function SiteChrome({ children, homeHref = '/' }: Props) {
         ref={panelRef}
         id={menuId}
         className={`menu-panel${menuOpen ? ' is-open' : ''}`}
-        hidden={!menuOpen}
         role="dialog"
         aria-label="Site menu"
+        aria-hidden={!menuOpen}
+        inert={!menuOpen ? true : undefined}
       >
+        <div className="menu-panel-head">
+          <p className="menu-panel-title">Menu</p>
+          <button
+            type="button"
+            className="menu-close"
+            aria-label="Close menu"
+            onClick={() => setMenuOpen(false)}
+          >
+            ×
+          </button>
+        </div>
         <nav aria-label="Main navigation">
           {NAV.map((item) => (
             <a
@@ -138,6 +173,29 @@ export function SiteChrome({ children, homeHref = '/' }: Props) {
             Owner
           </Link>
         </nav>
+        <div className="menu-ages" role="group" aria-labelledby={`${menuId}-ages`}>
+          <p className="menu-ages-label" id={`${menuId}-ages`}>
+            Browse by age
+          </p>
+          <ul className="menu-ages-list">
+            {AGE_GROUPS.map((group) => {
+              const selected = activeAge === group.id;
+              return (
+                <li key={group.id}>
+                  <Link
+                    to={ageHref(group.id)}
+                    className={`menu-age-link${selected ? ' is-active' : ''}`}
+                    aria-current={selected ? 'true' : undefined}
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    <span className="menu-age-range">{group.label}</span>
+                    <span className="menu-age-audience">{group.audience}</span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
         <button
           className="menu-theme"
           type="button"
@@ -164,6 +222,7 @@ export function SiteChrome({ children, homeHref = '/' }: Props) {
           <p>Color • Learn • Grow</p>
         </div>
         <div>
+          <Link to="/shop">Shop</Link>
           <a href="/#how">How it works</a>
           <a href="/#collection">Flower Meanings</a>
           <a href="/#updates">Launch updates</a>

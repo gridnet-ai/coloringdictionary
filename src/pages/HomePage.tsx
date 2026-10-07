@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { AmazonCarousel } from '@/components/AmazonCarousel';
 import {
   BrandArrow,
@@ -7,11 +7,23 @@ import {
   BrandSpark,
 } from '@/components/BrandIcons';
 import { SiteChrome } from '@/components/SiteChrome';
+import {
+  ageGroupById,
+  formatReadingAgeLabel,
+  matchesAgeFilter,
+  parseAgeGroupParam,
+} from '@/lib/ageGroups';
 import { FAQS } from '@/lib/siteSeo';
 import { BOOKS, FLAGSHIP_LISTING } from '@/lib/books';
 import { recordVcapHit } from '@/lib/vcapTracking';
 
 export function HomePage() {
+  const [searchParams] = useSearchParams();
+  const ageFilter = parseAgeGroupParam(searchParams.get('age'));
+  const ageGroup = ageGroupById(ageFilter);
+  const books = BOOKS.filter((b) =>
+    matchesAgeFilter(b.readingAge, ageFilter, ['all']),
+  );
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [previewSrc, setPreviewSrc] = useState('');
   const [previewAlt, setPreviewAlt] = useState('');
@@ -242,8 +254,33 @@ export function HomePage() {
                 </p>
               </div>
             </div>
+            <div className="age-filter-bar" aria-live="polite">
+              <p className="age-filter-active">
+                Showing:{' '}
+                <strong>{ageGroup.label}</strong>
+                {ageFilter !== 'all' ? (
+                  <span className="age-filter-audience">
+                    {' '}
+                    — {ageGroup.audience}
+                  </span>
+                ) : null}
+              </p>
+              <Link
+                className="age-filter-clear"
+                to={ageFilter === 'all' ? '/shop' : `/shop?age=${ageFilter}`}
+              >
+                Shop this age band
+              </Link>
+            </div>
             <div className="book-grid">
-              {BOOKS.map((book) => {
+              {books.length === 0 ? (
+                <p className="age-filter-empty">
+                  No titles in this age band yet. Try another group from the
+                  menu, or{' '}
+                  <Link to="/#collection">show all ages</Link>.
+                </p>
+              ) : null}
+              {books.map((book) => {
                 const onAmazon = Boolean(book.amazonUrl);
                 return (
                   <article className="book-card" key={book.slug}>
@@ -273,6 +310,9 @@ export function HomePage() {
                         <span className="book-badge">{book.badge}</span>
                       ) : null}
                       <p className="book-series">{book.series}</p>
+                      <p className="book-ages">
+                        {formatReadingAgeLabel(book.readingAge)}
+                      </p>
                       <h3>{book.title}</h3>
                       <p className="book-subtitle">{book.subtitle}</p>
                       <p className="book-blurb">{book.blurb}</p>

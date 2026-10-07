@@ -14,6 +14,11 @@ const SPARK = {
   teal: '/brand/cd-sparkle-teal.svg',
 } as const;
 
+const CART = {
+  light: '/brand/cd-cart-light.png',
+  dark: '/brand/cd-cart-dark.png',
+} as const;
+
 function CdIcon({
   src,
   className = '',
@@ -118,5 +123,17 @@ export function BrandArrow({ className = '', tone = 'cream' }: IconProps) {
 export function BrandArrowDown({ className = '', tone = 'auto' }: IconProps) {
   return (
     <BrandArrow className={`brand-arrow--down ${className}`.trim()} tone={tone} />
+  );
+}
+
+/** Shopping cart — teal+gold on light paper; cream+gold on dark. */
+export function BrandCart({ className = '' }: { className?: string }) {
+  return (
+    <AutoIcon
+      className={className}
+      markClass="brand-cart"
+      lightSrc={CART.light}
+      darkSrc={CART.dark}
+    />
   );
 }

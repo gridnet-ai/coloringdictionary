@@ -20,8 +20,11 @@ export const auth = getAuth(app);
 export const db = getFirestore(app);
 /** Flower meanings / floriography (named Firestore database). */
 export const floriographyDb = getFirestore(app, 'floriography');
+/** Kaikki / Wiktionary English word catalogue (named Firestore database). */
+export const englishWordsDb = getFirestore(app, 'englishwords');
 export const DICTIONARY_DATABASE_ID = '(default)';
 export const FLORIOGRAPHY_DATABASE_ID = 'floriography';
+export const ENGLISH_WORDS_DATABASE_ID = 'englishwords';
 export const storage = getStorage(app);
 
 let analyticsPromise: Promise<Analytics | null> | null = null;

@@ -9,6 +9,11 @@
       "database": "floriography",
       "rules": "firestore.floriography.rules",
       "indexes": "firestore.floriography.indexes.json"
+    },
+    {
+      "database": "englishwords",
+      "rules": "firestore.englishwords.rules",
+      "indexes": "firestore.englishwords.indexes.json"
     }
   ],
   "storage": {

@@ -1,0 +1,38 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+    function staffRole() {
+      return signedIn()
+        && exists(/databases/(default)/documents/staff/$(request.auth.uid))
+        && get(/databases/(default)/documents/staff/$(request.auth.uid)).data.role in ['owner', 'editor', 'illustrator', 'reviewer'];
+    }
+
+    // Kaikki / Wiktionary English word catalogue for book planning
+    match /entries/{id} {
+      allow read: if staffRole();
+      allow write: if staffRole();
+    }
+    match /lemmas/{id} {
+      allow read: if staffRole();
+      allow write: if staffRole();
+    }
+    match /meta/{id} {
+      allow read: if true;
+      allow write: if staffRole();
+    }
+    match /tabs/{id} {
+      allow read: if true;
+      allow write: if staffRole();
+    }
+    match /imports/{id} {
+      allow read, write: if staffRole();
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

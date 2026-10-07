@@ -4,6 +4,7 @@ import { onRequest } from 'firebase-functions/v2/https';
 import { onSchedule } from 'firebase-functions/v2/scheduler';
 import { defineString } from 'firebase-functions/params';
 import { logger } from 'firebase-functions';
+import Stripe from 'stripe';
 import { sendLaunchSignupEmails } from './signupEmail';
 import { SITE_ORIGIN as MAIL_SITE_ORIGIN } from './smtp';
 import { seedFromPublicHosting } from './seed';
@@ -19,6 +20,11 @@ import {
   importFloriographyFromGcs,
   upsertFloriographyDictionaryEntry,
 } from './floriographyImport';
+import {
+  importEnglishWordsCsvFromGcs,
+  registerEnglishWordDatabase,
+} from './englishWordsImport';
+import { SHOP_CATALOG } from './shopCatalog';
 
 initializeApp();
 
@@ -64,9 +70,55 @@ async function enqueueHit(payload: AccessPayload) {
   await db.collection('registryAccessOutbox').add(doc);
 }
 
+function stripeClient() {
+  const key = String(process.env.STRIPE_SECRET_KEY || '').trim();
+  if (!key) {
+    throw new Error('STRIPE_SECRET_KEY is not configured');
+  }
+  return new Stripe(key);
+}
+
+function randomSuffix(len = 8) {
+  const chars = 'abcdefghijklmnopqrstuvwxyz';
+  let out = '';
+  for (let i = 0; i < len; i++) {
+    out += chars[Math.floor(Math.random() * chars.length)];
+  }
+  return out;
+}
+
+async function fulfillCheckoutSession(session: Stripe.Checkout.Session) {
+  if (session.payment_status === 'unpaid') return;
+  const orderRef = db.collection('shopOrders').doc(session.id);
+  const existing = await orderRef.get();
+  if (existing.exists && existing.data()?.fulfilled) return;
+
+  await orderRef.set(
+    {
+      sessionId: session.id,
+      paymentStatus: session.payment_status,
+      amountTotal: session.amount_total ?? 0,
+      currency: session.currency ?? 'usd',
+      customerEmail: session.customer_details?.email ?? null,
+      lineItems: session.metadata?.lineItemsJson
+        ? JSON.parse(session.metadata.lineItemsJson)
+        : [],
+      fulfilled: true,
+      fulfilledAt: FieldValue.serverTimestamp(),
+      updatedAt: FieldValue.serverTimestamp(),
+    },
+    { merge: true },
+  );
+  logger.info('Shop order fulfilled', { sessionId: session.id });
+}
+
 /** Unified API: /api/signup and /api/vcap/hit via Hosting rewrite. */
 export const api = onRequest(
-  { cors: true, memory: '1GiB', timeoutSeconds: 540 },
+  {
+    cors: true,
+    memory: '1GiB',
+    timeoutSeconds: 540,
+  },
   async (req, res) => {
   cors(res);
   if (req.method === 'OPTIONS') {
@@ -76,6 +128,121 @@ export const api = onRequest(
 
   const path =
     (req.path || '').replace(/^\/api/, '') || req.url.replace(/^\/api/, '');
+
+  /** Stripe webhooks — verify signature; fulfill on paid sessions. */
+  if (path.startsWith('/checkout/webhook') && req.method === 'POST') {
+    const stripe = stripeClient();
+    const sig = req.get('stripe-signature') || '';
+    const secret = String(process.env.STRIPE_WEBHOOK_SECRET || '').trim();
+    if (!secret) {
+      res.status(500).send('Webhook secret not configured');
+      return;
+    }
+    let event: Stripe.Event;
+    try {
+      const rawBody =
+        (req as { rawBody?: Buffer }).rawBody ||
+        Buffer.from(JSON.stringify(req.body));
+      event = stripe.webhooks.constructEvent(rawBody, sig, secret);
+    } catch (err) {
+      logger.error('Stripe webhook signature failed', {
+        error: err instanceof Error ? err.message : String(err),
+      });
+      res.status(400).send('Webhook Error');
+      return;
+    }
+
+    try {
+      if (
+        event.type === 'checkout.session.completed' ||
+        event.type === 'checkout.session.async_payment_succeeded'
+      ) {
+        const session = event.data.object as Stripe.Checkout.Session;
+        await fulfillCheckoutSession(session);
+      }
+      res.status(200).json({ received: true });
+    } catch (err) {
+      logger.error('Stripe webhook handler failed', {
+        error: err instanceof Error ? err.message : String(err),
+      });
+      res.status(500).json({ error: 'fulfillment failed' });
+    }
+    return;
+  }
+
+  /** POST /api/checkout/session { items: [{ slug, quantity }] } */
+  if (path.startsWith('/checkout/session') && req.method === 'POST') {
+    try {
+      const rawItems = Array.isArray(req.body?.items) ? req.body.items : [];
+      if (rawItems.length === 0) {
+        res.status(400).json({ error: 'Cart is empty' });
+        return;
+      }
+
+      const lineItems: Stripe.Checkout.SessionCreateParams.LineItem[] = [];
+      const metaLines: { slug: string; quantity: number; priceCents: number }[] =
+        [];
+
+      for (const row of rawItems) {
+        const slug = String(row?.slug || '').trim();
+        const quantity = Math.min(
+          20,
+          Math.max(1, Math.floor(Number(row?.quantity) || 0)),
+        );
+        const sku = SHOP_CATALOG[slug];
+        if (!sku || quantity < 1) {
+          res.status(400).json({ error: `Unknown item: ${slug || 'missing'}` });
+          return;
+        }
+        metaLines.push({
+          slug,
+          quantity,
+          priceCents: sku.priceCents,
+        });
+        lineItems.push({
+          quantity,
+          price_data: {
+            currency: 'usd',
+            unit_amount: sku.priceCents,
+            product_data: {
+              name: sku.name,
+              images: sku.imagePath
+                ? [`${SITE_ORIGIN}${sku.imagePath}`]
+                : undefined,
+            },
+          },
+        });
+      }
+
+      const stripe = stripeClient();
+      const session = await stripe.checkout.sessions.create({
+        mode: 'payment',
+        line_items: lineItems,
+        success_url: `${SITE_ORIGIN}/shop/success?session_id={CHECKOUT_SESSION_ID}`,
+        cancel_url: `${SITE_ORIGIN}/shop`,
+        shipping_address_collection: {
+          allowed_countries: ['US', 'CA', 'GB', 'AU'],
+        },
+        metadata: {
+          lineItemsJson: JSON.stringify(metaLines),
+        },
+        integration_identifier: `cd-shop-checkout-${randomSuffix()}`,
+      });
+
+      res.status(200).json({ id: session.id, url: session.url });
+    } catch (err) {
+      logger.error('Checkout session failed', {
+        error: err instanceof Error ? err.message : String(err),
+      });
+      res.status(500).json({
+        error:
+          err instanceof Error
+            ? err.message
+            : 'Could not create checkout session',
+      });
+    }
+    return;
+  }
 
   if (path.startsWith('/signup') && req.method === 'POST') {
     const email = String(req.body?.email || '').trim();
@@ -364,6 +531,71 @@ export const api = onRequest(
       res.status(200).json({ ok: true, ...result });
     } catch (err) {
       logger.error('Kaikki import failed', {
+        error: err instanceof Error ? err.message : String(err),
+      });
+      res.status(500).json({
+        error: err instanceof Error ? err.message : 'import failed',
+      });
+    }
+    return;
+  }
+
+  /**
+   * POST /api/owner/englishwords/register
+   * { token, readmeText? } — registers named DB englishwords + universal dictionarySources
+   */
+  if (path.startsWith('/owner/englishwords/register') && req.method === 'POST') {
+    const expected = String(process.env.OWNER_SEED_TOKEN || '').trim();
+    const provided = String(req.body?.token || req.get('x-owner-seed-token') || '').trim();
+    if (!expected || provided !== expected) {
+      res.status(401).json({ error: 'unauthorized' });
+      return;
+    }
+    try {
+      const result = await registerEnglishWordDatabase({
+        readmeText:
+          typeof req.body?.readmeText === 'string' ? req.body.readmeText : undefined,
+        force: Boolean(req.body?.force),
+      });
+      res.status(200).json(result);
+    } catch (err) {
+      logger.error('English words register failed', {
+        error: err instanceof Error ? err.message : String(err),
+      });
+      res.status(500).json({
+        error: err instanceof Error ? err.message : 'register failed',
+      });
+    }
+    return;
+  }
+
+  /**
+   * POST /api/owner/englishwords/import-csv
+   * { token, objectPath, tab?, maxEntries?, skipExisting? }
+   */
+  if (path.startsWith('/owner/englishwords/import-csv') && req.method === 'POST') {
+    const expected = String(process.env.OWNER_SEED_TOKEN || '').trim();
+    const provided = String(req.body?.token || req.get('x-owner-seed-token') || '').trim();
+    if (!expected || provided !== expected) {
+      res.status(401).json({ error: 'unauthorized' });
+      return;
+    }
+    const objectPath = String(req.body?.objectPath || '').trim();
+    if (!objectPath) {
+      res.status(400).json({ error: 'objectPath required' });
+      return;
+    }
+    try {
+      const result = await importEnglishWordsCsvFromGcs({
+        objectPath,
+        tab: typeof req.body?.tab === 'string' ? req.body.tab : undefined,
+        maxEntries:
+          typeof req.body?.maxEntries === 'number' ? req.body.maxEntries : undefined,
+        skipExisting: Boolean(req.body?.skipExisting),
+      });
+      res.status(200).json(result);
+    } catch (err) {
+      logger.error('English words CSV import failed', {
         error: err instanceof Error ? err.message : String(err),
       });
       res.status(500).json({

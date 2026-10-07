@@ -72,7 +72,7 @@ export type FlowerEntry = {
   legacyStatus?: string | null;
   legacyPublished?: string | null;
   /** Named Firestore database this flower belongs to (`floriography`). */
-  database?: 'floriography' | string;
+  database?: 'floriography' | 'englishwords' | string;
   origin?: string | null;
   indexable?: boolean;
 };

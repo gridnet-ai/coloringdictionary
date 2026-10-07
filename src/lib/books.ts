@@ -1,3 +1,8 @@
+import {
+  formatReadingAgeLabel,
+  type ReadingAge,
+} from '@/lib/ageGroups';
+
 export type BookVolume = {
   slug: string;
   series: string;
@@ -9,6 +14,11 @@ export type BookVolume = {
   amazonUrl: string;
   status: 'available' | 'coming-soon';
   badge?: string;
+  /**
+   * KDP reading-age min–max. Leave unset for general-audience titles
+   * (site “All ages”); set a range when targeting children’s/teen categories.
+   */
+  readingAge?: ReadingAge;
 };
 
 export type AmazonListingCard = {
@@ -19,6 +29,7 @@ export type AmazonListingCard = {
   amazonUrl: string;
   format: string;
   ages?: string;
+  readingAge?: ReadingAge;
   badge?: string;
   /** Omit until real ratings exist — do not invent review counts. */
   rating?: string;
@@ -111,9 +122,11 @@ export const CAROUSEL_LISTINGS: AmazonListingCard[] = [
         b.amazonUrl ||
         `https://www.amazon.com/s?k=${encodeURIComponent(`Coloring Dictionary ${b.series} ${b.title}`)}`,
       format: 'Paperback',
-      ages: 'All ages',
+      readingAge: b.readingAge,
+      ages: formatReadingAgeLabel(b.readingAge),
       badge: b.status === 'coming-soon' ? 'Coming soon' : undefined,
       cta: b.status === 'coming-soon' ? 'View on Amazon' : 'Buy on Amazon',
     }),
   ),
 ];
+

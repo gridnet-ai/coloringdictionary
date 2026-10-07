@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { matchesAgeFilter, parseAgeGroupParam } from '@/lib/ageGroups';
 import { CAROUSEL_LISTINGS, type AmazonListingCard } from '@/lib/books';
 import { recordVcapHit } from '@/lib/vcapTracking';
 
@@ -88,6 +90,11 @@ function ListingCard({
 }
 
 export function AmazonCarousel({ onPreview }: Props) {
+  const [searchParams] = useSearchParams();
+  const ageFilter = parseAgeGroupParam(searchParams.get('age'));
+  const listings = CAROUSEL_LISTINGS.filter((item) =>
+    matchesAgeFilter(item.readingAge, ageFilter),
+  );
   const scrollerRef = useRef<HTMLDivElement>(null);
   const [thumb, setThumb] = useState({ left: 0, width: 40, visible: false });
 
@@ -151,7 +158,7 @@ export function AmazonCarousel({ onPreview }: Props) {
           ‹
         </button>
         <div className="az-carousel" ref={scrollerRef} tabIndex={0}>
-          {CAROUSEL_LISTINGS.map((item) => (
+          {listings.map((item) => (
             <ListingCard key={item.slug} item={item} onPreview={onPreview} />
           ))}
         </div>
