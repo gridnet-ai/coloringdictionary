@@ -1,0 +1,17 @@
+node_modules
+dist
+.firebase
+*.local
+.env
+.env.*
+!.env.example
+.DS_Store
+firebase-debug.log
+firebase-debug.*.log
+functions/lib
+functions/node_modules
+extracted_assets
+brand_source
+_preview_*
+_extract_*.py
+_preview_extract.txt

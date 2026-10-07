@@ -1,0 +1,54 @@
+{
+  "title": "Coloring Dictionary: Flower Meanings — Volume One",
+  "brand": "Coloring Dictionary",
+  "status": "In development",
+  "creativeWorkStatus": "In development",
+  "language": "en",
+  "format": {
+    "spread": "Guide left / coloring page right (English edition)",
+    "promise": "A colored guide on the left. A page to make your own on the right."
+  },
+  "description": "Discover the meanings people have given flowers. Explore a colored guide, then bring the facing flower illustration to life in your own colors.",
+  "audience": "Curious minds of all ages",
+  "url": "https://coloringdictionary.com/#flower-meanings",
+  "availability": "Not for sale yet. Preview and signup only.",
+  "entries": [
+    {
+      "slug": "coreopsis",
+      "name": "Coreopsis",
+      "scientificName": "Coreopsis spp.",
+      "meaning": "Always cheerful.",
+      "phrase": "You bring sunshine to my day.",
+      "url": "https://coloringdictionary.com/flowers/coreopsis/"
+    },
+    {
+      "slug": "pink-carnation",
+      "name": "Pink Carnation",
+      "scientificName": "Dianthus caryophyllus",
+      "meaning": "I'll never forget you.",
+      "phrase": "I will always remember you.",
+      "url": "https://coloringdictionary.com/flowers/pink-carnation/"
+    },
+    {
+      "slug": "white-clover",
+      "name": "White Clover",
+      "scientificName": "Trifolium repens",
+      "meaning": "Think of me.",
+      "phrase": "Keep me in your thoughts.",
+      "url": "https://coloringdictionary.com/flowers/white-clover/",
+      "facts": [
+        "Each round flower head holds many tiny flowers.",
+        "Its leaves usually have three leaflets.",
+        "Bees visit white clover flowers."
+      ]
+    }
+  ],
+  "notes": [
+    "Flower meanings can differ across cultures, historical periods and dictionaries.",
+    "Natural colors are a guide. Your colors are your choice.",
+    "Current website imagery includes draft pages and concept mockups."
+  ],
+  "isbn": null,
+  "publisherEntity": null,
+  "updated": "2026-10-07"
+}

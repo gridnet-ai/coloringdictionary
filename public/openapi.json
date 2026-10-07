@@ -1,0 +1,91 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Coloring Dictionary API",
+    "version": "0.1.0",
+    "description": "Performability surface for signup and AIWEB VCAP activity tracking."
+  },
+  "servers": [
+    { "url": "https://coloringdictionary.com" }
+  ],
+  "paths": {
+    "/api/signup": {
+      "post": {
+        "summary": "Join launch updates list",
+        "operationId": "signup",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["email", "consent"],
+                "properties": {
+                  "email": { "type": "string", "format": "email" },
+                  "source": { "type": "string", "default": "website" },
+                  "consent": { "type": "boolean" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Signed up" },
+          "503": { "description": "Signup not open yet" }
+        }
+      }
+    },
+    "/api/vcap/hit": {
+      "post": {
+        "summary": "Record a VCAP / HITS access event",
+        "operationId": "vcapHit",
+        "description": "Enqueues an access event for drain to Big Search registry/access. Do not await this from SSR critical path beyond fire-and-forget.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["sourceRegistry", "slug", "surface", "path"],
+                "properties": {
+                  "sourceRegistry": { "type": "string", "example": "coloringdictionary" },
+                  "slug": { "type": "string", "example": "coloring-dictionary" },
+                  "surface": { "type": "string", "example": "origin_html" },
+                  "httpStatus": { "type": "integer", "default": 200 },
+                  "path": { "type": "string" },
+                  "userAgent": { "type": "string" },
+                  "meta": { "type": "object", "additionalProperties": { "type": "string" } }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": { "description": "Accepted into outbox" },
+          "400": { "description": "Invalid payload" }
+        }
+      }
+    },
+    "/brand.json": {
+      "get": {
+        "summary": "Brand facts",
+        "operationId": "getBrand",
+        "responses": { "200": { "description": "Brand JSON" } }
+      }
+    },
+    "/book.json": {
+      "get": {
+        "summary": "Book metadata",
+        "operationId": "getBook",
+        "responses": { "200": { "description": "Book JSON" } }
+      }
+    },
+    "/llms.txt": {
+      "get": {
+        "summary": "Machine-readable site overview",
+        "operationId": "getLlms",
+        "responses": { "200": { "description": "Plain text" } }
+      }
+    }
+  }
+}

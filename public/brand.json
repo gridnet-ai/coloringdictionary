@@ -1,0 +1,57 @@
+{
+  "name": "Coloring Dictionary",
+  "tagline": "A dictionary you can color.",
+  "motto": "Color • Learn • Grow",
+  "url": "https://coloringdictionary.com/",
+  "domain": "coloringdictionary.com",
+  "description": "A publishing brand that pairs readable explanations and colored examples with facing illustrations to color.",
+  "personality": "Curious, warm, clear and dependable. Friendly enough for children; thoughtful enough for adults.",
+  "promise": "Discover something. Understand it. Make it your own through color.",
+  "architecture": {
+    "brand": "Coloring Dictionary",
+    "subject": "Flower Meanings",
+    "collectionIdentifier": "Volume One",
+    "language": "English (additional editions planned)"
+  },
+  "palette": {
+    "deepTeal": "#00505A",
+    "nightTeal": "#082F35",
+    "warmCream": "#FFF5DB",
+    "coloringGold": "#FFC629",
+    "readingInk": "#202A2D"
+  },
+  "assets": {
+    "logo": "https://coloringdictionary.com/assets/logo-wordmark.png",
+    "logoDark": "https://coloringdictionary.com/assets/logo-wordmark-dark.png",
+    "icon": "https://coloringdictionary.com/icons/favicon.png",
+    "ogImage": "https://coloringdictionary.com/assets/og-image.png"
+  },
+  "machineSurfaces": {
+    "llms": "https://coloringdictionary.com/llms.txt",
+    "discovery": "https://coloringdictionary.com/discovery.json",
+    "book": "https://coloringdictionary.com/book.json",
+    "jsonLd": "https://coloringdictionary.com/json.ld",
+    "mcp": "https://coloringdictionary.com/mcp.json",
+    "openapi": "https://coloringdictionary.com/openapi.json",
+    "sitemap": "https://coloringdictionary.com/sitemap.xml",
+    "robots": "https://coloringdictionary.com/robots.txt"
+  },
+  "vcap": {
+    "visibility": "HTML + Open Graph + JSON-LD",
+    "citability": "/llms.txt + /json.ld + /brand.json + /book.json",
+    "actionability": "/mcp.json",
+    "performability": "/openapi.json",
+    "tracking": {
+      "endpoint": "POST /api/vcap/hit → Big Search POST https://bigsearchai.com/api/v1/registry/access",
+      "sourceRegistry": "coloringdictionary",
+      "slug": "coloring-dictionary"
+    }
+  },
+  "related": {
+    "aiweb": "https://www.theaiwebcompany.com",
+    "aiwa": "https://www.theaiwebapp.com",
+    "bigsearch": "https://bigsearchai.com"
+  },
+  "status": "launch-preview",
+  "updated": "2026-10-07"
+}

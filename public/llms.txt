@@ -1,0 +1,53 @@
+# Coloring Dictionary
+
+> A dictionary you can color.
+
+**Coloring Dictionary** pairs a readable explanation and colored example with a facing illustration to color. Motto: Color • Learn • Grow.
+
+## Primary URLs
+
+- Home: https://coloringdictionary.com/
+- Flower Meanings collection: https://coloringdictionary.com/#collection
+- FAQ: https://coloringdictionary.com/#faq
+- Launch updates / signup: https://coloringdictionary.com/#updates
+- Brand facts (JSON): https://coloringdictionary.com/brand.json
+- Book facts (JSON): https://coloringdictionary.com/book.json
+- Discovery: https://coloringdictionary.com/discovery.json
+- Structured data: https://coloringdictionary.com/json.ld
+- Sitemap: https://coloringdictionary.com/sitemap.xml
+
+## First collection
+
+**Flower Meanings · Volume One** — in production (not for sale yet).
+
+Sample entries:
+
+1. [Coreopsis](https://coloringdictionary.com/flowers/coreopsis/) — Always cheerful. “You bring sunshine to my day.”
+2. [Pink Carnation](https://coloringdictionary.com/flowers/pink-carnation/) — I’ll never forget you. “I will always remember you.”
+3. [White Clover](https://coloringdictionary.com/flowers/white-clover/) — Think of me. “Keep me in your thoughts.” Scientific name: *Trifolium repens*.
+
+## How the book works
+
+1. Meet the subject — name, meaning, memorable facts on the left-hand guide page.
+2. Find your colors — look at the colored examples.
+3. Make it yours — color the facing illustration. Natural colors are a guide; your colors are your choice.
+
+## FAQ
+
+- **What is Coloring Dictionary?** A publishing brand that pairs readable explanations and colored examples with facing illustrations to color. Flower Meanings is its first collection.
+- **How does the two-page format work?** English edition: guide on the left, coloring illustration on the right.
+- **Must I use natural flower colors?** No.
+- **Can I buy Volume One?** Not yet — in production. Site images are draft/concept.
+- **Are flower meanings universal?** No — they vary across cultures and dictionaries; this collection shares selected, sourced associations.
+- **Other subjects/languages?** Planned expansions, not available products yet.
+
+## GEO / AEO / VCAP
+
+- Brand palette: Deep teal `#00505A`, Night teal `#082F35`, Warm cream `#FFF5DB`, Coloring gold `#FFC629`, Reading ink `#202A2D`
+- Machine surfaces: `/llms.txt`, `/brand.json`, `/book.json`, `/mcp.json`, `/openapi.json`, `/json.ld`, `/discovery.json`
+- Activity tracking (AIWEB HITS): `POST /api/vcap/hit` → Big Search `POST https://bigsearchai.com/api/v1/registry/access` with `sourceRegistry=coloringdictionary`, `slug=coloring-dictionary`
+
+## Contact
+
+- Site: https://coloringdictionary.com
+- Built on the AIWEB app framework (Vite + React + Firebase)

@@ -1,0 +1,52 @@
+{
+  "name": "Coloring Dictionary",
+  "company": "Coloring Dictionary",
+  "description": "A dictionary you can color. Discover flower meanings with colored guides and facing illustrations to make your own.",
+  "url": "https://coloringdictionary.com/",
+  "og_image": "https://coloringdictionary.com/assets/og-image.png",
+  "logo": "https://coloringdictionary.com/icons/favicon.png",
+  "llms_txt": "https://coloringdictionary.com/llms.txt",
+  "brand": "https://coloringdictionary.com/brand.json",
+  "book": "https://coloringdictionary.com/book.json",
+  "mcp": "https://coloringdictionary.com/mcp.json",
+  "openapi": "https://coloringdictionary.com/openapi.json",
+  "json_ld": "https://coloringdictionary.com/json.ld",
+  "sitemap": "https://coloringdictionary.com/sitemap.xml",
+  "robots": "https://coloringdictionary.com/robots.txt",
+  "irl_url": "https://coloringdictionary.com/irl/coloring-dictionary",
+  "protocol": "aiweb-vcap/0.1",
+  "framework": "AIWEB (Vite + React + Firebase Hosting + origin VCAP)",
+  "geo": {
+    "label": "Generative Engine Optimization",
+    "notes": "Canonical brand facts in /brand.json, book facts in /book.json, overview in /llms.txt, FAQPage JSON-LD on home."
+  },
+  "aeo": {
+    "label": "Answer Engine Optimization",
+    "notes": "Homepage FAQ answers common purchase/format questions; flower entry pages expose meaning + scientific name."
+  },
+  "vcap": {
+    "V": "Visibility — HTML, Open Graph, Twitter cards, theme-color",
+    "C": "Citability — /llms.txt, /json.ld, /brand.json, /book.json",
+    "A": "Actionability — /mcp.json tool descriptors",
+    "P": "Performability — /openapi.json signup + hit endpoints"
+  },
+  "tracking": {
+    "hits": "POST https://bigsearchai.com/api/v1/registry/access",
+    "handoff": "Site posts to /api/vcap/hit; Cloud Function enqueues outbox then drains to Big Search",
+    "sourceRegistry": "coloringdictionary",
+    "slug": "coloring-dictionary",
+    "metricsSlug": "coloringdictionary_coloring-dictionary"
+  },
+  "products": [
+    {
+      "name": "Flower Meanings · Volume One",
+      "url": "https://coloringdictionary.com/#collection",
+      "description": "First Coloring Dictionary collection — in production."
+    }
+  ],
+  "related": {
+    "ai_web_company": "https://www.theaiwebcompany.com",
+    "aiwa_platform": "https://www.theaiwebapp.com",
+    "bigsearch_registry": "https://bigsearchai.com"
+  }
+}

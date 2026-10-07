@@ -1,0 +1,54 @@
+{
+  "name": "coloring-dictionary",
+  "description": "MCP-style capability descriptor for Coloring Dictionary origin VCAP (Actionability).",
+  "version": "0.1.0",
+  "homepage": "https://coloringdictionary.com/",
+  "tools": [
+    {
+      "name": "get_brand",
+      "description": "Return machine-readable brand facts for Coloring Dictionary.",
+      "inputSchema": { "type": "object", "properties": {} },
+      "endpoint": "GET https://coloringdictionary.com/brand.json"
+    },
+    {
+      "name": "get_book",
+      "description": "Return Flower Meanings Volume One book metadata and sample entries.",
+      "inputSchema": { "type": "object", "properties": {} },
+      "endpoint": "GET https://coloringdictionary.com/book.json"
+    },
+    {
+      "name": "get_flower",
+      "description": "Fetch a flower meaning entry by slug.",
+      "inputSchema": {
+        "type": "object",
+        "required": ["slug"],
+        "properties": {
+          "slug": {
+            "type": "string",
+            "enum": ["coreopsis", "pink-carnation", "white-clover"]
+          }
+        }
+      },
+      "endpoint": "GET https://coloringdictionary.com/flowers/{slug}/"
+    },
+    {
+      "name": "list_faqs",
+      "description": "Return FAQ answers about the product and availability.",
+      "inputSchema": { "type": "object", "properties": {} },
+      "endpoint": "GET https://coloringdictionary.com/#faq"
+    },
+    {
+      "name": "record_hit",
+      "description": "Record a VCAP/HITS surface access via the site tracking handoff.",
+      "inputSchema": {
+        "type": "object",
+        "required": ["surface", "path"],
+        "properties": {
+          "surface": { "type": "string" },
+          "path": { "type": "string" }
+        }
+      },
+      "endpoint": "POST https://coloringdictionary.com/api/vcap/hit"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://coloringdictionary.com/sitemap.xml
+
+# Machine-readable brand & book surfaces
+Allow: /brand.json
+Allow: /book.json
+Allow: /llms.txt
+Allow: /discovery.json
+Allow: /mcp.json
+Allow: /openapi.json
+Allow: /json.ld
