@@ -4,6 +4,13 @@
   "motto": "Color • Learn • Grow",
   "url": "https://coloringdictionary.com/",
   "domain": "coloringdictionary.com",
+  "email": {
+    "fromName": "Color Dictionary",
+    "from": "hello@coloringdictionary.com",
+    "replyTo": "hello@coloringdictionary.com",
+    "transport": "gmail-smtp",
+    "note": "Aliases can be added on the Google account as needed."
+  },
   "description": "A publishing brand that pairs readable explanations and colored examples with facing illustrations to color.",
   "personality": "Curious, warm, clear and dependable. Friendly enough for children; thoughtful enough for adults.",
   "promise": "Discover something. Understand it. Make it your own through color.",

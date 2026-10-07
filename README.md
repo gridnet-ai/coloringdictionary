@@ -24,24 +24,34 @@ npm install
 npm run dev
 ```
 
+## Email (own Gmail SMTP — not Resend)
+
+Same stack as ai-locating: **nodemailer → `smtp.gmail.com`**.
+
+| Field | Value |
+|-------|--------|
+| From name | Color Dictionary |
+| From / SMTP user | `hello@coloringdictionary.com` |
+| Transport | Google Workspace / Gmail app password |
+
+Set `functions/.env` (see `functions/.env.example`), especially `SMTP_PASS` (Google App Password for that mailbox). Aliases can be added on the Google account later.
+
+Signup flow: store intent → confirm subscriber → notify `hello@…`.
+
 ## Deploy
 
 ```bash
 # Hosting only
 npm run deploy:hosting
 
-# Hosting + Functions (signup + VCAP hits + IRL)
+# Hosting + Functions (signup mail + VCAP hits + IRL)
 cd functions && npm install && cd ..
 npm run deploy:all
 ```
 
 Firebase project: `coloringdictionary` (see `.firebaserc`).
 
-For HITS draining, set the Big Search API key:
-
-```bash
-npx -y firebase-tools@latest functions:secrets:set REGISTRY_INGEST_API_KEY --project coloringdictionary
-```
+Optional HITS drain: set `REGISTRY_INGEST_API_KEY` in `functions/.env` / Functions params.
 
 Details: [docs/VCAP_HANDOFF.md](docs/VCAP_HANDOFF.md)
 

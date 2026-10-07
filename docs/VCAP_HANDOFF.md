@@ -46,6 +46,12 @@ Metrics slug Big Search will derive: `coloringdictionary_coloring-dictionary`.
 4. Deploy functions: `npm run deploy:functions`
 5. Confirm drains in Functions logs / Big Search registry metrics.
 
-## Signup
+## Signup + mail
 
-`POST /api/signup` stores email intents in `signupIntents` and records a `signup_intent` hit. Connect an ESP when launch email is ready.
+`POST /api/signup` stores email intents in `signupIntents`, records a `signup_intent` hit, then sends via **Gmail SMTP** (ai-locating pattern):
+
+- From: `Color Dictionary <hello@coloringdictionary.com>`
+- Confirm email to the subscriber
+- Notify `hello@coloringdictionary.com`
+
+Configure `SMTP_*` in `functions/.env` (App Password required for `SMTP_PASS`).

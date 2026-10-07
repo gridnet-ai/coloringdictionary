@@ -9,7 +9,9 @@ export function HomePage() {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [previewSrc, setPreviewSrc] = useState('');
   const [previewAlt, setPreviewAlt] = useState('');
-  const [status, setStatus] = useState('Email signup is coming soon.');
+  const [status, setStatus] = useState(
+    'Get occasional book previews and release news.',
+  );
 
   useEffect(() => {
     recordVcapHit('origin_html', '/');
@@ -45,7 +47,7 @@ export function HomePage() {
       setStatus('You’re on the list. Look out for our first chapter.');
       form.reset();
     } catch {
-      setStatus('Signup isn’t open yet. Please check back for launch updates.');
+      setStatus('We couldn’t complete your signup. Please try again.');
     }
   }
 
@@ -299,7 +301,9 @@ export function HomePage() {
         >
           ×
         </button>
-        <img src={previewSrc} alt={previewAlt || 'Enlarged sample book page'} />
+        {previewSrc ? (
+          <img src={previewSrc} alt={previewAlt || 'Enlarged sample book page'} />
+        ) : null}
         <p>Draft page preview</p>
       </dialog>
     </SiteChrome>

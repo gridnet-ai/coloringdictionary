@@ -69,8 +69,6 @@
       }
     ],
     "rewrites": [
-      { "source": "/api/**", "function": "api" },
-      { "source": "/irl/**", "function": "irlVcap" },
       { "source": "**", "destination": "/index.html" }
     ]
   }

@@ -2,14 +2,17 @@ import { initializeApp } from 'firebase-admin/app';
 import { getFirestore, FieldValue } from 'firebase-admin/firestore';
 import { onRequest } from 'firebase-functions/v2/https';
 import { onSchedule } from 'firebase-functions/v2/scheduler';
-import { defineSecret } from 'firebase-functions/params';
+import { defineString } from 'firebase-functions/params';
+import { logger } from 'firebase-functions';
+import { sendLaunchSignupEmails } from './signupEmail';
+import { SITE_ORIGIN as MAIL_SITE_ORIGIN } from './smtp';
 
 initializeApp();
 
 const db = getFirestore();
-const registryApiKey = defineSecret('REGISTRY_INGEST_API_KEY');
+const registryApiKey = defineString('REGISTRY_INGEST_API_KEY', { default: '' });
 
-const SITE_ORIGIN = process.env.SITE_ORIGIN || 'https://coloringdictionary.com';
+const SITE_ORIGIN = process.env.SITE_ORIGIN || MAIL_SITE_ORIGIN;
 const SOURCE_REGISTRY = process.env.SOURCE_REGISTRY || 'coloringdictionary';
 const IRL_SLUG = process.env.IRL_SLUG || 'coloring-dictionary';
 const REGISTRY_ACCESS_URL =
@@ -43,64 +46,73 @@ async function enqueueHit(payload: AccessPayload) {
 }
 
 /** Unified API: /api/signup and /api/vcap/hit via Hosting rewrite. */
-export const api = onRequest(
-  { secrets: [registryApiKey], cors: true },
-  async (req, res) => {
-    cors(res);
-    if (req.method === 'OPTIONS') {
-      res.status(204).send('');
+export const api = onRequest({ cors: true }, async (req, res) => {
+  cors(res);
+  if (req.method === 'OPTIONS') {
+    res.status(204).send('');
+    return;
+  }
+
+  const path =
+    (req.path || '').replace(/^\/api/, '') || req.url.replace(/^\/api/, '');
+
+  if (path.startsWith('/signup') && req.method === 'POST') {
+    const email = String(req.body?.email || '').trim();
+    const consent = Boolean(req.body?.consent);
+    if (!email || !consent) {
+      res.status(400).json({ error: 'email and consent required' });
       return;
     }
 
-    const path = (req.path || '').replace(/^\/api/, '') || req.url.replace(/^\/api/, '');
+    const source = String(req.body?.source || 'website');
+    await db.collection('signupIntents').add({
+      email: email.toLowerCase(),
+      source,
+      consent,
+      createdAt: FieldValue.serverTimestamp(),
+    });
 
-    if (path.startsWith('/signup') && req.method === 'POST') {
-      const email = String(req.body?.email || '').trim();
-      const consent = Boolean(req.body?.consent);
-      if (!email || !consent) {
-        res.status(400).json({ error: 'email and consent required' });
-        return;
-      }
-      // Soft-open: store intent; wire ESP later
-      await db.collection('signupIntents').add({
-        email,
-        source: req.body?.source || 'website',
-        consent,
-        createdAt: FieldValue.serverTimestamp(),
+    try {
+      await sendLaunchSignupEmails({ email, source });
+    } catch (err) {
+      logger.error('Signup email failed', {
+        error: err instanceof Error ? err.message : String(err),
       });
-      await enqueueHit({
-        sourceRegistry: SOURCE_REGISTRY,
-        slug: IRL_SLUG,
-        surface: 'signup_intent',
-        path: '/api/signup',
-        userAgent: req.get('user-agent') || undefined,
-      });
-      res.status(200).json({ ok: true, message: 'You’re on the list.' });
-      return;
     }
 
-    if (path.startsWith('/vcap/hit') && req.method === 'POST') {
-      const body = req.body as AccessPayload;
-      if (!body?.surface || !body?.path) {
-        res.status(400).json({ error: 'surface and path required' });
-        return;
-      }
-      await enqueueHit({
-        sourceRegistry: body.sourceRegistry || SOURCE_REGISTRY,
-        slug: body.slug || IRL_SLUG,
-        surface: body.surface,
-        httpStatus: body.httpStatus ?? 200,
-        path: body.path,
-        userAgent: body.userAgent || req.get('user-agent') || undefined,
-        meta: body.meta,
-      });
-      res.status(202).json({ ok: true, queued: true });
+    await enqueueHit({
+      sourceRegistry: SOURCE_REGISTRY,
+      slug: IRL_SLUG,
+      surface: 'signup_intent',
+      path: '/api/signup',
+      userAgent: req.get('user-agent') || undefined,
+    });
+
+    res.status(200).json({ ok: true, message: 'You’re on the list.' });
+    return;
+  }
+
+  if (path.startsWith('/vcap/hit') && req.method === 'POST') {
+    const body = req.body as AccessPayload;
+    if (!body?.surface || !body?.path) {
+      res.status(400).json({ error: 'surface and path required' });
       return;
     }
+    await enqueueHit({
+      sourceRegistry: body.sourceRegistry || SOURCE_REGISTRY,
+      slug: body.slug || IRL_SLUG,
+      surface: body.surface,
+      httpStatus: body.httpStatus ?? 200,
+      path: body.path,
+      userAgent: body.userAgent || req.get('user-agent') || undefined,
+      meta: body.meta,
+    });
+    res.status(202).json({ ok: true, queued: true });
+    return;
+  }
 
-    res.status(404).json({ error: 'not found' });
-  },
-);
+  res.status(404).json({ error: 'not found' });
+});
 
 /** Origin IRL VCAP HTML surface (Visibility) + citability links. */
 export const irlVcap = onRequest(async (req, res) => {
@@ -170,13 +182,13 @@ export const irlVcap = onRequest(async (req, res) => {
 
 /** Drain registry access outbox → Big Search (AIWEB HITS). */
 export const drainRegistryAccessOutbox = onSchedule(
-  {
-    schedule: 'every 5 minutes',
-    secrets: [registryApiKey],
-  },
+  { schedule: 'every 5 minutes' },
   async () => {
-    const key = registryApiKey.value();
-    if (!key) return;
+    const key = registryApiKey.value().trim();
+    if (!key) {
+      logger.info('REGISTRY_INGEST_API_KEY unset — skipping HITS drain');
+      return;
+    }
 
     const snap = await db
       .collection('registryAccessOutbox')

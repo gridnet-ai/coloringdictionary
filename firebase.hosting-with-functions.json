@@ -1,0 +1,8 @@
+{
+  "_comment": "Restore these rewrites in firebase.json after Cloud Functions deploy successfully.",
+  "rewrites": [
+    { "source": "/api/**", "function": "api" },
+    { "source": "/irl/**", "function": "irlVcap" },
+    { "source": "**", "destination": "/index.html" }
+  ]
+}
