@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { SiteChrome } from '@/components/SiteChrome';
 import { FAQS } from '@/lib/siteSeo';
-import { FLOWERS } from '@/lib/flowers';
+import { BOOKS } from '@/lib/books';
 import { recordVcapHit } from '@/lib/vcapTracking';
 
 export function HomePage() {
@@ -70,7 +70,7 @@ export function HomePage() {
             </p>
             <div className="actions">
               <a className="button" href="#collection">
-                Explore Flower Meanings <span aria-hidden="true">↗</span>
+                Explore the series <span aria-hidden="true">↗</span>
               </a>
               <a className="text-link" href="#how">
                 Take a peek inside <span aria-hidden="true">↓</span>
@@ -171,58 +171,91 @@ export function HomePage() {
           <div className="wrap">
             <div className="collection-title">
               <div>
-                <p className="eyebrow">OUR FIRST CHAPTER</p>
+                <p className="eyebrow">THE SERIES</p>
                 <h2>
-                  Flowers have
+                  Flower Meanings
                   <br />
-                  something to say.
+                  for every season.
                 </h2>
               </div>
               <div className="collection-aside">
-                <span className="pill">IN THE MAKING</span>
+                <span className="pill">ON AMAZON</span>
                 <p>
-                  <strong>Flower Meanings · Volume One</strong>
+                  <strong>Coloring Dictionary books</strong>
                   <br />
-                  Explore the messages people have given flowers, from cheerful
-                  coreopsis to a clover that says “Think of me.”
+                  Each volume pairs a colored guide with a facing page to make
+                  your own. More titles are on the way.
                 </p>
               </div>
             </div>
-            <div className="flower-grid">
-              {FLOWERS.map((flower) => (
-                <article className="flower-card" key={flower.slug}>
-                  <button
-                    type="button"
-                    aria-label={`View ${flower.name.toLowerCase()} guide`}
-                    onClick={() =>
-                      openPreview(flower.image, `${flower.name} color guide`)
-                    }
-                  >
-                    <div className="crop">
-                      <img
-                        src={flower.image}
-                        alt={`${flower.name} color examples`}
-                        loading="lazy"
-                      />
+            <div className="book-grid">
+              {BOOKS.map((book) => {
+                const onAmazon = Boolean(book.amazonUrl);
+                return (
+                  <article className="book-card" key={book.slug}>
+                    <button
+                      type="button"
+                      className="book-cover-btn"
+                      aria-label={`Preview cover: ${book.series} — ${book.title}`}
+                      onClick={() =>
+                        openPreview(
+                          book.cover,
+                          `${book.series} — ${book.title} cover`,
+                        )
+                      }
+                    >
+                      <div className="book-cover">
+                        <img
+                          src={book.cover}
+                          alt={`Cover: Coloring Dictionary ${book.series} — ${book.title}`}
+                          loading="lazy"
+                          width={600}
+                          height={900}
+                        />
+                      </div>
+                    </button>
+                    <div className="book-body">
+                      {book.badge ? (
+                        <span className="book-badge">{book.badge}</span>
+                      ) : null}
+                      <p className="book-series">{book.series}</p>
+                      <h3>{book.title}</h3>
+                      <p className="book-subtitle">{book.subtitle}</p>
+                      <p className="book-blurb">{book.blurb}</p>
+                      {onAmazon ? (
+                        <a
+                          className="amazon-btn"
+                          href={book.amazonUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Buy on Amazon <span aria-hidden="true">↗</span>
+                        </a>
+                      ) : (
+                        <a
+                          className="amazon-btn amazon-btn--soon"
+                          href="https://www.amazon.com/s?k=Coloring+Dictionary+Flower+Meanings"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title="Available on Amazon soon — search Coloring Dictionary"
+                        >
+                          Buy on Amazon <span aria-hidden="true">↗</span>
+                        </a>
+                      )}
+                      {!onAmazon ? (
+                        <p className="amazon-note">Coming soon on Amazon</p>
+                      ) : null}
                     </div>
-                    <div className="flower-meta">
-                      <span>
-                        {flower.number} / {flower.name.toUpperCase()}
-                      </span>
-                      <span aria-hidden="true">↗</span>
-                    </div>
-                  </button>
-                  <h3>{flower.meaning}</h3>
-                  <Link className="entry-link" to={`/flowers/${flower.slug}/`}>
-                    Read the meaning and sources ↗
-                  </Link>
-                  <p>{flower.phrase}</p>
-                </article>
-              ))}
+                  </article>
+                );
+              })}
             </div>
             <p className="collection-note">
-              Sample entries from draft pages. Flower meanings vary across
-              cultures and historical dictionaries; we share selected, sourced
+              Peek at sample flower pages:{' '}
+              <Link to="/flowers/white-clover/">White Clover</Link>,{' '}
+              <Link to="/flowers/coreopsis/">Coreopsis</Link>,{' '}
+              <Link to="/flowers/pink-carnation/">Pink Carnation</Link>.
+              Meanings vary across cultures; we share selected, sourced
               associations.
             </p>
           </div>

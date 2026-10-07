@@ -271,56 +271,130 @@ h3 {
   margin-bottom: 18px;
 }
 .collection-aside p { font-size: 13px; color: var(--muted); }
-.flower-grid {
+.book-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
+  gap: 28px;
 }
-.flower-card > button {
+.book-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--card);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px #082f350d;
+}
+.book-cover-btn {
+  display: block;
   width: 100%;
   padding: 0;
   border: 0;
-  background: var(--card);
-  color: var(--ink);
-  text-align: left;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 3px 12px #082f3507;
+  background: #0a3a40;
+  cursor: pointer;
 }
-.crop {
-  height: 265px;
-  overflow: hidden;
-  background: white;
-  position: relative;
-}
-.crop img {
-  position: absolute;
+.book-cover {
+  aspect-ratio: 2 / 3;
   width: 100%;
-  max-width: none;
-  top: -185px;
+  overflow: hidden;
+  background: #0a3a40;
 }
-.flower-meta {
+.book-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.28s ease;
+}
+.book-cover-btn:hover img {
+  transform: scale(1.03);
+}
+.book-body {
+  padding: 18px 18px 22px;
   display: flex;
-  justify-content: space-between;
-  padding: 16px;
-  font-size: 9px;
-  letter-spacing: 1px;
-  font-weight: 700;
-  border-top: 1px solid var(--line);
+  flex-direction: column;
+  flex: 1;
 }
-.flower-card h3 { font-size: 24px; margin: 18px 0 7px; }
-.flower-card p { font-size: 12px; color: var(--muted); }
+.book-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 3px 9px;
+  margin-bottom: 10px;
+  color: var(--muted);
+}
+.book-series {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin: 0 0 4px;
+}
+.book-card h3 {
+  font-family: var(--serif);
+  font-size: 26px;
+  margin: 0 0 4px;
+  letter-spacing: -0.4px;
+}
+.book-subtitle {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0 0 10px;
+}
+.book-blurb {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0 0 16px;
+  flex: 1;
+}
+.amazon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  background: #ff9900;
+  color: #111;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  padding: 12px 14px;
+  border-radius: 6px;
+  border: 1px solid #e47911;
+  text-align: center;
+}
+.amazon-btn:hover {
+  background: #f5a623;
+}
+.amazon-btn--soon {
+  opacity: 0.95;
+}
+.amazon-note {
+  margin: 8px 0 0;
+  font-size: 11px;
+  color: var(--muted);
+  text-align: center;
+}
+.collection-note {
+  max-width: 750px;
+  margin: 28px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+.collection-note a {
+  border-bottom: 1px solid;
+  font-weight: 600;
+}
 .entry-link {
   font-size: 11px;
   border-bottom: 1px solid;
   display: inline-block;
   margin-bottom: 8px;
-}
-.collection-note {
-  max-width: 750px;
-  margin: 25px 0 0;
-  font-size: 11px;
-  color: var(--muted);
 }
 
 .philosophy { text-align: center; padding-top: 100px; padding-bottom: 100px; }
@@ -483,16 +557,11 @@ body.dark .pill { border-color: #608381; }
 body.dark .hero-art { background: #1a454b; color: var(--cream); }
 body.dark .meaning-box { background: #1a454b; }
 
-@media (min-width: 1200px) {
-  .crop img { top: -175px; }
-}
 @media (max-width: 1000px) {
   .wrap { padding-left: 30px; padding-right: 30px; }
   .header { padding: 18px 30px; }
   .hero { gap: 25px; }
   .header nav { gap: 18px; }
-  .crop { height: 210px; }
-  .crop img { top: -145px; }
   .updates { margin: 0 30px; gap: 30px; }
   .input-row { flex-direction: column; }
   .footer > div:nth-child(2) { flex-direction: column; gap: 8px; }
@@ -531,9 +600,7 @@ body.dark .meaning-box { background: #1a454b; }
   .collection { padding-top: 48px; padding-bottom: 35px; }
   .collection-title { flex-direction: column; gap: 0; }
   .collection-aside { max-width: none; padding-top: 0; }
-  .flower-grid { grid-template-columns: 1fr; gap: 25px; }
-  .crop { height: 300px; }
-  .crop img { width: 100%; top: -255px; }
+  .book-grid { grid-template-columns: 1fr; gap: 22px; max-width: 380px; margin: 0 auto; }
   .philosophy { padding-top: 60px; padding-bottom: 60px; }
   .philosophy h2 { font-size: 36px; }
   .updates {
@@ -552,6 +619,7 @@ body.dark .meaning-box { background: #1a454b; }
   h1 { font-size: 50px; }
   .header nav { display: none; }
   .theme { margin-left: auto; }
+  .book-grid { max-width: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

@@ -1,7 +1,7 @@
 {
-  "title": "Coloring Dictionary: Flower Meanings — Volume One",
+  "title": "Coloring Dictionary: Flower Meanings",
   "brand": "Coloring Dictionary",
-  "status": "In development",
+  "status": "Series in production — available on Amazon soon",
   "creativeWorkStatus": "In development",
   "language": "en",
   "format": {
@@ -10,8 +10,31 @@
   },
   "description": "Discover the meanings people have given flowers. Explore a colored guide, then bring the facing flower illustration to life in your own colors.",
   "audience": "Curious minds of all ages",
-  "url": "https://coloringdictionary.com/#flower-meanings",
-  "availability": "Not for sale yet. Preview and signup only.",
+  "url": "https://coloringdictionary.com/#collection",
+  "availability": "Buy on Amazon (links added as each volume goes live).",
+  "volumes": [
+    {
+      "slug": "flower-meanings-volume-one",
+      "series": "Flower Meanings",
+      "title": "Volume One",
+      "cover": "https://coloringdictionary.com/assets/cover-volume-one.png",
+      "amazonUrl": null
+    },
+    {
+      "slug": "flower-meanings-christmas",
+      "series": "Flower Meanings",
+      "title": "Christmas",
+      "cover": "https://coloringdictionary.com/assets/cover-christmas.png",
+      "amazonUrl": null
+    },
+    {
+      "slug": "flower-meanings-texas",
+      "series": "Flower Meanings",
+      "title": "Texas",
+      "cover": "https://coloringdictionary.com/assets/cover-texas.png",
+      "amazonUrl": null
+    }
+  ],
   "entries": [
     {
       "slug": "coreopsis",
