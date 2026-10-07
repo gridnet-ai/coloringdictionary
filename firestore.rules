@@ -23,6 +23,16 @@ service cloud.firestore {
     // Editorial content — staff only
     match /entries/{id} {
       allow read, write: if staffRole();
+      // Year-stamped definition archive (Webster 1913, future backfills, etc.)
+      match /definitionEditions/{editionId} {
+        allow read, write: if staffRole();
+      }
+    }
+    match /lemmas/{id} {
+      allow read, write: if staffRole();
+    }
+    match /dictionarySources/{id} {
+      allow read, write: if staffRole();
     }
     match /books/{id} {
       allow read, write: if staffRole();

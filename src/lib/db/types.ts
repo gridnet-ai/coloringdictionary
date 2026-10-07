@@ -49,11 +49,14 @@ export type FlowerEntry = {
   entryType: 'flower_meaning';
   slug: string;
   name: string;
+  historicalName?: string | null;
   botanicalName?: string | null;
   catalogNumber?: string | null;
   meanings: FlowerMeanings;
   signatureLine?: string | null;
+  alternateMessages?: string[];
   whenToSend?: string | null;
+  emotionalLanes?: string[];
   matchStatus?: string | null;
   verificationStatus: VerificationStatus;
   publicationStatus: PublicationStatus;
@@ -68,17 +71,68 @@ export type FlowerEntry = {
   };
   legacyStatus?: string | null;
   legacyPublished?: string | null;
+  /** Named Firestore database this flower belongs to (`floriography`). */
+  database?: 'floriography' | string;
+  origin?: string | null;
+  indexable?: boolean;
 };
 
-/** Individual sense for dictionary words (illustration targets one sense). */
+/** One contributing layer when synthesizing a sense from multiple datasets. */
+export type SenseSourceLayer = {
+  provider: string;
+  datasetVersion?: string;
+  sourceId?: string;
+  role?: 'primary_definition' | 'example' | 'simpler_wording' | 'pronunciation' | 'other';
+};
+
+/**
+ * One year-stamped definition snapshot.
+ * Never overwrite — append when wording changes so history can be backfilled
+ * (Webster 1913, future OED years, editorial revisions, etc.).
+ */
+export type DefinitionEdition = {
+  /** Calendar year the wording represents (e.g. 1913 for Webster's Unabridged). */
+  year: number;
+  /** Optional finer label: "1913", "c. 1828", "2025-editorial". */
+  yearLabel?: string;
+  provider: string;
+  datasetVersion?: string;
+  definition: string;
+  partOfSpeech?: string;
+  synonyms?: string[];
+  examples?: string[];
+  license?: string;
+  sourceUrl?: string;
+  retrievedAt?: string;
+  /** Content fingerprint for idempotent reimport. */
+  contentHash?: string;
+};
+
+/**
+ * Individual sense for dictionary words (illustration targets one sense).
+ * Gaps are filled from additional sources without inventing unsupported facts.
+ */
 export type DictionarySense = {
   id: string;
   partOfSpeech?: string;
+  /** Preferred/current display definition. */
   definition: string;
+  /** Year of the preferred `definition` field. */
+  asOfYear?: number;
   definitionSource?: string;
   publicationAdaptation?: string | null;
   examples?: string[];
+  synonyms?: string[];
   pronunciation?: string;
+  synsetId?: string;
+  wordnetSenseId?: string | null;
+  gapFlags?: string[];
+  sourceLayers?: SenseSourceLayer[];
+  /**
+   * Inline history (recent editions). Full archive also lives in
+   * `entries/{id}/definitionEditions` for unlimited backfill.
+   */
+  definitionHistory?: DefinitionEdition[];
 };
 
 export type DictionaryEntry = {
@@ -91,6 +145,13 @@ export type DictionaryEntry = {
   editorialLocked: boolean;
   sources: SourceRecord[];
   provenance: Provenance[];
+  synthesis?: {
+    strategy: 'fill_gaps_from_sources';
+    primarySource: string;
+    pendingSources?: string[];
+  };
+  /** Years represented across senses / edition archive (for filtering). */
+  definitionYears?: number[];
 };
 
 export type EncyclopediaEntry = {

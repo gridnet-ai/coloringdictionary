@@ -1,5 +1,6 @@
 import { useEffect, useId, useRef, useState, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
+import { BrandArrow } from '@/components/BrandIcons';
 
 type Props = {
   children: ReactNode;
@@ -125,7 +126,12 @@ export function SiteChrome({ children, homeHref = '/' }: Props) {
               onClick={() => setMenuOpen(false)}
             >
               {item.label}
-              {item.cta ? <span aria-hidden="true"> ↗</span> : null}
+              {item.cta ? (
+                <>
+                  {' '}
+                  <BrandArrow />
+                </>
+              ) : null}
             </a>
           ))}
           <Link to="/login" onClick={() => setMenuOpen(false)}>

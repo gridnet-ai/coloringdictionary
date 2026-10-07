@@ -23,6 +23,7 @@ Brand promise: **A dictionary that you can color.**
 - `editorialLocked: true` blocks reimport overwrite of reviewed fields.
 - Meanings for flowers: historical / Terry List / almanac / modern / adaptation.
 - Dictionary senses are separate documents/fields so illustrations target one sense.
+- **Definition editions by year:** each sense may carry `asOfYear` + `definitionHistory[]`; the durable archive is `entries/{id}/definitionEditions/{editionId}` (`year`, `provider`, `definition`, `contentHash`). Never delete old years — append when wording changes so historical backfill is possible.
 - Document licenses, attribution, verification status. Folklore ≠ factual claims.
 
 ## Books

@@ -1,7 +1,16 @@
 {
-  "firestore": {
-    "rules": "firestore.rules"
-  },
+  "firestore": [
+    {
+      "database": "(default)",
+      "rules": "firestore.rules",
+      "indexes": "firestore.indexes.json"
+    },
+    {
+      "database": "floriography",
+      "rules": "firestore.floriography.rules",
+      "indexes": "firestore.floriography.indexes.json"
+    }
+  ],
   "storage": {
     "rules": "storage.rules"
   },

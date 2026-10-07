@@ -264,7 +264,7 @@ h1 em::after {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 18px;
+  gap: 10px;
   background: var(--teal);
   color: white;
   padding: 14px 19px;
@@ -275,6 +275,9 @@ h1 em::after {
 }
 .button:hover { background: var(--night); }
 .text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-size: 12px;
   font-weight: 700;
   border-bottom: 1px solid;
@@ -464,13 +467,15 @@ h1 em::after {
   gap: 12px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  padding: 4px 8px 18px;
-  /* Firefox — teal track, gold thumb (hamburger menu palette) */
+  padding: 4px 8px 14px;
+  -webkit-overflow-scrolling: touch;
+  /* Match page scrollbar (teal track / gold thumb) */
   scrollbar-width: thin;
   scrollbar-color: var(--gold) var(--teal);
 }
 .az-carousel::-webkit-scrollbar {
-  height: 10px;
+  width: 12px;
+  height: 12px;
 }
 .az-carousel::-webkit-scrollbar-track {
   background: var(--teal);
@@ -480,16 +485,50 @@ h1 em::after {
 .az-carousel::-webkit-scrollbar-thumb {
   background: var(--gold);
   border-radius: 999px;
-  border: 2px solid var(--teal);
+  border: 3px solid var(--teal);
   background-clip: padding-box;
 }
 .az-carousel::-webkit-scrollbar-thumb:hover {
   background: #ffd24a;
-  border: 2px solid var(--teal);
+  border: 3px solid var(--teal);
   background-clip: padding-box;
 }
 .az-carousel::-webkit-scrollbar-corner {
-  background: transparent;
+  background: var(--teal);
+}
+/* Mobile / touch: native bars ignore custom styles — hide them and use a brand track cue */
+@media (hover: none), (max-width: 760px) {
+  .az-carousel {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-bottom: 8px;
+  }
+  .az-carousel::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+  .az-carousel-shell {
+    padding-bottom: 10px;
+  }
+  .az-carousel-shell::after {
+    content: '';
+    display: block;
+    height: 6px;
+    margin: 10px 12px 0;
+    border-radius: 999px;
+    background:
+      linear-gradient(
+        90deg,
+        var(--teal) 0%,
+        var(--teal) 62%,
+        var(--gold) 62%,
+        var(--gold) 78%,
+        var(--teal) 78%
+      );
+    opacity: 0.9;
+    pointer-events: none;
+  }
 }
 .az-carousel:focus-visible {
   outline: 3px solid var(--gold);
@@ -625,10 +664,11 @@ h1 em::after {
   font-weight: 700;
   white-space: nowrap;
 }
-.brand-strip i {
-  font-style: normal;
-  margin-left: 35px;
-  font-size: 28px;
+.brand-strip .brand-spark {
+  width: 1.15em;
+  height: 1.15em;
+  margin-left: 0.55em;
+  vertical-align: -0.18em;
 }
 
 .how { padding-top: 95px; padding-bottom: 90px; }
@@ -788,6 +828,10 @@ h3 {
   border-radius: 6px;
   border: 1px solid #e47911;
   text-align: center;
+}
+.amazon-btn .brand-arrow {
+  width: 0.95em;
+  height: 0.95em;
 }
 .amazon-btn:hover {
   background: #f5a623;
@@ -960,6 +1004,35 @@ dialog p { text-align: center; margin: 8px 0 0; font-size: 10px; }
 }
 .skip:focus { top: 10px; }
 
+/* Brand mark icons (spark / arrow) */
+.brand-icon {
+  display: inline-block;
+  width: 1.05em;
+  height: 1.05em;
+  vertical-align: -0.18em;
+  object-fit: contain;
+  flex-shrink: 0;
+  pointer-events: none;
+  user-select: none;
+}
+.brand-arrow {
+  width: 0.95em;
+  height: 0.95em;
+}
+.brand-arrow--down {
+  transform: rotate(135deg);
+  transform-origin: center;
+}
+.button .brand-arrow,
+.text-link .brand-arrow,
+.menu-panel .brand-arrow {
+  width: 0.95em;
+  height: 0.95em;
+}
+.menu-panel .brand-arrow {
+  margin-left: 0.15em;
+}
+
 body.dark {
   --paper: #082f35;
   --ink: #fff5db;
@@ -967,6 +1040,18 @@ body.dark {
   --line: #3b595c;
   --card: #143e44;
   color-scheme: dark;
+}
+/* Lighten teal portion of brand PNGs on dark backgrounds; gold stays vivid */
+body.dark .brand-icon:not(.brand-spark) {
+  filter: brightness(1.55) saturate(1.05) contrast(1.05);
+}
+body.dark .button .brand-icon,
+body.dark .menu-panel .nav-cta .brand-icon {
+  /* Already on teal / dark CTA — keep original contrast */
+  filter: none;
+}
+body.dark .brand-strip .brand-spark {
+  filter: none; /* gold strip already contrasts with teal spark */
 }
 body.dark .brand {
   background: #fff5db;
@@ -1037,7 +1122,11 @@ body.dark .meaning-box { background: #1a454b; }
   .az-carousel-shell { padding: 0 28px; }
   .az-nav { display: none; }
   .brand-strip { font-size: 15px; gap: 12px; padding: 15px; }
-  .brand-strip i { margin-left: 15px; font-size: 20px; }
+  .brand-strip .brand-spark {
+    width: 1.05em;
+    height: 1.05em;
+    margin-left: 0.4em;
+  }
   .strip-extra { display: none; }
   .how { padding-top: 55px; padding-bottom: 45px; }
   .section-top { grid-template-columns: 1fr; gap: 8px; }

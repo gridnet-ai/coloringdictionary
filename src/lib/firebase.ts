@@ -16,7 +16,12 @@ const firebaseConfig = {
 
 export const app: FirebaseApp = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
+/** Dictionary + encyclopedia (default Firestore database). */
 export const db = getFirestore(app);
+/** Flower meanings / floriography (named Firestore database). */
+export const floriographyDb = getFirestore(app, 'floriography');
+export const DICTIONARY_DATABASE_ID = '(default)';
+export const FLORIOGRAPHY_DATABASE_ID = 'floriography';
 export const storage = getStorage(app);
 
 let analyticsPromise: Promise<Analytics | null> | null = null;

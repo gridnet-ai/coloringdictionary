@@ -7,6 +7,18 @@ import { logger } from 'firebase-functions';
 import { sendLaunchSignupEmails } from './signupEmail';
 import { SITE_ORIGIN as MAIL_SITE_ORIGIN } from './smtp';
 import { seedFromPublicHosting } from './seed';
+import {
+  fetchUrlToGcs,
+  importDwylWordListFromGcs,
+  importKaikkiBatchFromGcs,
+  importWebstersFromGcs,
+  importWordnetBatchFromGcs,
+  registerDictionarySources,
+} from './dictionaryImport';
+import {
+  importFloriographyFromGcs,
+  upsertFloriographyDictionaryEntry,
+} from './floriographyImport';
 
 initializeApp();
 
@@ -53,7 +65,9 @@ async function enqueueHit(payload: AccessPayload) {
 }
 
 /** Unified API: /api/signup and /api/vcap/hit via Hosting rewrite. */
-export const api = onRequest({ cors: true }, async (req, res) => {
+export const api = onRequest(
+  { cors: true, memory: '1GiB', timeoutSeconds: 540 },
+  async (req, res) => {
   cors(res);
   if (req.method === 'OPTIONS') {
     res.status(204).send('');
@@ -115,6 +129,247 @@ export const api = onRequest({ cors: true }, async (req, res) => {
       meta: body.meta,
     });
     res.status(202).json({ ok: true, queued: true });
+    return;
+  }
+
+  /**
+   * Import TerryList flower meanings into the floriography Firestore database.
+   * POST /api/owner/floriography/import { token, maxEntries?, force? }
+   */
+  if (path.startsWith('/owner/floriography/import') && req.method === 'POST') {
+    const expected = String(process.env.OWNER_SEED_TOKEN || '').trim();
+    const provided = String(req.body?.token || req.get('x-owner-seed-token') || '').trim();
+    if (!expected || provided !== expected) {
+      res.status(401).json({ error: 'unauthorized' });
+      return;
+    }
+    try {
+      const result = await importFloriographyFromGcs({
+        maxEntries:
+          typeof req.body?.maxEntries === 'number' ? req.body.maxEntries : undefined,
+        force: Boolean(req.body?.force),
+      });
+      res.status(200).json({ ok: true, ...result });
+    } catch (err) {
+      logger.error('Floriography import failed', {
+        error: err instanceof Error ? err.message : String(err),
+      });
+      res.status(500).json({
+        error: err instanceof Error ? err.message : 'import failed',
+      });
+    }
+    return;
+  }
+
+  /**
+   * Upsert Floriography definition into the dictionary (default) database.
+   * POST /api/owner/dictionary/floriography-entry { token }
+   */
+  if (path.startsWith('/owner/dictionary/floriography-entry') && req.method === 'POST') {
+    const expected = String(process.env.OWNER_SEED_TOKEN || '').trim();
+    const provided = String(req.body?.token || req.get('x-owner-seed-token') || '').trim();
+    if (!expected || provided !== expected) {
+      res.status(401).json({ error: 'unauthorized' });
+      return;
+    }
+    try {
+      const result = await upsertFloriographyDictionaryEntry();
+      res.status(200).json({ ok: true, ...result });
+    } catch (err) {
+      res.status(500).json({
+        error: err instanceof Error ? err.message : 'upsert failed',
+      });
+    }
+    return;
+  }
+
+  /** Register dictionary source objects in Firestore (GCS paths). */
+  if (path.startsWith('/owner/dictionary/register') && req.method === 'POST') {
+    const expected = String(process.env.OWNER_SEED_TOKEN || '').trim();
+    const provided = String(req.body?.token || req.get('x-owner-seed-token') || '').trim();
+    if (!expected || provided !== expected) {
+      res.status(401).json({ error: 'unauthorized' });
+      return;
+    }
+    try {
+      const result = await registerDictionarySources();
+      res.status(200).json({ ok: true, ...result });
+    } catch (err) {
+      res.status(500).json({
+        error: err instanceof Error ? err.message : 'register failed',
+      });
+    }
+    return;
+  }
+
+  /**
+   * Fetch a remote corpus URL straight into GCS (no laptop disk).
+   * POST /api/owner/dictionary/fetch { token, url, objectPath }
+   */
+  if (path.startsWith('/owner/dictionary/fetch') && req.method === 'POST') {
+    const expected = String(process.env.OWNER_SEED_TOKEN || '').trim();
+    const provided = String(req.body?.token || req.get('x-owner-seed-token') || '').trim();
+    if (!expected || provided !== expected) {
+      res.status(401).json({ error: 'unauthorized' });
+      return;
+    }
+    const url = String(req.body?.url || '').trim();
+    const objectPath = String(req.body?.objectPath || '').trim();
+    if (!url || !objectPath) {
+      res.status(400).json({ error: 'url and objectPath required' });
+      return;
+    }
+    try {
+      const result = await fetchUrlToGcs({ url, objectPath });
+      res.status(200).json({ ok: true, ...result });
+    } catch (err) {
+      logger.error('GCS fetch failed', {
+        error: err instanceof Error ? err.message : String(err),
+      });
+      res.status(500).json({
+        error: err instanceof Error ? err.message : 'fetch failed',
+      });
+    }
+    return;
+  }
+
+  /**
+   * Import Webster's Unabridged (year-stamped editions) from GCS.
+   * POST /api/owner/dictionary/import-websters
+   * { token, maxEntries?, letterPrefix?, asOfYear? }
+   */
+  if (path.startsWith('/owner/dictionary/import-websters') && req.method === 'POST') {
+    const expected = String(process.env.OWNER_SEED_TOKEN || '').trim();
+    const provided = String(req.body?.token || req.get('x-owner-seed-token') || '').trim();
+    if (!expected || provided !== expected) {
+      res.status(401).json({ error: 'unauthorized' });
+      return;
+    }
+    try {
+      const result = await importWebstersFromGcs({
+        objectPath: req.body?.objectPath
+          ? String(req.body.objectPath)
+          : undefined,
+        maxEntries:
+          typeof req.body?.maxEntries === 'number' ? req.body.maxEntries : 3000,
+        letterPrefix: req.body?.letterPrefix
+          ? String(req.body.letterPrefix)
+          : undefined,
+        asOfYear:
+          typeof req.body?.asOfYear === 'number' ? req.body.asOfYear : 1913,
+      });
+      res.status(200).json({ ok: true, ...result });
+    } catch (err) {
+      logger.error('Webster import failed', {
+        error: err instanceof Error ? err.message : String(err),
+      });
+      res.status(500).json({
+        error: err instanceof Error ? err.message : 'import failed',
+      });
+    }
+    return;
+  }
+
+  /**
+   * Import dwyl/english-words lemma list from GCS → dictionary Firestore.
+   * POST /api/owner/dictionary/import-dwyl { token, maxEntries?, letterPrefix?, skipExisting? }
+   */
+  if (path.startsWith('/owner/dictionary/import-dwyl') && req.method === 'POST') {
+    const expected = String(process.env.OWNER_SEED_TOKEN || '').trim();
+    const provided = String(req.body?.token || req.get('x-owner-seed-token') || '').trim();
+    if (!expected || provided !== expected) {
+      res.status(401).json({ error: 'unauthorized' });
+      return;
+    }
+    try {
+      const result = await importDwylWordListFromGcs({
+        objectPath: req.body?.objectPath
+          ? String(req.body.objectPath)
+          : undefined,
+        maxEntries:
+          typeof req.body?.maxEntries === 'number' ? req.body.maxEntries : 8000,
+        letterPrefix: req.body?.letterPrefix
+          ? String(req.body.letterPrefix)
+          : undefined,
+        skipExisting:
+          typeof req.body?.skipExisting === 'boolean'
+            ? req.body.skipExisting
+            : true,
+      });
+      res.status(200).json({ ok: true, ...result });
+    } catch (err) {
+      logger.error('dwyl word list import failed', {
+        error: err instanceof Error ? err.message : String(err),
+      });
+      res.status(500).json({
+        error: err instanceof Error ? err.message : 'import failed',
+      });
+    }
+    return;
+  }
+
+  /**
+   * Import Open English Wordnet batch from GCS zip → Firestore.
+   * POST /api/owner/dictionary/import-wordnet { token, maxEntries?, letterPrefix?, objectPath? }
+   */
+  if (path.startsWith('/owner/dictionary/import-wordnet') && req.method === 'POST') {
+    const expected = String(process.env.OWNER_SEED_TOKEN || '').trim();
+    const provided = String(req.body?.token || req.get('x-owner-seed-token') || '').trim();
+    if (!expected || provided !== expected) {
+      res.status(401).json({ error: 'unauthorized' });
+      return;
+    }
+    try {
+      const result = await importWordnetBatchFromGcs({
+        objectPath: req.body?.objectPath
+          ? String(req.body.objectPath)
+          : undefined,
+        maxEntries:
+          typeof req.body?.maxEntries === 'number' ? req.body.maxEntries : 300,
+        letterPrefix: req.body?.letterPrefix
+          ? String(req.body.letterPrefix)
+          : 'a',
+      });
+      res.status(200).json({ ok: true, ...result });
+    } catch (err) {
+      logger.error('Wordnet import failed', {
+        error: err instanceof Error ? err.message : String(err),
+      });
+      res.status(500).json({
+        error: err instanceof Error ? err.message : 'import failed',
+      });
+    }
+    return;
+  }
+
+  /**
+   * Import a Kaikki batch from GCS → Firestore (no local disk).
+   * POST /api/owner/dictionary/import-kaikki { token, maxEntries?, objectPath? }
+   */
+  if (path.startsWith('/owner/dictionary/import-kaikki') && req.method === 'POST') {
+    const expected = String(process.env.OWNER_SEED_TOKEN || '').trim();
+    const provided = String(req.body?.token || req.get('x-owner-seed-token') || '').trim();
+    if (!expected || provided !== expected) {
+      res.status(401).json({ error: 'unauthorized' });
+      return;
+    }
+    try {
+      const result = await importKaikkiBatchFromGcs({
+        objectPath: req.body?.objectPath
+          ? String(req.body.objectPath)
+          : undefined,
+        maxEntries:
+          typeof req.body?.maxEntries === 'number' ? req.body.maxEntries : 500,
+      });
+      res.status(200).json({ ok: true, ...result });
+    } catch (err) {
+      logger.error('Kaikki import failed', {
+        error: err instanceof Error ? err.message : String(err),
+      });
+      res.status(500).json({
+        error: err instanceof Error ? err.message : 'import failed',
+      });
+    }
     return;
   }
 

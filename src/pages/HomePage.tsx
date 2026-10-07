@@ -1,6 +1,11 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { AmazonCarousel } from '@/components/AmazonCarousel';
+import {
+  BrandArrow,
+  BrandArrowDown,
+  BrandSpark,
+} from '@/components/BrandIcons';
 import { SiteChrome } from '@/components/SiteChrome';
 import { FAQS } from '@/lib/siteSeo';
 import { BOOKS, FLAGSHIP_LISTING } from '@/lib/books';
@@ -57,9 +62,6 @@ export function HomePage() {
       <main id="main">
         <section className="hero wrap">
           <div className="hero-copy">
-            <p className="eyebrow">
-              <span className="dot" /> A little curiosity. A lot of color.
-            </p>
             <h1>
               A dictionary
               <br />
@@ -79,10 +81,10 @@ export function HomePage() {
                   recordVcapHit('amazon_cta', '/#hero', { book: FLAGSHIP_LISTING.slug })
                 }
               >
-                Now available on Amazon <span aria-hidden="true">↗</span>
+                Now available on Amazon <BrandArrow />
               </a>
               <a className="text-link" href="#collection">
-                Explore the series <span aria-hidden="true">↓</span>
+                Explore the series <BrandArrowDown />
               </a>
             </div>
             <p className="hero-note">For curious minds of all ages.</p>
@@ -143,16 +145,16 @@ export function HomePage() {
 
         <div className="brand-strip" aria-label="Color Learn Grow">
           <span>
-            COLOR <i>✳</i>
+            COLOR <BrandSpark />
           </span>
           <span>
-            LEARN <i>✳</i>
+            LEARN <BrandSpark />
           </span>
           <span>
-            GROW <i>✳</i>
+            GROW <BrandSpark />
           </span>
           <span className="strip-extra" aria-hidden="true">
-            COLOR <i>✳</i>
+            COLOR <BrandSpark />
           </span>
         </div>
 
@@ -259,7 +261,7 @@ export function HomePage() {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          Buy on Amazon <span aria-hidden="true">↗</span>
+                          Buy on Amazon <BrandArrow />
                         </a>
                       ) : (
                         <a
@@ -269,7 +271,7 @@ export function HomePage() {
                           rel="noopener noreferrer"
                           title="Available on Amazon soon — search Coloring Dictionary"
                         >
-                          Buy on Amazon <span aria-hidden="true">↗</span>
+                          Buy on Amazon <BrandArrow />
                         </a>
                       )}
                       {!onAmazon ? (
@@ -303,7 +305,7 @@ export function HomePage() {
             to discover. Start wherever curiosity takes you.
           </p>
           <a className="text-link" href="#updates">
-            Follow the first collection <span aria-hidden="true">↗</span>
+            Follow the first collection <BrandArrow />
           </a>
         </section>
 
@@ -341,7 +343,7 @@ export function HomePage() {
                   required
                 />
                 <button className="button" type="submit">
-                  Keep me posted <span aria-hidden="true">↗</span>
+                  Keep me posted <BrandArrow />
                 </button>
               </div>
               <p className="signup-status" aria-live="polite">
