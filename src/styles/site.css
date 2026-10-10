@@ -488,7 +488,11 @@ h1 em.hero-word img {
   display: block;
   height: 0.72em;
   width: auto;
-  max-width: min(280px, 58vw);
+  max-width: min(280px, 100%);
+  box-sizing: content-box;
+  padding: 4px 4px 8px;
+  object-fit: contain;
+  object-position: left center;
   /* Bold coloring-book outline around white fill */
   filter:
     drop-shadow(2px 0 0 var(--ink))
@@ -591,7 +595,11 @@ h1 em.hero-word--color::after {
   display: block;
   height: 28px;
   width: auto;
-  max-width: min(220px, 55vw);
+  max-width: 100%;
+  box-sizing: content-box;
+  padding: 4px;
+  object-fit: contain;
+  object-position: left center;
   filter:
     drop-shadow(1.5px 0 0 var(--ink))
     drop-shadow(-1.5px 0 0 var(--ink))
@@ -770,6 +778,108 @@ body.dark .hero .hero-word--explore {
   box-shadow: 0 2px 5px #00000014;
 }
 .az-cart:hover { background: #f7ca00; }
+.store-logos {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  margin-top: auto;
+  width: fit-content;
+  max-width: 100%;
+  line-height: 0;
+  text-decoration: none;
+}
+a.store-logos:hover { opacity: 0.8; }
+.store-logos--soon {
+  opacity: 0.45;
+  cursor: default;
+}
+.store-logo {
+  display: block;
+  height: 22px;
+  width: auto;
+  max-width: 100%;
+}
+.store-logo--for-dark { display: none; }
+body.dark .store-logos--on-paper .store-logo--for-light { display: none; }
+body.dark .store-logos--on-paper .store-logo--for-dark { display: block; }
+.hero .actions .store-logo { height: 28px; }
+.az-inventory-card .store-logos { gap: 5px 6px; }
+.az-inventory-card .store-logo { height: 13px; }
+.az-card .store-logo { height: 18px; }
+.az-cart--soon {
+  background: #f0f2f2;
+  border-color: #d5d9d9;
+  color: #565959;
+  box-shadow: none;
+  cursor: default;
+}
+.az-inventory {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  width: 100%;
+  min-width: 0;
+  align-content: start;
+}
+.az-inventory-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: #fff;
+  border: 1px solid #d5d9d9;
+  border-radius: 10px;
+  padding: 10px;
+  color: #0f1111;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 0 1px 2px #00000014;
+}
+.az-inventory-card .az-listing-cover {
+  margin-bottom: 8px;
+}
+.az-inventory-title {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0;
+  color: #0f1111;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.az-inventory-meta {
+  margin: 0 0 4px;
+  font-size: 12px;
+  line-height: 1.3;
+  color: #565959;
+}
+.az-inventory-stars {
+  margin: 0 0 2px;
+  color: #de7921;
+  font-size: 14px;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+.az-inventory-price {
+  margin: 0 0 8px;
+  color: #0f1111;
+  line-height: 1;
+}
+.az-inventory-price .az-price-currency,
+.az-inventory-price .az-price-frac {
+  font-size: 12px;
+  font-weight: 400;
+  vertical-align: super;
+}
+.az-inventory-price .az-price-whole {
+  font-size: 22px;
+  font-weight: 400;
+}
+.az-inventory-card .az-cart {
+  margin-top: auto;
+  font-size: 12px;
+  min-height: 34px;
+  padding: 6px 8px;
+}
 
 /* Amazon-style carousel */
 .az-carousel-wrap {
@@ -1504,6 +1614,7 @@ body.dark .menu-theme { background: #123b40; color: var(--cream); }
 body.dark .age-filter-clear { color: var(--gold); }
 body.dark .book-ages { color: var(--muted); }
 body.dark .az-listing,
+body.dark .az-inventory-card,
 body.dark .az-card {
   background: #fff;
   color: #0f1111;
@@ -1600,11 +1711,29 @@ body.dark .meaning-box { background: #1a454b; }
   .hero-copy {
     order: 1;
     padding-top: 0;
+    min-width: 0;
+    max-width: 100%;
   }
-  .az-listing {
+  h1 {
+    overflow: visible;
+    line-height: 1.15;
+  }
+  h1 em.hero-word {
+    max-width: 100%;
+  }
+  .actions {
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 100%;
+  }
+  .hero .text-link.hero-explore-link {
+    max-width: 100%;
+  }
+  .az-inventory {
     order: 2;
-    justify-self: center;
-    max-width: 320px;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    max-width: none;
   }
   h1 { font-size: 60px; letter-spacing: -2px; }
   .hero-art { transform: none; }

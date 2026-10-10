@@ -3,9 +3,9 @@
     "id": "asset_cover_words_wonders",
     "kind": "cover",
     "bookId": "words-and-wonders",
-    "path": "/assets/cover-words-wonders.jpg",
-    "title": "Words & Wonders cover (half color)",
-    "alt": "Coloring Dictionary Words and Wonders cover — colored left, line art right",
+    "path": "/assets/cover-everyday-things.jpg?v=3",
+    "title": "Everyday Things, Book 0000001 cover",
+    "alt": "Coloring Dictionary Everyday Things Book 0000001 cover — colored left, line art right",
     "labels": [
       "cover",
       "flagship",

@@ -7,6 +7,7 @@ import {
   BrandSpark,
 } from '@/components/BrandIcons';
 import { SiteChrome } from '@/components/SiteChrome';
+import { StoreMarks } from '@/components/StoreMarks';
 import {
   ageGroupById,
   formatReadingAgeLabel,
@@ -14,7 +15,7 @@ import {
   parseAgeGroupParam,
 } from '@/lib/ageGroups';
 import { FAQS } from '@/lib/siteSeo';
-import { BOOKS, FLAGSHIP_LISTING } from '@/lib/books';
+import { BOOKS, FLAGSHIP_LISTING, HERO_LISTINGS } from '@/lib/books';
 import { recordVcapHit } from '@/lib/vcapTracking';
 
 export function HomePage() {
@@ -22,7 +23,10 @@ export function HomePage() {
   const ageFilter = parseAgeGroupParam(searchParams.get('age'));
   const ageGroup = ageGroupById(ageFilter);
   const books = BOOKS.filter((b) =>
-    matchesAgeFilter(b.readingAge, ageFilter, ['all']),
+    matchesAgeFilter(b.readingAge, ageFilter, b.ageFilters ?? ['all']),
+  );
+  const inventory = HERO_LISTINGS.filter((item) =>
+    matchesAgeFilter(item.readingAge, ageFilter),
   );
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [previewSrc, setPreviewSrc] = useState('');
@@ -97,17 +101,13 @@ export function HomePage() {
               picture to make your own.
             </p>
             <div className="actions">
-              <a
-                className="button"
+              <StoreMarks
                 href={FLAGSHIP_LISTING.amazonUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+                onPaper
                 onClick={() =>
                   recordVcapHit('amazon_cta', '/#hero', { book: FLAGSHIP_LISTING.slug })
                 }
-              >
-                Now available on Amazon <BrandArrow />
-              </a>
+              />
               <a className="text-link hero-explore-link" href="#collection">
                 <img
                   className="hero-word hero-word--explore"
@@ -123,55 +123,39 @@ export function HomePage() {
             </div>
             <p className="hero-note">For curious minds of all ages.</p>
           </div>
-          <aside className="az-listing" aria-label="Amazon product listing">
-            <button
-              type="button"
-              className="az-listing-cover"
-              aria-label={`Preview cover: ${FLAGSHIP_LISTING.title}`}
-              onClick={() =>
-                openPreview(FLAGSHIP_LISTING.cover, `${FLAGSHIP_LISTING.title} cover`)
-              }
-            >
-              {FLAGSHIP_LISTING.badge ? (
-                <span className="az-badge">{FLAGSHIP_LISTING.badge}</span>
-              ) : null}
-              <img
-                src={FLAGSHIP_LISTING.cover}
-                width={900}
-                height={1200}
-                alt={`Cover: ${FLAGSHIP_LISTING.title}`}
-              />
-            </button>
-            <div className="az-listing-body">
-              <h2 className="az-listing-title">{FLAGSHIP_LISTING.title}</h2>
-              <p className="az-series">
-                <a
-                  href={FLAGSHIP_LISTING.amazonUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+          <aside className="az-inventory" aria-label="Books on Amazon">
+            {inventory.map((item) => (
+              <article className="az-inventory-card" key={item.slug}>
+                <button
+                  type="button"
+                  className="az-listing-cover"
+                  aria-label={`Preview cover: ${item.title}`}
+                  onClick={() => openPreview(item.cover, `${item.title} cover`)}
                 >
-                  {FLAGSHIP_LISTING.seriesLabel}
-                </a>
-              </p>
-              <p className="az-rating az-rating--new">New on Amazon</p>
-              <p className="az-format">{FLAGSHIP_LISTING.format}</p>
-              <p className="az-price az-price--see">See price on Amazon</p>
-              <p className="az-ages">Ages: {FLAGSHIP_LISTING.ages}</p>
-              <p className="az-tagline">{FLAGSHIP_LISTING.tagline}</p>
-              <a
-                className="az-cart"
-                href={FLAGSHIP_LISTING.amazonUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() =>
-                  recordVcapHit('amazon_cta', '/#hero-listing', {
-                    book: FLAGSHIP_LISTING.slug,
-                  })
-                }
-              >
-                {FLAGSHIP_LISTING.cta}
-              </a>
-            </div>
+                  <img src={item.cover} alt="" width={400} height={520} />
+                </button>
+                <h2 className="az-inventory-title">{item.title}</h2>
+                {item.kind ? <p className="az-inventory-meta">{item.kind}</p> : null}
+                <p className="az-inventory-stars" aria-label="4 out of 5 stars">
+                  <span aria-hidden="true">★★★★☆</span>
+                </p>
+                {item.price ? (
+                  <p className="az-inventory-price">
+                    <span className="az-price-currency">$</span>
+                    <span className="az-price-whole">{item.price.whole}</span>
+                    <span className="az-price-frac">{item.price.frac}</span>
+                  </p>
+                ) : null}
+                <StoreMarks
+                  href={item.amazonUrl || undefined}
+                  onClick={() =>
+                    recordVcapHit('amazon_cta', '/#hero-listing', {
+                      book: item.slug,
+                    })
+                  }
+                />
+              </article>
+            ))}
           </aside>
         </section>
 
@@ -311,31 +295,26 @@ export function HomePage() {
                       ) : null}
                       <p className="book-series">{book.series}</p>
                       <p className="book-ages">
-                        {formatReadingAgeLabel(book.readingAge)}
+                        {book.agesLabel ?? formatReadingAgeLabel(book.readingAge)}
                       </p>
                       <h3>{book.title}</h3>
                       <p className="book-subtitle">{book.subtitle}</p>
                       <p className="book-blurb">{book.blurb}</p>
-                      {onAmazon ? (
-                        <a
-                          className="amazon-btn"
-                          href={book.amazonUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Buy on Amazon <BrandArrow tone="teal" />
-                        </a>
-                      ) : (
-                        <a
-                          className="amazon-btn amazon-btn--soon"
-                          href="https://www.amazon.com/s?k=Coloring+Dictionary+Flower+Meanings"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          title="Available on Amazon soon — search Coloring Dictionary"
-                        >
-                          Buy on Amazon <BrandArrow tone="teal" />
-                        </a>
-                      )}
+                      <StoreMarks
+                        onPaper
+                        href={
+                          onAmazon
+                            ? book.amazonUrl
+                            : book.series === 'Flower Meanings'
+                              ? 'https://www.amazon.com/s?k=Coloring+Dictionary+Flower+Meanings'
+                              : undefined
+                        }
+                        onClick={() =>
+                          recordVcapHit('amazon_cta', '/#collection', {
+                            book: book.slug,
+                          })
+                        }
+                      />
                       {!onAmazon ? (
                         <p className="amazon-note">Coming soon on Amazon</p>
                       ) : null}

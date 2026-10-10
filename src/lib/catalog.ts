@@ -19,6 +19,10 @@ export type CatalogProduct = {
   badge?: string;
   blurb?: string;
   readingAge?: ReadingAge;
+  agesLabel?: string;
+  /** Amazon product page only. No site price and no cart. */
+  amazonOnly?: boolean;
+  keywords?: string[];
   /**
    * Which age browse chips this title appears under.
    * Include `all` for general-audience titles (they also show in every band).
@@ -55,7 +59,7 @@ export const CATALOG: CatalogProduct[] = [
     cover: FLAGSHIP_LISTING.cover,
     format: FLAGSHIP_LISTING.format,
     amazonUrl: FLAGSHIP_LISTING.amazonUrl,
-    priceCents: 1499,
+    priceCents: 999,
     badge: FLAGSHIP_LISTING.badge,
     blurb: FLAGSHIP_LISTING.tagline,
     ageFilters: ageFiltersFor(undefined),
@@ -65,18 +69,23 @@ export const CATALOG: CatalogProduct[] = [
     const readingAge = b.readingAge;
     return {
       slug: b.slug,
-      title: `Coloring Dictionary: ${b.series} — ${b.title}`,
+      title: b.listingTitle ?? `Coloring Dictionary: ${b.series} — ${b.title}`,
       seriesLabel: `Part of: ${b.series}`,
       cover: b.cover,
-      format: 'Paperback',
+      format: b.format ?? 'Paperback',
       amazonUrl:
         b.amazonUrl ||
-        `https://www.amazon.com/s?k=${encodeURIComponent(`Coloring Dictionary ${b.series} ${b.title}`)}`,
-      priceCents: 1499,
+        (b.amazonOnly
+          ? ''
+          : `https://www.amazon.com/s?k=${encodeURIComponent(`Coloring Dictionary ${b.series} ${b.title}`)}`),
+      priceCents: b.series === 'Guided Journals' ? 1999 : 999,
       badge: b.badge,
       blurb: b.blurb,
       readingAge,
-      ageFilters: ageFiltersFor(readingAge),
+      agesLabel: b.agesLabel,
+      amazonOnly: b.amazonOnly,
+      keywords: b.keywords,
+      ageFilters: b.ageFilters ?? ageFiltersFor(readingAge),
       status: b.status,
     };
   }),
@@ -94,6 +103,6 @@ export function formatUsd(cents: number): string {
 }
 
 export function catalogAgeLabel(product: CatalogProduct): string {
-  return formatReadingAgeLabel(product.readingAge);
+  return product.agesLabel || formatReadingAgeLabel(product.readingAge);
 }
 

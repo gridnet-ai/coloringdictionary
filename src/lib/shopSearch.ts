@@ -13,6 +13,7 @@ export function catalogSearchHaystack(product: CatalogProduct): string {
     product.badge,
     product.format,
     product.slug,
+    ...(product.keywords || []),
     ...(product.ageFilters || []),
   ]
     .filter(Boolean)

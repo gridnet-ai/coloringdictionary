@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { SiteChrome } from '@/components/SiteChrome';
+import { StoreMarks } from '@/components/StoreMarks';
 import {
   catalogAgeLabel,
   formatUsd,
@@ -53,29 +54,25 @@ function ProductCard({
           ) : null}
         </p>
         <div className="shop-card-actions">
-          <button
-            type="button"
-            className="shop-add"
-            disabled={comingSoon}
-            onClick={() => {
-              addItem(product.slug);
-              onAdded();
-              recordVcapHit('cart_add', '/shop', { book: product.slug });
-            }}
-          >
-            {comingSoon ? 'Coming soon' : 'Add to cart'}
-          </button>
-          <a
-            className="shop-amazon"
-            href={product.amazonUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+          {!product.amazonOnly && !comingSoon ? (
+            <button
+              type="button"
+              className="shop-add"
+              onClick={() => {
+                addItem(product.slug);
+                onAdded();
+                recordVcapHit('cart_add', '/shop', { book: product.slug });
+              }}
+            >
+              Add to cart
+            </button>
+          ) : null}
+          <StoreMarks
+            href={product.amazonUrl || undefined}
             onClick={() =>
               recordVcapHit('amazon_cta', '/shop', { book: product.slug })
             }
-          >
-            View on Amazon
-          </a>
+          />
         </div>
       </div>
     </article>

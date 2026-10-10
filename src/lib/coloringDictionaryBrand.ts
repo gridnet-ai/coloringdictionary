@@ -28,5 +28,5 @@ export const COLORING_DICTIONARY_BRAND = {
   },
   logo: `${SITE_ORIGIN}/assets/logo-header.png`,
   icon: `${SITE_ORIGIN}/icons/icon-512.png`,
-  ogImage: `${SITE_ORIGIN}/assets/og-image.png`,
+  ogImage: `${SITE_ORIGIN}/assets/og-image.png?v=3`,
 } as const;

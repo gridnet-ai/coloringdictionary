@@ -3,7 +3,7 @@
   "company": "Coloring Dictionary",
   "description": "A dictionary you can color. Discover flower meanings with colored guides and facing illustrations to make your own.",
   "url": "https://coloringdictionary.com/",
-  "og_image": "https://coloringdictionary.com/assets/og-image.png",
+  "og_image": "https://coloringdictionary.com/assets/og-image.png?v=3",
   "logo": "https://coloringdictionary.com/icons/icon-512.png",
   "llms_txt": "https://coloringdictionary.com/llms.txt",
   "brand": "https://coloringdictionary.com/brand.json",

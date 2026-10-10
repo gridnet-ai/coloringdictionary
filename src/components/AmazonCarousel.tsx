@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { matchesAgeFilter, parseAgeGroupParam } from '@/lib/ageGroups';
+import { StoreMarks } from '@/components/StoreMarks';
 import { CAROUSEL_LISTINGS, type AmazonListingCard } from '@/lib/books';
 import { recordVcapHit } from '@/lib/vcapTracking';
 
@@ -32,9 +33,13 @@ function ListingCard({
       </button>
       <div className="az-card-body">
         <h3 className="az-card-title">
-          <a href={href} target="_blank" rel="noopener noreferrer">
-            {item.title}
-          </a>
+          {item.amazonUrl ? (
+            <a href={href} target="_blank" rel="noopener noreferrer">
+              {item.title}
+            </a>
+          ) : (
+            item.title
+          )}
         </h3>
         {item.seriesLabel ? (
           <p className="az-series">
@@ -73,17 +78,12 @@ function ListingCard({
           <p className="az-price az-price--see">See price on Amazon</p>
         )}
         {item.ages ? <p className="az-ages">Ages: {item.ages}</p> : null}
-        <a
-          className="az-cart"
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
+        <StoreMarks
+          href={item.amazonUrl || undefined}
           onClick={() =>
             recordVcapHit('amazon_cta', '/#carousel', { book: item.slug })
           }
-        >
-          {item.cta || 'Buy on Amazon'}
-        </a>
+        />
       </div>
     </article>
   );
