@@ -23,7 +23,13 @@ function ProductCard({
 
   return (
     <article className="shop-card">
-      <div className="shop-card-cover">
+      <div
+        className={
+          product.coverContain
+            ? 'shop-card-cover shop-card-cover--contain'
+            : 'shop-card-cover'
+        }
+      >
         {product.badge ? (
           <span className="shop-badge">{product.badge}</span>
         ) : null}
@@ -67,12 +73,16 @@ function ProductCard({
               Add to cart
             </button>
           ) : null}
-          <StoreMarks
-            href={product.amazonUrl || undefined}
-            onClick={() =>
-              recordVcapHit('amazon_cta', '/shop', { book: product.slug })
-            }
-          />
+          {product.comingSoonLabel ? (
+            <p className="shop-soon">{product.comingSoonLabel}</p>
+          ) : (
+            <StoreMarks
+              href={product.amazonUrl || undefined}
+              onClick={() =>
+                recordVcapHit('amazon_cta', '/shop', { book: product.slug })
+              }
+            />
+          )}
         </div>
       </div>
     </article>

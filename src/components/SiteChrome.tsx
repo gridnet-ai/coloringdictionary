@@ -25,8 +25,6 @@ type Props = {
 const NAV: { href: string; label: string; cta?: boolean }[] = [
   { href: '/shop', label: 'Shop' },
   { href: '/login', label: 'Sign in' },
-  { href: '/#how', label: 'How it works' },
-  { href: '/#collection', label: 'The collection' },
   { href: '/#updates', label: 'Stay in the loop', cta: true },
   { href: '/#faq', label: 'FAQ' },
 ];
@@ -401,13 +399,19 @@ export function SiteChrome({ children, homeHref = '/' }: Props) {
             >
               <img src="/brand/social-tiktok.svg" alt="" width={28} height={28} />
             </a>
+            <a
+              href="https://www.youtube.com/@ColoringDictionary"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Coloring Dictionary on YouTube"
+            >
+              <img src="/brand/social-youtube.svg" alt="" width={28} height={28} />
+            </a>
           </nav>
         </div>
         <div>
           <Link to="/shop">Shop</Link>
           <Link to="/login">Sign in</Link>
-          <a href="/#how">How it works</a>
-          <a href="/#collection">Flower Meanings</a>
           <a href="/#updates">Launch updates</a>
           <a href="/#faq">FAQ</a>
         </div>

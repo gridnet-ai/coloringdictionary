@@ -317,5 +317,89 @@
     "isProductImage": true,
     "isMarketingMockup": false,
     "note": "Primary site hero lifestyle photo. Also at /assets/product/lifestyle/family-acorn-hero.jpg"
+  },
+  {
+    "id": "asset_cover_hardline",
+    "kind": "cover",
+    "bookId": "hardline",
+    "path": "/assets/hardline-front-cover.webp",
+    "title": "Hardline front cover",
+    "alt": "Front cover of Hardline, a Coloring Dictionary coloring practice book with bold black outlines and the Coloring Dictionary logo.",
+    "audience": "general",
+    "labels": [
+      "cover",
+      "front-cover",
+      "hardline",
+      "coloring-practice",
+      "webp",
+      "canonical"
+    ],
+    "status": "draft",
+    "availability": "local",
+    "isMarketingMockup": false,
+    "note": "Canonical Hardline front cover (WebP, 791×1024). Call this asset for the product. Paperback is submitted to Amazon KDP and awaiting review."
+  },
+  {
+    "id": "asset_cover_hardline_jpg",
+    "kind": "cover",
+    "bookId": "hardline",
+    "path": "/assets/hardline-front-cover.jpg",
+    "title": "Hardline front cover (previous JPEG)",
+    "alt": "Earlier JPEG front cover of Hardline, a Coloring Dictionary coloring practice book with bold black outlines.",
+    "audience": "general",
+    "labels": [
+      "cover",
+      "front-cover",
+      "hardline",
+      "coloring-practice",
+      "jpg",
+      "previous"
+    ],
+    "status": "draft",
+    "availability": "local",
+    "isMarketingMockup": false,
+    "note": "Previous JPEG of the Hardline front cover, kept so it can be called later. The current cover is asset_cover_hardline."
+  },
+  {
+    "id": "asset_cover_softline",
+    "kind": "cover",
+    "bookId": "softline",
+    "path": "/assets/softline-front-cover.webp",
+    "title": "Softline front cover",
+    "alt": "Front cover of Softline, a Coloring Dictionary coloring practice book with light gray guides and the Coloring Dictionary logo.",
+    "audience": "general",
+    "labels": [
+      "cover",
+      "front-cover",
+      "softline",
+      "coloring-practice",
+      "webp",
+      "canonical"
+    ],
+    "status": "draft",
+    "availability": "local",
+    "isMarketingMockup": false,
+    "note": "Canonical Softline front cover (WebP, 791×1024). Call this asset for the product. Paperback is submitted to Amazon KDP and awaiting review."
+  },
+  {
+    "id": "asset_cover_softline_jpg",
+    "kind": "cover",
+    "bookId": "softline",
+    "path": "/assets/softline-front-cover.jpg",
+    "title": "Softline front cover (previous JPEG)",
+    "alt": "Earlier JPEG front cover of Softline, a Coloring Dictionary coloring practice book with light gray guides.",
+    "audience": "general",
+    "labels": [
+      "cover",
+      "front-cover",
+      "softline",
+      "coloring-practice",
+      "jpg",
+      "previous"
+    ],
+    "status": "draft",
+    "availability": "local",
+    "isMarketingMockup": false,
+    "note": "Previous JPEG of the Softline front cover, kept so it can be called later. The current cover is asset_cover_softline."
   }
 ]

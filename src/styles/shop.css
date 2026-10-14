@@ -109,6 +109,10 @@
   height: 100%;
   object-fit: cover;
 }
+.shop-card-cover--contain img {
+  object-fit: contain;
+  background: #f7f8f8;
+}
 .shop-badge {
   position: absolute;
   top: 8px;
@@ -159,6 +163,17 @@
   margin: 0 0 12px;
   font-size: 20px;
   font-weight: 700;
+}
+.shop-soon {
+  margin: 0;
+  align-self: flex-start;
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f1111;
+  background: #fff8e7;
+  border: 1px solid #e7d7a8;
+  border-radius: 6px;
+  padding: 8px 10px;
 }
 .shop-list {
   font-size: 13px;

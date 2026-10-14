@@ -108,6 +108,42 @@ export function bookJsonLd() {
   };
 }
 
+/** Hardline and Softline are submitted to KDP and are not for sale yet. */
+export function lineStyleBooksJsonLd() {
+  const shared =
+    'Submitted to Amazon KDP and awaiting review. Not for sale. Same 60 designs as the other line-style edition.';
+  return [
+    {
+      '@type': 'Book',
+      '@id': `${SITE_ORIGIN}/#hardline`,
+      name: 'Hardline',
+      alternateName: 'A Coloring Practice Book',
+      bookFormat: 'https://schema.org/Paperback',
+      numberOfPages: 136,
+      inLanguage: 'en',
+      creativeWorkStatus: shared,
+      description:
+        'A coloring practice book with bold black outlines. Paperback, 8.5 × 11 inches, 136 pages, 60 coloring designs.',
+      image: `${SITE_ORIGIN}/assets/hardline-front-cover.webp`,
+      publisher: { '@id': `${SITE_ORIGIN}/#organization` },
+    },
+    {
+      '@type': 'Book',
+      '@id': `${SITE_ORIGIN}/#softline`,
+      name: 'Softline',
+      alternateName: 'A Coloring Practice Book',
+      bookFormat: 'https://schema.org/Paperback',
+      numberOfPages: 136,
+      inLanguage: 'en',
+      creativeWorkStatus: shared,
+      description:
+        'A coloring practice book with thin, light-gray guides. Paperback, 8.5 × 11 inches, 136 pages, 60 coloring designs. Opaque layers cover the guides best; transparent media may leave them visible.',
+      image: `${SITE_ORIGIN}/assets/softline-front-cover.webp`,
+      publisher: { '@id': `${SITE_ORIGIN}/#organization` },
+    },
+  ];
+}
+
 export function faqPageJsonLd(
   faqs: readonly { question: string; answer: string }[] = FAQS,
 ) {
@@ -133,6 +169,7 @@ export function homePageJsonLd() {
       websiteJsonLd(),
       webPageJsonLd(),
       bookJsonLd(),
+      ...lineStyleBooksJsonLd(),
       faqPageJsonLd(),
     ],
   };

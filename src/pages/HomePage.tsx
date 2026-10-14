@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { AmazonCarousel } from '@/components/AmazonCarousel';
 import {
   BrandArrow,
@@ -9,22 +9,22 @@ import {
 import { SiteChrome } from '@/components/SiteChrome';
 import { StoreMarks } from '@/components/StoreMarks';
 import {
-  ageGroupById,
   formatReadingAgeLabel,
   matchesAgeFilter,
   parseAgeGroupParam,
 } from '@/lib/ageGroups';
 import { FAQS } from '@/lib/siteSeo';
-import { BOOKS, FLAGSHIP_LISTING, HERO_LISTINGS } from '@/lib/books';
+import {
+  FLAGSHIP_LISTING,
+  HERO_LISTINGS,
+  LINE_STYLE_BOOKS,
+  publishedAmazonUrl,
+} from '@/lib/books';
 import { recordVcapHit } from '@/lib/vcapTracking';
 
 export function HomePage() {
   const [searchParams] = useSearchParams();
   const ageFilter = parseAgeGroupParam(searchParams.get('age'));
-  const ageGroup = ageGroupById(ageFilter);
-  const books = BOOKS.filter((b) =>
-    matchesAgeFilter(b.readingAge, ageFilter, b.ageFilters ?? ['all']),
-  );
   const inventory = HERO_LISTINGS.filter((item) =>
     matchesAgeFilter(item.readingAge, ageFilter),
   );
@@ -108,7 +108,7 @@ export function HomePage() {
                   recordVcapHit('amazon_cta', '/#hero', { book: FLAGSHIP_LISTING.slug })
                 }
               />
-              <a className="text-link hero-explore-link" href="#collection">
+              <a className="text-link hero-explore-link" href="/shop">
                 <img
                   className="hero-word hero-word--explore"
                   src="/brand/hero-explore.png"
@@ -159,6 +159,66 @@ export function HomePage() {
           </aside>
         </section>
 
+        <section
+          id="line-styles"
+          className="line-styles"
+          aria-labelledby="line-styles-heading"
+        >
+          <div className="wrap">
+            <div className="section-top">
+              <p className="eyebrow">Coloring practice</p>
+              <h2 id="line-styles-heading">
+                Two line styles.
+                <br />
+                Your way to color.
+              </h2>
+              <p>
+                Choose bold black boundaries or thin, light-gray guides. Explore
+                the same 60 designs through two different coloring experiences.
+              </p>
+            </div>
+            <div className="line-style-grid">
+              {LINE_STYLE_BOOKS.map((book) => {
+                const shopUrl = publishedAmazonUrl(book);
+                return (
+                  <article className="book-card" key={book.slug}>
+                    <div className="line-style-cover">
+                      <img
+                        src={book.cover}
+                        alt={book.coverAlt ?? `${book.title} front cover`}
+                        width={791}
+                        height={1024}
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className="book-body">
+                      <p className="book-series">{book.series}</p>
+                      <p className="book-ages">
+                        {book.agesLabel ?? formatReadingAgeLabel(book.readingAge)}
+                      </p>
+                      <h3>{book.title}</h3>
+                      <p className="book-subtitle">{book.subtitle}</p>
+                      <p className="book-blurb">{book.blurb}</p>
+                      <StoreMarks
+                        onPaper
+                        href={shopUrl}
+                        onClick={() =>
+                          recordVcapHit('amazon_cta', '/#line-styles', {
+                            book: book.slug,
+                          })
+                        }
+                      />
+                      {shopUrl ? null : (
+                        <p className="amazon-note">Coming soon on Amazon</p>
+                      )}
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
         <AmazonCarousel onPreview={openPreview} />
 
         <div className="brand-strip" aria-label="Color Learn Grow">
@@ -176,183 +236,7 @@ export function HomePage() {
           </span>
         </div>
 
-        <section id="how" className="wrap how">
-          <div className="section-top">
-            <p className="eyebrow">OPEN IT UP. LET CURIOSITY IN.</p>
-            <h2>
-              Two pages.
-              <br />
-              A whole new way to explore.
-            </h2>
-            <p>
-              Keep the guide beside you as you color. Follow nature’s palette or
-              dream up your own.
-            </p>
-          </div>
-          <div className="steps">
-            <article>
-              <span className="number">01</span>
-              <h3>Meet the subject.</h3>
-              <p>
-                Find its name, meaning and a few memorable facts on the left-hand
-                page.
-              </p>
-            </article>
-            <article>
-              <span className="number">02</span>
-              <h3>Find your colors.</h3>
-              <p>
-                Look at the colored examples. Notice the shapes, shades and little
-                details.
-              </p>
-            </article>
-            <article>
-              <span className="number">03</span>
-              <h3>Make it yours.</h3>
-              <p>
-                Bring the facing illustration to life. There’s room for your
-                imagination.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <section id="collection" className="collection">
-          <div className="wrap">
-            <div className="collection-title">
-              <div>
-                <p className="eyebrow">THE SERIES</p>
-                <h2>
-                  Flower Meanings
-                  <br />
-                  for every season.
-                </h2>
-              </div>
-              <div className="collection-aside">
-                <span className="pill">ON AMAZON</span>
-                <p>
-                  <strong>Coloring Dictionary books</strong>
-                  <br />
-                  Each volume pairs a colored guide with a facing page to make
-                  your own. More titles are on the way.
-                </p>
-              </div>
-            </div>
-            <div className="age-filter-bar" aria-live="polite">
-              <p className="age-filter-active">
-                Showing:{' '}
-                <strong>{ageGroup.label}</strong>
-                {ageFilter !== 'all' ? (
-                  <span className="age-filter-audience">
-                    {' '}
-                    — {ageGroup.audience}
-                  </span>
-                ) : null}
-              </p>
-              <Link
-                className="age-filter-clear"
-                to={ageFilter === 'all' ? '/shop' : `/shop?age=${ageFilter}`}
-              >
-                Shop this age band
-              </Link>
-            </div>
-            <div className="book-grid">
-              {books.length === 0 ? (
-                <p className="age-filter-empty">
-                  No titles in this age band yet. Try another group from the
-                  menu, or{' '}
-                  <Link to="/#collection">show all ages</Link>.
-                </p>
-              ) : null}
-              {books.map((book) => {
-                const onAmazon = Boolean(book.amazonUrl);
-                return (
-                  <article className="book-card" key={book.slug}>
-                    <button
-                      type="button"
-                      className="book-cover-btn"
-                      aria-label={`Preview cover: ${book.series} — ${book.title}`}
-                      onClick={() =>
-                        openPreview(
-                          book.cover,
-                          `${book.series} — ${book.title} cover`,
-                        )
-                      }
-                    >
-                      <div className="book-cover">
-                        <img
-                          src={book.cover}
-                          alt={`Cover: Coloring Dictionary ${book.series} — ${book.title}`}
-                          loading="lazy"
-                          width={600}
-                          height={900}
-                        />
-                      </div>
-                    </button>
-                    <div className="book-body">
-                      {book.badge ? (
-                        <span className="book-badge">{book.badge}</span>
-                      ) : null}
-                      <p className="book-series">{book.series}</p>
-                      <p className="book-ages">
-                        {book.agesLabel ?? formatReadingAgeLabel(book.readingAge)}
-                      </p>
-                      <h3>{book.title}</h3>
-                      <p className="book-subtitle">{book.subtitle}</p>
-                      <p className="book-blurb">{book.blurb}</p>
-                      <StoreMarks
-                        onPaper
-                        href={
-                          onAmazon
-                            ? book.amazonUrl
-                            : book.series === 'Flower Meanings'
-                              ? 'https://www.amazon.com/s?k=Coloring+Dictionary+Flower+Meanings'
-                              : undefined
-                        }
-                        onClick={() =>
-                          recordVcapHit('amazon_cta', '/#collection', {
-                            book: book.slug,
-                          })
-                        }
-                      />
-                      {!onAmazon ? (
-                        <p className="amazon-note">Coming soon on Amazon</p>
-                      ) : null}
-                    </div>
-                  </article>
-                );
-              })}
-            </div>
-            <p className="collection-note">
-              Peek at sample flower pages:{' '}
-              <Link to="/flowers/white-clover/">White Clover</Link>,{' '}
-              <Link to="/flowers/coreopsis/">Coreopsis</Link>,{' '}
-              <Link to="/flowers/pink-carnation/">Pink Carnation</Link>.
-              Meanings vary across cultures; we share selected, sourced
-              associations.
-            </p>
-          </div>
-        </section>
-
-        <section className="wrap philosophy">
-          <p className="eyebrow">YOUR PAGE. YOUR PALETTE.</p>
-          <h2>
-            Nature gives you a guide.
-            <br />
-            <em>You bring the color.</em>
-          </h2>
-          <p>
-            A quiet afternoon. A page shared with someone you love. Something new
-            to discover. Start wherever curiosity takes you.
-          </p>
-          <a className="text-link" href="#updates">
-            Follow the first collection <BrandArrow tone="auto" />
-          </a>
-        </section>
-
-        <section id="faq" className="wrap faq">
-          <p className="eyebrow">A FEW THINGS TO KNOW</p>
-          <h2>Curiosity starts here.</h2>
+        <section id="faq" className="wrap faq" aria-label="Frequently asked questions">
           {FAQS.map((item) => (
             <details key={item.question}>
               <summary>{item.question}</summary>

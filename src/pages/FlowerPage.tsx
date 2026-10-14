@@ -57,8 +57,8 @@ export function FlowerPage() {
   return (
     <SiteChrome>
       <main id="main" className="wrap entry-article">
-        <Link className="back-link" to="/#collection">
-          ← Back to Flower Meanings
+        <Link className="back-link" to="/">
+          ← Back
         </Link>
         <p className="eyebrow">
           — COLORING DICTIONARY — · {flower.number}

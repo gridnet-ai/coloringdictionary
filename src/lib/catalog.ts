@@ -3,7 +3,7 @@ import {
   type AgeGroupId,
   type ReadingAge,
 } from '@/lib/ageGroups';
-import { BOOKS, FLAGSHIP_LISTING } from '@/lib/books';
+import { BOOKS, FLAGSHIP_LISTING, publishedAmazonUrl } from '@/lib/books';
 
 /** Storefront product — Amazon listings plus direct Stripe checkout. */
 export type CatalogProduct = {
@@ -30,6 +30,10 @@ export type CatalogProduct = {
    */
   ageFilters: AgeGroupId[];
   status: 'available' | 'coming-soon';
+  /** Show the full cover without cropping. */
+  coverContain?: boolean;
+  /** Non-link availability line. Set while the book is not for sale. */
+  comingSoonLabel?: string;
 };
 
 function ageFiltersFor(
@@ -74,10 +78,15 @@ export const CATALOG: CatalogProduct[] = [
       cover: b.cover,
       format: b.format ?? 'Paperback',
       amazonUrl:
-        b.amazonUrl ||
+        publishedAmazonUrl(b) ||
         (b.amazonOnly
           ? ''
           : `https://www.amazon.com/s?k=${encodeURIComponent(`Coloring Dictionary ${b.series} ${b.title}`)}`),
+      coverContain: b.feature === 'line-styles',
+      comingSoonLabel:
+        b.feature === 'line-styles' && !publishedAmazonUrl(b)
+          ? 'Coming soon on Amazon.'
+          : undefined,
       priceCents: b.series === 'Guided Journals' ? 1999 : 999,
       badge: b.badge,
       blurb: b.blurb,

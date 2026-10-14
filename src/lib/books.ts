@@ -11,11 +11,31 @@ export type BookVolume = {
   subtitle: string;
   blurb: string;
   cover: string;
-  /** Set the real Amazon product URL when live; empty shows “Coming soon on Amazon”. */
+  /**
+   * Verified Amazon product URL. Leave empty until the listing is live.
+   * A URL is shown only together with status `available`.
+   */
   amazonUrl: string;
   status: 'available' | 'coming-soon';
   badge?: string;
   format?: string;
+  /** One-line promise under the title, used on feature cards. */
+  tagline?: string;
+  /** How the coloring lines are printed. */
+  lineStyle?: string;
+  /** Short contrast between editions of the same designs. */
+  comparison?: string;
+  /** Medium note. Only set when it applies to this edition. */
+  materialNote?: string;
+  /** Cover description for the feature image. */
+  coverAlt?: string;
+  /** Spec line for the feature card. */
+  specs?: string;
+  /**
+   * Dedicated homepage feature. These titles stay out of the flower
+   * collection and the Amazon carousel.
+   */
+  feature?: 'line-styles';
   /** Full title on cards. Defaults to “Coloring Dictionary: {series} — {title}”. */
   listingTitle?: string;
   /** Audience line when it is not a children’s reading-age range. */
@@ -141,8 +161,8 @@ export const BOOKS: BookVolume[] = [
     blurb:
       'A couples journal for gratitude, shared dreams, and the year you spend together. Undated, so you can begin whenever you are ready.',
     cover: '/assets/cover-our-lucky-year.jpg',
-    amazonUrl: '',
-    status: 'coming-soon',
+    amazonUrl: 'https://www.amazon.com/dp/B0HMM597C7',
+    status: 'available',
     badge: 'Journal',
     format: 'Hardcover',
     agesLabel: 'Young adult and adult',
@@ -199,7 +219,90 @@ export const BOOKS: BookVolume[] = [
     status: 'coming-soon',
     badge: 'Regional',
   },
+  {
+    slug: 'hardline',
+    series: 'Coloring Practice',
+    title: 'Hardline',
+    listingTitle: 'Hardline',
+    subtitle: 'A Coloring Practice Book',
+    tagline: 'Bold outlines. Clear boundaries.',
+    blurb:
+      'Bold black outlines give each shape a clear edge. Start with simple objects, explore flowers and their meanings, and relax with Chill & Bro scenes.',
+    lineStyle: 'Bold black outlines',
+    comparison: 'Clear black boundaries for bold, graphic results.',
+    cover: '/assets/hardline-front-cover.webp',
+    coverAlt:
+      'Hardline front cover, a coloring practice book with bold black outlines and the Coloring Dictionary logo.',
+    specs: 'Paperback · 8.5 × 11 inches · 136 pages · 60 coloring designs · $9.99',
+    amazonUrl: '',
+    status: 'coming-soon',
+    format: 'Paperback',
+    agesLabel: 'All ages',
+    ageFilters: ['all'],
+    amazonOnly: true,
+    feature: 'line-styles',
+    keywords: [
+      'hardline coloring book',
+      'bold black outlines',
+      'coloring practice book',
+    ],
+  },
+  {
+    slug: 'softline',
+    series: 'Coloring Practice',
+    title: 'Softline',
+    listingTitle: 'Softline',
+    subtitle: 'A Coloring Practice Book',
+    tagline: 'Light guides. More freedom.',
+    blurb:
+      'Thin, light-gray outlines give your colors more of the spotlight. Explore shading, layering, and blending with simple objects, meaningful flowers, and Chill & Bro scenes.',
+    lineStyle: 'Thin, light-gray guides',
+    comparison: 'Subtle gray guides for exploring more advanced coloring techniques.',
+    materialNote:
+      'Line coverage varies by medium. Opaque layers cover guides best; transparent media may leave them visible.',
+    cover: '/assets/softline-front-cover.webp',
+    coverAlt:
+      'Softline front cover, a coloring practice book with thin light-gray guides and the Coloring Dictionary logo.',
+    specs: 'Paperback · 8.5 × 11 inches · 136 pages · 60 coloring designs · $9.99',
+    amazonUrl: '',
+    status: 'coming-soon',
+    format: 'Paperback',
+    agesLabel: 'All ages',
+    ageFilters: ['all'],
+    amazonOnly: true,
+    feature: 'line-styles',
+    keywords: [
+      'softline coloring book',
+      'light gray guides',
+      'coloring practice book',
+    ],
+  },
 ];
+
+/** Same 60 designs in both line-style editions. */
+export const LINE_STYLE_NOTE =
+  'Hardline and Softline contain the same 60 designs with different line treatments.';
+
+export const LINE_STYLE_SHARED = [
+  '24 shapes and everyday objects',
+  '12 flowers with meanings',
+  '12 Chill & Bro scenes',
+  '12 matching item pages',
+  'Short definitions with casual bro humor',
+  'Single-sided coloring designs with blank reverse sides',
+  'Additional creative-space pages with practice prompts',
+] as const;
+
+export const LINE_STYLE_BOOKS = BOOKS.filter((b) => b.feature === 'line-styles');
+
+/** Shop link only when the book is published and a real URL is set. */
+export function publishedAmazonUrl(
+  book: Pick<BookVolume, 'amazonUrl' | 'status'>,
+): string | undefined {
+  const url = book.amazonUrl.trim();
+  if (book.status === 'available' && url) return url;
+  return undefined;
+}
 
 function listingFromBook(b: BookVolume): AmazonListingCard {
   const title =
@@ -210,7 +313,7 @@ function listingFromBook(b: BookVolume): AmazonListingCard {
     seriesLabel: `Part of: ${b.series}`,
     cover: b.cover,
     amazonUrl:
-      b.amazonUrl ||
+      publishedAmazonUrl(b) ||
       (b.amazonOnly
         ? ''
         : `https://www.amazon.com/s?k=${encodeURIComponent(`Coloring Dictionary ${b.series} ${b.title}`)}`),
@@ -218,7 +321,7 @@ function listingFromBook(b: BookVolume): AmazonListingCard {
     readingAge: b.readingAge,
     ages: b.agesLabel ?? formatReadingAgeLabel(b.readingAge),
     badge: b.status === 'coming-soon' ? 'Coming soon' : b.badge,
-    cta: b.amazonUrl ? 'Buy on Amazon' : 'Coming soon',
+    cta: publishedAmazonUrl(b) ? 'Shop on Amazon' : 'Coming soon',
   };
 }
 
@@ -261,6 +364,6 @@ export const CAROUSEL_LISTINGS: AmazonListingCard[] = [
     badge: 'New',
     cta: 'Buy on Amazon',
   },
-  ...BOOKS.map(listingFromBook),
+  ...BOOKS.filter((b) => b.feature !== 'line-styles').map(listingFromBook),
 ];
 

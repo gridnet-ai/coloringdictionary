@@ -881,6 +881,26 @@ body.dark .store-logos--on-paper .store-logo--for-dark { display: block; }
   padding: 6px 8px;
 }
 
+.line-styles {
+  padding: 8px 0 72px;
+}
+.line-style-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: stretch;
+}
+.line-style-cover {
+  background: #f3efe4;
+}
+.line-style-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+body.dark .line-style-cover { background: #0e3338; }
+
 /* Amazon-style carousel */
 .az-carousel-wrap {
   background: #eaeded;
@@ -1786,6 +1806,8 @@ body.dark .meaning-box { background: #1a454b; }
   .collection-title { flex-direction: column; gap: 0; }
   .collection-aside { max-width: none; padding-top: 0; }
   .book-grid { grid-template-columns: 1fr; gap: 22px; max-width: 380px; margin: 0 auto; }
+  .line-styles { padding-bottom: 48px; }
+  .line-style-grid { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; }
   .philosophy { padding-top: 60px; padding-bottom: 60px; }
   .philosophy h2 { font-size: 36px; }
   .updates {

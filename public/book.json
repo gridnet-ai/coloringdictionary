@@ -10,7 +10,7 @@
   },
   "description": "Discover the meanings people have given flowers. Explore a colored guide, then bring the facing flower illustration to life in your own colors.",
   "audience": "Curious minds of all ages",
-  "url": "https://coloringdictionary.com/#collection",
+  "url": "https://coloringdictionary.com/shop",
   "availability": "Buy on Amazon (links added as each volume goes live).",
   "volumes": [
     {
@@ -66,12 +66,42 @@
       ]
     }
   ],
+  "practiceBooks": [
+    {
+      "slug": "hardline",
+      "series": "Coloring Practice",
+      "title": "Hardline",
+      "subtitle": "A Coloring Practice Book",
+      "tagline": "Bold outlines. Clear boundaries.",
+      "lineStyle": "Bold black outlines",
+      "cover": "https://coloringdictionary.com/assets/hardline-front-cover.webp",
+      "format": "Paperback, 8.5 × 11 inches, 136 pages, 60 coloring designs",
+      "priceUsd": 9.99,
+      "status": "Submitted to Amazon KDP — awaiting review",
+      "amazonUrl": null
+    },
+    {
+      "slug": "softline",
+      "series": "Coloring Practice",
+      "title": "Softline",
+      "subtitle": "A Coloring Practice Book",
+      "tagline": "Light guides. More freedom.",
+      "lineStyle": "Thin, light-gray guides",
+      "cover": "https://coloringdictionary.com/assets/softline-front-cover.webp",
+      "format": "Paperback, 8.5 × 11 inches, 136 pages, 60 coloring designs",
+      "priceUsd": 9.99,
+      "status": "Submitted to Amazon KDP — awaiting review",
+      "materialNote": "Line coverage varies by medium. Opaque layers cover guides best; transparent media may leave them visible.",
+      "amazonUrl": null
+    }
+  ],
   "notes": [
     "Flower meanings can differ across cultures, historical periods and dictionaries.",
     "Natural colors are a guide. Your colors are your choice.",
-    "Current website imagery includes draft pages and concept mockups."
+    "Current website imagery includes draft pages and concept mockups.",
+    "Hardline and Softline contain the same 60 designs with different line treatments. Both are submitted to Amazon KDP and are not for sale yet."
   ],
   "isbn": null,
   "publisherEntity": null,
-  "updated": "2026-10-07"
+  "updated": "2026-10-14"
 }
