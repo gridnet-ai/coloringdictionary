@@ -108,10 +108,8 @@ export function bookJsonLd() {
   };
 }
 
-/** Hardline and Softline are submitted to KDP and are not for sale yet. */
+/** Practice Hardline and Softline are live on Amazon. Chill & Bro is still in review. */
 export function lineStyleBooksJsonLd() {
-  const shared =
-    'Submitted to Amazon KDP and awaiting review. Not for sale. Same 60 designs as the other line-style edition.';
   return [
     {
       '@type': 'Book',
@@ -121,7 +119,9 @@ export function lineStyleBooksJsonLd() {
       bookFormat: 'https://schema.org/Paperback',
       numberOfPages: 136,
       inLanguage: 'en',
-      creativeWorkStatus: shared,
+      creativeWorkStatus: 'Published',
+      url: 'https://www.amazon.com/dp/B0HN34HXGZ',
+      sameAs: 'https://www.amazon.com/dp/B0HN34HXGZ',
       description:
         'A coloring practice book with bold black outlines. Paperback, 8.5 × 11 inches, 136 pages, 60 coloring designs.',
       image: `${SITE_ORIGIN}/assets/hardline-front-cover.webp`,
@@ -135,7 +135,9 @@ export function lineStyleBooksJsonLd() {
       bookFormat: 'https://schema.org/Paperback',
       numberOfPages: 136,
       inLanguage: 'en',
-      creativeWorkStatus: shared,
+      creativeWorkStatus: 'Published',
+      url: 'https://www.amazon.com/dp/B0HN2ZBLLD',
+      sameAs: 'https://www.amazon.com/dp/B0HN2ZBLLD',
       description:
         'A coloring practice book with thin, light-gray guides. Paperback, 8.5 × 11 inches, 136 pages, 60 coloring designs. Opaque layers cover the guides best; transparent media may leave them visible.',
       image: `${SITE_ORIGIN}/assets/softline-front-cover.webp`,

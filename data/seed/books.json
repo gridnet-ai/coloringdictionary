@@ -2611,7 +2611,7 @@
     "coverUrl": "/assets/hardline-front-cover.webp",
     "previousCoverUrl": "/assets/hardline-front-cover.jpg",
     "format": "Paperback, 8.5 × 11 inches, 136 pages, 60 coloring designs",
-    "status": "Submitted to Amazon KDP — awaiting review",
+    "status": "Available on Amazon",
     "language": "en",
     "audience": "All ages",
     "tagline": "Bold outlines. Clear boundaries.",
@@ -2623,14 +2623,14 @@
     "pageCount": 136,
     "provenance": {
       "source": "product catalog",
-      "note": "Front covers are registered on this book. Not yet for sale. Amazon URL is not set."
+      "note": "Front covers are registered on this book. Available on Amazon."
     },
     "pinnedAssetVersions": {
       "frontCover": "asset_cover_hardline",
       "frontCoverPrevious": "asset_cover_hardline_jpg"
     },
     "creditsEditable": true,
-    "amazonUrl": null
+    "amazonUrl": "https://www.amazon.com/dp/B0HN34HXGZ"
   },
   {
     "id": "softline",
@@ -2643,7 +2643,7 @@
     "coverUrl": "/assets/softline-front-cover.webp",
     "previousCoverUrl": "/assets/softline-front-cover.jpg",
     "format": "Paperback, 8.5 × 11 inches, 136 pages, 60 coloring designs",
-    "status": "Submitted to Amazon KDP — awaiting review",
+    "status": "Available on Amazon",
     "language": "en",
     "audience": "All ages",
     "tagline": "Light guides. More freedom.",
@@ -2655,14 +2655,14 @@
     "pageCount": 136,
     "provenance": {
       "source": "product catalog",
-      "note": "Front covers are registered on this book. Not yet for sale. Amazon URL is not set."
+      "note": "Front covers are registered on this book. Available on Amazon."
     },
     "pinnedAssetVersions": {
       "frontCover": "asset_cover_softline",
       "frontCoverPrevious": "asset_cover_softline_jpg"
     },
     "creditsEditable": true,
-    "amazonUrl": null
+    "amazonUrl": "https://www.amazon.com/dp/B0HN2ZBLLD"
   },
 {
   "id": "chill-bro-hardline",

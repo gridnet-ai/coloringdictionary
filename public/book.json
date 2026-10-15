@@ -77,8 +77,8 @@
       "cover": "https://coloringdictionary.com/assets/hardline-front-cover.webp",
       "format": "Paperback, 8.5 × 11 inches, 136 pages, 60 coloring designs",
       "priceUsd": 9.99,
-      "status": "Submitted to Amazon KDP — awaiting review",
-      "amazonUrl": null
+      "status": "Available on Amazon",
+      "amazonUrl": "https://www.amazon.com/dp/B0HN34HXGZ"
     },
     {
       "slug": "softline",
@@ -90,9 +90,9 @@
       "cover": "https://coloringdictionary.com/assets/softline-front-cover.webp",
       "format": "Paperback, 8.5 × 11 inches, 136 pages, 60 coloring designs",
       "priceUsd": 9.99,
-      "status": "Submitted to Amazon KDP — awaiting review",
+      "status": "Available on Amazon",
       "materialNote": "Line coverage varies by medium. Opaque layers cover guides best; transparent media may leave them visible.",
-      "amazonUrl": null
+      "amazonUrl": "https://www.amazon.com/dp/B0HN2ZBLLD"
     },
     {
       "slug": "chill-bro-hardline",
@@ -126,9 +126,9 @@
     "Flower meanings can differ across cultures, historical periods and dictionaries.",
     "Natural colors are a guide. Your colors are your choice.",
     "Current website imagery includes draft pages and concept mockups.",
-    "Hardline and Softline contain the same 60 designs with different line treatments. Both are submitted to Amazon KDP and are not for sale yet."
+    "Hardline and Softline contain the same 60 designs with different line treatments. Both practice books are available on Amazon."
   ],
   "isbn": null,
   "publisherEntity": null,
-  "updated": "2026-10-14"
+  "updated": "2026-10-15"
 }

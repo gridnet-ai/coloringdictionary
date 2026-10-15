@@ -302,8 +302,8 @@ export const BOOKS: BookVolume[] = [
     coverAlt:
       'Hardline front cover, a coloring practice book with bold black outlines and the Coloring Dictionary logo.',
     specs: 'Paperback · 8.5 × 11 inches · 136 pages · 60 coloring designs · $9.99',
-    amazonUrl: '',
-    status: 'coming-soon',
+    amazonUrl: 'https://www.amazon.com/dp/B0HN34HXGZ',
+    status: 'available',
     format: 'Paperback',
     agesLabel: 'All ages',
     ageFilters: ['all'],
@@ -333,8 +333,8 @@ export const BOOKS: BookVolume[] = [
     coverAlt:
       'Softline front cover, a coloring practice book with thin light-gray guides and the Coloring Dictionary logo.',
     specs: 'Paperback · 8.5 × 11 inches · 136 pages · 60 coloring designs · $9.99',
-    amazonUrl: '',
-    status: 'coming-soon',
+    amazonUrl: 'https://www.amazon.com/dp/B0HN2ZBLLD',
+    status: 'available',
     format: 'Paperback',
     agesLabel: 'All ages',
     ageFilters: ['all'],
@@ -450,6 +450,9 @@ export const CAROUSEL_LISTINGS: AmazonListingCard[] = [
     badge: 'New',
     cta: 'Buy on Amazon',
   },
+  ...BOOKS.filter(
+    (b) => b.feature === 'line-styles' && b.status === 'available',
+  ).map(listingFromBook),
   ...BOOKS.filter(
     (b) => b.feature !== 'line-styles' && b.feature !== 'chill-bro',
   ).map(listingFromBook),
