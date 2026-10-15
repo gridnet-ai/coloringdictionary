@@ -93,6 +93,33 @@
       "status": "Submitted to Amazon KDP — awaiting review",
       "materialNote": "Line coverage varies by medium. Opaque layers cover guides best; transparent media may leave them visible.",
       "amazonUrl": null
+    },
+    {
+      "slug": "chill-bro-hardline",
+      "series": "Chill & Bro",
+      "title": "Hardline",
+      "subtitle": "Creative and fun coloring book",
+      "tagline": "A little less rush. A little more color.",
+      "lineStyle": "Bold black outlines",
+      "cover": "https://coloringdictionary.com/assets/chill-bro-hardline-front-cover.jpg",
+      "format": "Hardcover, 136 pages, 30 scenes, 30 matching item pages",
+      "priceUsd": 19.99,
+      "status": "Submitted to Amazon KDP — awaiting review",
+      "amazonUrl": null
+    },
+    {
+      "slug": "chill-bro-softline",
+      "series": "Chill & Bro",
+      "title": "Softline",
+      "subtitle": "Creative and fun coloring book",
+      "tagline": "Let your colors take the lead.",
+      "lineStyle": "Thin, light-gray guides",
+      "cover": "https://coloringdictionary.com/assets/chill-bro-softline-front-cover.jpg",
+      "format": "Hardcover, 136 pages, 30 scenes, 30 matching item pages",
+      "priceUsd": 19.99,
+      "status": "Submitted to Amazon KDP — awaiting review",
+      "materialNote": "Guide visibility varies by medium. Opaque layers cover gray guides more effectively than transparent markers.",
+      "amazonUrl": null
     }
   ],
   "notes": [

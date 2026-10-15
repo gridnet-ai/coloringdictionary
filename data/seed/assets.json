@@ -401,5 +401,47 @@
     "availability": "local",
     "isMarketingMockup": false,
     "note": "Previous JPEG of the Softline front cover, kept so it can be called later. The current cover is asset_cover_softline."
-  }
+  },
+{
+  "id": "asset_cover_chill_bro_hardline",
+  "kind": "cover",
+  "bookId": "chill-bro-hardline",
+  "path": "/assets/chill-bro-hardline-front-cover.jpg",
+  "title": "Chill & Bro Hardline front cover",
+  "alt": "Chill and Bro Hardline front cover: a dog, a bear, and a pig around a campfire, with bold black outlines.",
+  "audience": "general",
+  "labels": [
+    "cover",
+    "front-cover",
+    "chill-bro",
+    "hardline",
+    "jpg",
+    "canonical"
+  ],
+  "status": "draft",
+  "availability": "local",
+  "isMarketingMockup": false,
+  "note": "Canonical Chill & Bro Hardline front cover. Hardcover is in review and not for sale yet."
+},
+{
+  "id": "asset_cover_chill_bro_softline",
+  "kind": "cover",
+  "bookId": "chill-bro-softline",
+  "path": "/assets/chill-bro-softline-front-cover.jpg",
+  "title": "Chill & Bro Softline front cover",
+  "alt": "Chill and Bro Softline front cover: a dog, a bear, and a pig around a campfire, with thin light-gray guides.",
+  "audience": "general",
+  "labels": [
+    "cover",
+    "front-cover",
+    "chill-bro",
+    "softline",
+    "jpg",
+    "canonical"
+  ],
+  "status": "draft",
+  "availability": "local",
+  "isMarketingMockup": false,
+  "note": "Canonical Chill & Bro Softline front cover. Hardcover is in review and not for sale yet."
+}
 ]

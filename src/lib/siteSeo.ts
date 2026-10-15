@@ -141,6 +141,36 @@ export function lineStyleBooksJsonLd() {
       image: `${SITE_ORIGIN}/assets/softline-front-cover.webp`,
       publisher: { '@id': `${SITE_ORIGIN}/#organization` },
     },
+    {
+      '@type': 'Book',
+      '@id': `${SITE_ORIGIN}/#chill-bro-hardline`,
+      name: 'Chill & Bro: Hardline',
+      alternateName: 'Creative and fun coloring book',
+      bookFormat: 'https://schema.org/Hardcover',
+      numberOfPages: 136,
+      inLanguage: 'en',
+      creativeWorkStatus:
+        'Submitted to Amazon KDP and awaiting review. Not for sale.',
+      description:
+        'A hardcover coloring book with bold black outlines. 136 pages, 30 Chill & Bro scenes and 30 matching item pages. Listed at $19.99 and not yet for sale.',
+      image: `${SITE_ORIGIN}/assets/chill-bro-hardline-front-cover.jpg`,
+      publisher: { '@id': `${SITE_ORIGIN}/#organization` },
+    },
+    {
+      '@type': 'Book',
+      '@id': `${SITE_ORIGIN}/#chill-bro-softline`,
+      name: 'Chill & Bro: Softline',
+      alternateName: 'Creative and fun coloring book',
+      bookFormat: 'https://schema.org/Hardcover',
+      numberOfPages: 136,
+      inLanguage: 'en',
+      creativeWorkStatus:
+        'Submitted to Amazon KDP and awaiting review. Not for sale.',
+      description:
+        'A hardcover coloring book with thin, light-gray guides and the same scenes as Chill & Bro: Hardline. 136 pages. Listed at $19.99 and not yet for sale. Opaque layers cover the guides best.',
+      image: `${SITE_ORIGIN}/assets/chill-bro-softline-front-cover.jpg`,
+      publisher: { '@id': `${SITE_ORIGIN}/#organization` },
+    },
   ];
 }
 

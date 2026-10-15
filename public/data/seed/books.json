@@ -2663,5 +2663,68 @@
     },
     "creditsEditable": true,
     "amazonUrl": null
-  }
+  },
+{
+  "id": "chill-bro-hardline",
+  "title": "Chill & Bro: Hardline",
+  "subtitle": "Creative and fun coloring book",
+  "series": "Chill & Bro",
+  "edition": "Hardline",
+  "authorImported": null,
+  "authorCreditNeedsConfirmation": false,
+  "coverUrl": "/assets/chill-bro-hardline-front-cover.jpg",
+  "format": "Hardcover, 136 pages, 30 scenes, 30 matching item pages",
+  "status": "Submitted to Amazon KDP — awaiting review",
+  "language": "en",
+  "audience": "All ages",
+  "tagline": "A little less rush. A little more color.",
+  "priceUsd": 19.99,
+  "spreadLayout": {
+    "guideSide": "n/a — single-sided coloring designs",
+    "coloringSide": "coloring design with a blank reverse side"
+  },
+  "pages": [],
+  "pageCount": 136,
+  "provenance": {
+    "source": "product catalog",
+    "note": "Front cover is registered on this book. In review. Not yet for sale. Amazon URL is not set."
+  },
+  "pinnedAssetVersions": {
+    "frontCover": "asset_cover_chill_bro_hardline"
+  },
+  "creditsEditable": true,
+  "amazonUrl": null
+},
+{
+  "id": "chill-bro-softline",
+  "title": "Chill & Bro: Softline",
+  "subtitle": "Creative and fun coloring book",
+  "series": "Chill & Bro",
+  "edition": "Softline",
+  "authorImported": null,
+  "authorCreditNeedsConfirmation": false,
+  "coverUrl": "/assets/chill-bro-softline-front-cover.jpg",
+  "format": "Hardcover, 136 pages, 30 scenes, 30 matching item pages",
+  "status": "Submitted to Amazon KDP — awaiting review",
+  "language": "en",
+  "audience": "All ages",
+  "tagline": "Let your colors take the lead.",
+  "priceUsd": 19.99,
+  "materialNote": "Guide visibility varies by medium. Opaque layers cover gray guides more effectively than transparent markers.",
+  "spreadLayout": {
+    "guideSide": "n/a — single-sided coloring designs",
+    "coloringSide": "coloring design with a blank reverse side"
+  },
+  "pages": [],
+  "pageCount": 136,
+  "provenance": {
+    "source": "product catalog",
+    "note": "Front cover is registered on this book. In review. Not yet for sale. Amazon URL is not set. Same scenes as Chill & Bro Hardline."
+  },
+  "pinnedAssetVersions": {
+    "frontCover": "asset_cover_chill_bro_softline"
+  },
+  "creditsEditable": true,
+  "amazonUrl": null
+}
 ]

@@ -82,12 +82,14 @@ export const CATALOG: CatalogProduct[] = [
         (b.amazonOnly
           ? ''
           : `https://www.amazon.com/s?k=${encodeURIComponent(`Coloring Dictionary ${b.series} ${b.title}`)}`),
-      coverContain: b.feature === 'line-styles',
+      coverContain: b.feature === 'line-styles' || b.feature === 'chill-bro',
       comingSoonLabel:
-        b.feature === 'line-styles' && !publishedAmazonUrl(b)
+        (b.feature === 'line-styles' || b.feature === 'chill-bro') &&
+        !publishedAmazonUrl(b)
           ? 'Coming soon on Amazon.'
           : undefined,
-      priceCents: b.series === 'Guided Journals' ? 1999 : 999,
+      priceCents:
+        b.priceCents ?? (b.series === 'Guided Journals' ? 1999 : 999),
       badge: b.badge,
       blurb: b.blurb,
       readingAge,

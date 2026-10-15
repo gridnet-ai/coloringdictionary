@@ -35,7 +35,7 @@ export type BookVolume = {
    * Dedicated homepage feature. These titles stay out of the flower
    * collection and the Amazon carousel.
    */
-  feature?: 'line-styles';
+  feature?: 'line-styles' | 'chill-bro';
   /** Full title on cards. Defaults to “Coloring Dictionary: {series} — {title}”. */
   listingTitle?: string;
   /** Audience line when it is not a children’s reading-age range. */
@@ -47,6 +47,8 @@ export type BookVolume = {
   ageFilters?: AgeGroupId[];
   /** Sold on Amazon only — no site price and no cart. */
   amazonOnly?: boolean;
+  /** List price in cents. Defaults to $9.99, or $19.99 for guided journals. */
+  priceCents?: number;
   keywords?: string[];
   /** Show in the homepage Amazon inventory grid. */
   storefront?: boolean;
@@ -220,6 +222,72 @@ export const BOOKS: BookVolume[] = [
     badge: 'Regional',
   },
   {
+    slug: 'chill-bro-hardline',
+    series: 'Chill & Bro',
+    title: 'Hardline',
+    listingTitle: 'Chill & Bro: Hardline',
+    subtitle: 'Creative and fun coloring book',
+    tagline: 'A little less rush. A little more color.',
+    blurb:
+      'Bold, smooth black outlines give every Chill & Bro scene a clear boundary. Kick back with animal bros fishing, grilling, camping, and taking a well-earned break. Hardcover, 136 pages, still in review.',
+    lineStyle: 'Bold black outlines',
+    comparison: 'Bold black boundaries. The outlines stay part of the finished picture.',
+    materialNote:
+      'When using markers, place a protective sheet underneath your page. Blank reverse sides do not prevent bleed-through.',
+    cover: '/assets/chill-bro-hardline-front-cover.jpg',
+    coverAlt:
+      'Chill and Bro Hardline front cover: a dog, a bear, and a pig around a campfire, with bold black outlines.',
+    specs: 'Hardcover · 136 pages · 30 scenes · 30 matching item pages · $19.99',
+    amazonUrl: '',
+    status: 'coming-soon',
+    format: 'Hardcover',
+    agesLabel: 'All ages',
+    ageFilters: ['all'],
+    amazonOnly: true,
+    storefront: true,
+    feature: 'chill-bro',
+    priceCents: 1999,
+    keywords: [
+      'chill and bro coloring book',
+      'coloring book for men',
+      'bold black outlines',
+      'hardcover coloring book',
+    ],
+  },
+  {
+    slug: 'chill-bro-softline',
+    series: 'Chill & Bro',
+    title: 'Softline',
+    listingTitle: 'Chill & Bro: Softline',
+    subtitle: 'Creative and fun coloring book',
+    tagline: 'Let your colors take the lead.',
+    blurb:
+      'Thin, light-gray guides for the same Chill & Bro scenes. Explore shading, layering, and blending while your colors define the picture. Hardcover, 136 pages, still in review.',
+    lineStyle: 'Thin, light-gray guides',
+    comparison: 'Same scenes as Hardline, with light guides instead of bold black boundaries.',
+    materialNote:
+      'Guide visibility varies by medium. Opaque layers cover gray guides more effectively than transparent markers. When using markers, place a protective sheet underneath your page. Blank reverse sides do not prevent bleed-through.',
+    cover: '/assets/chill-bro-softline-front-cover.jpg',
+    coverAlt:
+      'Chill and Bro Softline front cover: a dog, a bear, and a pig around a campfire, with thin light-gray guides.',
+    specs: 'Hardcover · 136 pages · 30 scenes · 30 matching item pages · $19.99',
+    amazonUrl: '',
+    status: 'coming-soon',
+    format: 'Hardcover',
+    agesLabel: 'All ages',
+    ageFilters: ['all'],
+    amazonOnly: true,
+    storefront: true,
+    feature: 'chill-bro',
+    priceCents: 1999,
+    keywords: [
+      'chill and bro softline',
+      'light gray coloring guides',
+      'coloring book for men',
+      'hardcover coloring book',
+    ],
+  },
+  {
     slug: 'hardline',
     series: 'Coloring Practice',
     title: 'Hardline',
@@ -240,6 +308,7 @@ export const BOOKS: BookVolume[] = [
     agesLabel: 'All ages',
     ageFilters: ['all'],
     amazonOnly: true,
+    storefront: true,
     feature: 'line-styles',
     keywords: [
       'hardline coloring book',
@@ -270,6 +339,7 @@ export const BOOKS: BookVolume[] = [
     agesLabel: 'All ages',
     ageFilters: ['all'],
     amazonOnly: true,
+    storefront: true,
     feature: 'line-styles',
     keywords: [
       'softline coloring book',
@@ -325,8 +395,32 @@ function listingFromBook(b: BookVolume): AmazonListingCard {
   };
 }
 
+function inventoryCard(b: BookVolume): AmazonListingCard {
+  const cents = b.priceCents ?? (b.series === 'Guided Journals' ? 1999 : 999);
+  return {
+    ...listingFromBook(b),
+    title:
+      b.listingTitle ??
+      (b.series === 'Flower Meanings' ? `${b.series}: ${b.title}` : b.title),
+    kind: b.series === 'Guided Journals' ? 'Guided Journals' : 'Coloring Book',
+    price: {
+      whole: String(Math.floor(cents / 100)),
+      frac: String(cents % 100).padStart(2, '0'),
+    },
+  };
+}
+
+const STOREFRONT_BOOKS = BOOKS.filter((b) => b.storefront);
+const LEAD_INVENTORY = STOREFRONT_BOOKS.filter(
+  (b) => b.feature === 'chill-bro' || b.feature === 'line-styles',
+);
+const REST_INVENTORY = STOREFRONT_BOOKS.filter(
+  (b) => b.feature !== 'chill-bro' && b.feature !== 'line-styles',
+);
+
 /** Homepage grid of titles people can shop now. */
 export const HERO_LISTINGS: AmazonListingCard[] = [
+  ...LEAD_INVENTORY.map(inventoryCard),
   {
     slug: FLAGSHIP_LISTING.slug,
     title: FLAGSHIP_LISTING.shortTitle,
@@ -340,15 +434,7 @@ export const HERO_LISTINGS: AmazonListingCard[] = [
     kind: 'Coloring Book',
     price: { whole: '9', frac: '99' },
   },
-  ...BOOKS.filter((b) => b.storefront).map((b) => {
-    const journal = b.series === 'Guided Journals';
-    return {
-      ...listingFromBook(b),
-      title: b.series === 'Flower Meanings' ? `${b.series}: ${b.title}` : b.title,
-      kind: journal ? 'Guided Journals' : 'Coloring Book',
-      price: journal ? { whole: '19', frac: '99' } : { whole: '9', frac: '99' },
-    };
-  }),
+  ...REST_INVENTORY.map(inventoryCard),
 ];
 
 /** Amazon-style carousel cards (after hero). */
@@ -364,6 +450,8 @@ export const CAROUSEL_LISTINGS: AmazonListingCard[] = [
     badge: 'New',
     cta: 'Buy on Amazon',
   },
-  ...BOOKS.filter((b) => b.feature !== 'line-styles').map(listingFromBook),
+  ...BOOKS.filter(
+    (b) => b.feature !== 'line-styles' && b.feature !== 'chill-bro',
+  ).map(listingFromBook),
 ];
 

@@ -8,18 +8,9 @@ import {
 } from '@/components/BrandIcons';
 import { SiteChrome } from '@/components/SiteChrome';
 import { StoreMarks } from '@/components/StoreMarks';
-import {
-  formatReadingAgeLabel,
-  matchesAgeFilter,
-  parseAgeGroupParam,
-} from '@/lib/ageGroups';
+import { matchesAgeFilter, parseAgeGroupParam } from '@/lib/ageGroups';
 import { FAQS } from '@/lib/siteSeo';
-import {
-  FLAGSHIP_LISTING,
-  HERO_LISTINGS,
-  LINE_STYLE_BOOKS,
-  publishedAmazonUrl,
-} from '@/lib/books';
+import { FLAGSHIP_LISTING, HERO_LISTINGS } from '@/lib/books';
 import { recordVcapHit } from '@/lib/vcapTracking';
 
 export function HomePage() {
@@ -157,66 +148,6 @@ export function HomePage() {
               </article>
             ))}
           </aside>
-        </section>
-
-        <section
-          id="line-styles"
-          className="line-styles"
-          aria-labelledby="line-styles-heading"
-        >
-          <div className="wrap">
-            <div className="section-top">
-              <p className="eyebrow">Coloring practice</p>
-              <h2 id="line-styles-heading">
-                Two line styles.
-                <br />
-                Your way to color.
-              </h2>
-              <p>
-                Choose bold black boundaries or thin, light-gray guides. Explore
-                the same 60 designs through two different coloring experiences.
-              </p>
-            </div>
-            <div className="line-style-grid">
-              {LINE_STYLE_BOOKS.map((book) => {
-                const shopUrl = publishedAmazonUrl(book);
-                return (
-                  <article className="book-card" key={book.slug}>
-                    <div className="line-style-cover">
-                      <img
-                        src={book.cover}
-                        alt={book.coverAlt ?? `${book.title} front cover`}
-                        width={791}
-                        height={1024}
-                        loading="lazy"
-                      />
-                    </div>
-                    <div className="book-body">
-                      <p className="book-series">{book.series}</p>
-                      <p className="book-ages">
-                        {book.agesLabel ?? formatReadingAgeLabel(book.readingAge)}
-                      </p>
-                      <h3>{book.title}</h3>
-                      <p className="book-subtitle">{book.subtitle}</p>
-                      <p className="book-blurb">{book.blurb}</p>
-                      <StoreMarks
-                        onPaper
-                        href={shopUrl}
-                        onClick={() =>
-                          recordVcapHit('amazon_cta', '/#line-styles', {
-                            book: book.slug,
-                          })
-                        }
-                      />
-                      {shopUrl ? null : (
-                        <p className="amazon-note">Coming soon on Amazon</p>
-                      )}
-                    </div>
-                  </article>
-                );
-              })}
-            </div>
-          </div>
         </section>
 
         <AmazonCarousel onPreview={openPreview} />
