@@ -421,7 +421,7 @@
   "status": "draft",
   "availability": "local",
   "isMarketingMockup": false,
-  "note": "Canonical Chill & Bro Hardline front cover. Hardcover is in review and not for sale yet."
+  "note": "Canonical Chill & Bro Hardline front cover. Hardcover is available at https://www.amazon.com/dp/B0HN64QQ4M."
 },
 {
   "id": "asset_cover_chill_bro_softline",
@@ -442,7 +442,7 @@
   "status": "draft",
   "availability": "local",
   "isMarketingMockup": false,
-  "note": "Canonical Chill & Bro Softline front cover. Hardcover is in review and not for sale yet."
+  "note": "Canonical Chill & Bro Softline front cover. Hardcover is available at https://www.amazon.com/dp/B0HN6D89DJ."
 },
 {
   "id": "asset_marketing_hardline_softline_two_ways",
@@ -485,7 +485,7 @@
   "availability": "local",
   "isMarketingMockup": true,
   "isProductImage": false,
-  "note": "Holiday gift creative for Chill & Bro Hardline and Softline. Both hardcovers are still in review."
+  "note": "Holiday gift creative for the live Chill & Bro Hardline and Softline hardcovers."
 },
 {
   "id": "asset_marketing_hardline_softline_choose_your_line",

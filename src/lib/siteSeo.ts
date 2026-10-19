@@ -108,7 +108,7 @@ export function bookJsonLd() {
   };
 }
 
-/** Practice Hardline and Softline are live on Amazon. Chill & Bro is still in review. */
+/** Practice books and Chill & Bro Hardline and Softline are live on Amazon. */
 export function lineStyleBooksJsonLd() {
   return [
     {
@@ -151,10 +151,11 @@ export function lineStyleBooksJsonLd() {
       bookFormat: 'https://schema.org/Hardcover',
       numberOfPages: 136,
       inLanguage: 'en',
-      creativeWorkStatus:
-        'Submitted to Amazon KDP and awaiting review. Not for sale.',
+      creativeWorkStatus: 'Published',
+      url: 'https://www.amazon.com/dp/B0HN64QQ4M',
+      sameAs: 'https://www.amazon.com/dp/B0HN64QQ4M',
       description:
-        'A hardcover coloring book with bold black outlines. 136 pages, 30 Chill & Bro scenes and 30 matching item pages. Listed at $19.99 and not yet for sale.',
+        'A hardcover coloring book with bold black outlines. 136 pages, 30 Chill & Bro scenes and 30 matching item pages. $19.99.',
       image: `${SITE_ORIGIN}/assets/chill-bro-hardline-front-cover.jpg`,
       publisher: { '@id': `${SITE_ORIGIN}/#organization` },
     },
@@ -166,10 +167,11 @@ export function lineStyleBooksJsonLd() {
       bookFormat: 'https://schema.org/Hardcover',
       numberOfPages: 136,
       inLanguage: 'en',
-      creativeWorkStatus:
-        'Submitted to Amazon KDP and awaiting review. Not for sale.',
+      creativeWorkStatus: 'Published',
+      url: 'https://www.amazon.com/dp/B0HN6D89DJ',
+      sameAs: 'https://www.amazon.com/dp/B0HN6D89DJ',
       description:
-        'A hardcover coloring book with thin, light-gray guides and the same scenes as Chill & Bro: Hardline. 136 pages. Listed at $19.99 and not yet for sale. Opaque layers cover the guides best.',
+        'A hardcover coloring book with thin, light-gray guides and the same scenes as Chill & Bro: Hardline. 136 pages. $19.99. Opaque layers cover the guides best.',
       image: `${SITE_ORIGIN}/assets/chill-bro-softline-front-cover.jpg`,
       publisher: { '@id': `${SITE_ORIGIN}/#organization` },
     },

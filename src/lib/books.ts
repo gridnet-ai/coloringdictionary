@@ -229,7 +229,7 @@ export const BOOKS: BookVolume[] = [
     subtitle: 'Creative and fun coloring book',
     tagline: 'A little less rush. A little more color.',
     blurb:
-      'Bold, smooth black outlines give every Chill & Bro scene a clear boundary. Kick back with animal bros fishing, grilling, camping, and taking a well-earned break. Hardcover, 136 pages, still in review.',
+      'Bold, smooth black outlines give every Chill & Bro scene a clear boundary. Kick back with animal bros fishing, grilling, camping, and taking a well-earned break. Hardcover, 136 pages.',
     lineStyle: 'Bold black outlines',
     comparison: 'Bold black boundaries. The outlines stay part of the finished picture.',
     materialNote:
@@ -238,8 +238,8 @@ export const BOOKS: BookVolume[] = [
     coverAlt:
       'Chill and Bro Hardline front cover: a dog, a bear, and a pig around a campfire, with bold black outlines.',
     specs: 'Hardcover · 136 pages · 30 scenes · 30 matching item pages · $19.99',
-    amazonUrl: '',
-    status: 'coming-soon',
+    amazonUrl: 'https://www.amazon.com/dp/B0HN64QQ4M',
+    status: 'available',
     format: 'Hardcover',
     agesLabel: 'All ages',
     ageFilters: ['all'],
@@ -262,7 +262,7 @@ export const BOOKS: BookVolume[] = [
     subtitle: 'Creative and fun coloring book',
     tagline: 'Let your colors take the lead.',
     blurb:
-      'Thin, light-gray guides for the same Chill & Bro scenes. Explore shading, layering, and blending while your colors define the picture. Hardcover, 136 pages, still in review.',
+      'Thin, light-gray guides for the same Chill & Bro scenes. Explore shading, layering, and blending while your colors define the picture. Hardcover, 136 pages.',
     lineStyle: 'Thin, light-gray guides',
     comparison: 'Same scenes as Hardline, with light guides instead of bold black boundaries.',
     materialNote:
@@ -271,8 +271,8 @@ export const BOOKS: BookVolume[] = [
     coverAlt:
       'Chill and Bro Softline front cover: a dog, a bear, and a pig around a campfire, with thin light-gray guides.',
     specs: 'Hardcover · 136 pages · 30 scenes · 30 matching item pages · $19.99',
-    amazonUrl: '',
-    status: 'coming-soon',
+    amazonUrl: 'https://www.amazon.com/dp/B0HN6D89DJ',
+    status: 'available',
     format: 'Hardcover',
     agesLabel: 'All ages',
     ageFilters: ['all'],
@@ -450,6 +450,9 @@ export const CAROUSEL_LISTINGS: AmazonListingCard[] = [
     badge: 'New',
     cta: 'Buy on Amazon',
   },
+  ...BOOKS.filter(
+    (b) => b.feature === 'chill-bro' && b.status === 'available',
+  ).map(listingFromBook),
   ...BOOKS.filter(
     (b) => b.feature === 'line-styles' && b.status === 'available',
   ).map(listingFromBook),

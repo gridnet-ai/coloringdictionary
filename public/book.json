@@ -104,8 +104,8 @@
       "cover": "https://coloringdictionary.com/assets/chill-bro-hardline-front-cover.jpg",
       "format": "Hardcover, 136 pages, 30 scenes, 30 matching item pages",
       "priceUsd": 19.99,
-      "status": "Submitted to Amazon KDP — awaiting review",
-      "amazonUrl": null
+      "status": "Available on Amazon",
+      "amazonUrl": "https://www.amazon.com/dp/B0HN64QQ4M"
     },
     {
       "slug": "chill-bro-softline",
@@ -117,9 +117,9 @@
       "cover": "https://coloringdictionary.com/assets/chill-bro-softline-front-cover.jpg",
       "format": "Hardcover, 136 pages, 30 scenes, 30 matching item pages",
       "priceUsd": 19.99,
-      "status": "Submitted to Amazon KDP — awaiting review",
+      "status": "Available on Amazon",
       "materialNote": "Guide visibility varies by medium. Opaque layers cover gray guides more effectively than transparent markers.",
-      "amazonUrl": null
+      "amazonUrl": "https://www.amazon.com/dp/B0HN6D89DJ"
     }
   ],
   "notes": [
@@ -130,5 +130,5 @@
   ],
   "isbn": null,
   "publisherEntity": null,
-  "updated": "2026-10-15"
+  "updated": "2026-10-19"
 }
